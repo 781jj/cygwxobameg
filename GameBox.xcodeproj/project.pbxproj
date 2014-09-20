@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D81717719CD6C9500125961 /* VSUserGameInfomationRefreshHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81717619CD6C9500125961 /* VSUserGameInfomationRefreshHandle.m */; };
+		3D81717D19CD722500125961 /* VSUsersGameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81717C19CD722500125961 /* VSUsersGameResult.m */; };
+		3D81718019CD751900125961 /* VSChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81717F19CD751900125961 /* VSChannelViewController.m */; };
+		3D81718319CD757D00125961 /* VSChannelSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81718219CD757D00125961 /* VSChannelSwitch.m */; };
 		3DEC306C19CD2236009FCCFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEC306B19CD2236009FCCFE /* Foundation.framework */; };
 		3DEC306E19CD2236009FCCFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEC306D19CD2236009FCCFE /* CoreGraphics.framework */; };
 		3DEC307019CD2236009FCCFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEC306F19CD2236009FCCFE /* UIKit.framework */; };
@@ -21,6 +25,10 @@
 		3DEC308D19CD2236009FCCFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEC306F19CD2236009FCCFE /* UIKit.framework */; };
 		3DEC309519CD2236009FCCFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DEC309319CD2236009FCCFE /* InfoPlist.strings */; };
 		3DEC309719CD2236009FCCFE /* GameBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC309619CD2236009FCCFE /* GameBoxTests.m */; };
+		3DEC30AF19CD30F9009FCCFE /* VSChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC30AC19CD30F9009FCCFE /* VSChannel.m */; };
+		3DEC30B019CD30F9009FCCFE /* VSChannelList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC30AE19CD30F9009FCCFE /* VSChannelList.m */; };
+		3DEC30B619CD34A8009FCCFE /* VSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC30B519CD34A8009FCCFE /* VSRequest.m */; };
+		3DEC30BC19CD60E4009FCCFE /* VSGameDetailInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC30BB19CD60E4009FCCFE /* VSGameDetailInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D81717519CD6C9500125961 /* VSUserGameInfomationRefreshHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = VSUserGameInfomationRefreshHandle.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		3D81717619CD6C9500125961 /* VSUserGameInfomationRefreshHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = VSUserGameInfomationRefreshHandle.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		3D81717B19CD722500125961 /* VSUsersGameResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSUsersGameResult.h; sourceTree = "<group>"; };
+		3D81717C19CD722500125961 /* VSUsersGameResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSUsersGameResult.m; sourceTree = "<group>"; };
+		3D81717E19CD751900125961 /* VSChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSChannelViewController.h; sourceTree = "<group>"; };
+		3D81717F19CD751900125961 /* VSChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSChannelViewController.m; sourceTree = "<group>"; };
+		3D81718119CD757D00125961 /* VSChannelSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSChannelSwitch.h; sourceTree = "<group>"; };
+		3D81718219CD757D00125961 /* VSChannelSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSChannelSwitch.m; sourceTree = "<group>"; };
 		3DEC306819CD2236009FCCFE /* GameBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DEC306B19CD2236009FCCFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3DEC306D19CD2236009FCCFE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +69,14 @@
 		3DEC309219CD2236009FCCFE /* GameBoxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GameBoxTests-Info.plist"; sourceTree = "<group>"; };
 		3DEC309419CD2236009FCCFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3DEC309619CD2236009FCCFE /* GameBoxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameBoxTests.m; sourceTree = "<group>"; };
+		3DEC30AB19CD30F9009FCCFE /* VSChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSChannel.h; sourceTree = "<group>"; };
+		3DEC30AC19CD30F9009FCCFE /* VSChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSChannel.m; sourceTree = "<group>"; };
+		3DEC30AD19CD30F9009FCCFE /* VSChannelList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSChannelList.h; sourceTree = "<group>"; };
+		3DEC30AE19CD30F9009FCCFE /* VSChannelList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSChannelList.m; sourceTree = "<group>"; };
+		3DEC30B419CD34A8009FCCFE /* VSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = VSRequest.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		3DEC30B519CD34A8009FCCFE /* VSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = VSRequest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		3DEC30BA19CD60E4009FCCFE /* VSGameDetailInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSGameDetailInfo.h; sourceTree = "<group>"; };
+		3DEC30BB19CD60E4009FCCFE /* VSGameDetailInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSGameDetailInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +136,9 @@
 		3DEC307119CD2236009FCCFE /* GameBox */ = {
 			isa = PBXGroup;
 			children = (
+				3DEC30B319CD34A8009FCCFE /* Source */,
+				3DEC30A919CD30F9009FCCFE /* View */,
+				3DEC30AA19CD30F9009FCCFE /* Model */,
 				3DEC307A19CD2236009FCCFE /* AppDelegate.h */,
 				3DEC307B19CD2236009FCCFE /* AppDelegate.m */,
 				3DEC307D19CD2236009FCCFE /* Main.storyboard */,
@@ -150,6 +177,43 @@
 				3DEC309319CD2236009FCCFE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3DEC30A919CD30F9009FCCFE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D81717E19CD751900125961 /* VSChannelViewController.h */,
+				3D81717F19CD751900125961 /* VSChannelViewController.m */,
+				3D81718119CD757D00125961 /* VSChannelSwitch.h */,
+				3D81718219CD757D00125961 /* VSChannelSwitch.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DEC30AA19CD30F9009FCCFE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC30AB19CD30F9009FCCFE /* VSChannel.h */,
+				3DEC30AC19CD30F9009FCCFE /* VSChannel.m */,
+				3DEC30AD19CD30F9009FCCFE /* VSChannelList.h */,
+				3DEC30AE19CD30F9009FCCFE /* VSChannelList.m */,
+				3DEC30BA19CD60E4009FCCFE /* VSGameDetailInfo.h */,
+				3DEC30BB19CD60E4009FCCFE /* VSGameDetailInfo.m */,
+				3D81717519CD6C9500125961 /* VSUserGameInfomationRefreshHandle.h */,
+				3D81717619CD6C9500125961 /* VSUserGameInfomationRefreshHandle.m */,
+				3D81717B19CD722500125961 /* VSUsersGameResult.h */,
+				3D81717C19CD722500125961 /* VSUsersGameResult.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DEC30B319CD34A8009FCCFE /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC30B419CD34A8009FCCFE /* VSRequest.h */,
+				3DEC30B519CD34A8009FCCFE /* VSRequest.m */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,9 +313,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D81718319CD757D00125961 /* VSChannelSwitch.m in Sources */,
+				3DEC30AF19CD30F9009FCCFE /* VSChannel.m in Sources */,
+				3DEC30B619CD34A8009FCCFE /* VSRequest.m in Sources */,
+				3D81717719CD6C9500125961 /* VSUserGameInfomationRefreshHandle.m in Sources */,
 				3DEC308219CD2236009FCCFE /* ViewController.m in Sources */,
 				3DEC307C19CD2236009FCCFE /* AppDelegate.m in Sources */,
 				3DEC307819CD2236009FCCFE /* main.m in Sources */,
+				3DEC30B019CD30F9009FCCFE /* VSChannelList.m in Sources */,
+				3D81717D19CD722500125961 /* VSUsersGameResult.m in Sources */,
+				3DEC30BC19CD60E4009FCCFE /* VSGameDetailInfo.m in Sources */,
+				3D81718019CD751900125961 /* VSChannelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,9 +448,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameBox/GameBox-Prefix.pch";
 				INFOPLIST_FILE = "GameBox/GameBox-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -389,9 +466,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameBox/GameBox-Prefix.pch";
 				INFOPLIST_FILE = "GameBox/GameBox-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -456,6 +538,7 @@
 				3DEC309C19CD2236009FCCFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3DEC309D19CD2236009FCCFE /* Build configuration list for PBXNativeTarget "GameBoxTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +547,7 @@
 				3DEC309F19CD2236009FCCFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
