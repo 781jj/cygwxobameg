@@ -12,10 +12,14 @@
 
 @property (nonatomic,copy)NSString *name;
 @property (nonatomic,copy)NSString *gameId;
-@property (nonatomic,copy)NSString *picture;
-@property (nonatomic,copy)NSString *abstract;
+@property (nonatomic,readonly)NSString *iconPath;
+@property (nonatomic,copy)NSString *description;
 //玩法
 @property (nonatomic,copy)NSString *gameplay;
 @property (nonatomic,assign)NSInteger players;
-@property (nonatomic,strong)NSArray *abstractImages;
+@property (nonatomic,readonly)NSArray *showImagesPath;
+@property (nonatomic,strong)NSArray *shareInfo;
+@property (nonatomic,readonly)NSArray *htmlPath;
+
+- (id)initWithDic:(NSDictionary *)dic;
 @end

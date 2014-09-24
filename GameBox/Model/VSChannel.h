@@ -18,7 +18,9 @@ typedef  void(^VSChannelLoadDataBlock)(BOOL success,id );
 @interface VSChannel : NSObject
 
 @property (nonatomic,assign)VSChannelType type;
+@property (nonatomic,strong)NSArray *gameList;
 - (id)initWithType:(VSChannelType )type;
 
 - (void)loadData:(VSChannelLoadDataBlock)callback;
+- (void)loadJson;
 @end

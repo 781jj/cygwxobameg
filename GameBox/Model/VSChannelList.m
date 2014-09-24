@@ -20,6 +20,7 @@ static VSChannelList *_channelList = nil;
     if (self) {
         _list = [NSMutableArray array];
         NSArray *types = @[@"1",@"2"];
+        _currentType = VSNewChannel;
         __weak typeof(self) blockself = self;
         [types enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             NSInteger type = [obj integerValue];

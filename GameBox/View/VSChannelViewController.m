@@ -7,9 +7,11 @@
 //
 
 #import "VSChannelViewController.h"
+#import "VSChannelList.h"
+#import "VSGameDetailInfo.h"
 
-@interface VSChannelViewController ()
-
+@interface VSChannelViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic,weak)IBOutlet UITableView *table;
 @end
 
 @implementation VSChannelViewController
@@ -18,6 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   
     // Do any additional setup after loading the view.
 }
 
@@ -27,15 +30,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
+    return [channel.gameList count];
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *CellIdentifier = @"test";
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+    }
+    VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
+    
+    if (indexPath.row >= [channel.gameList count] ) {
+        return cell;
+    }
+    
+    VSGameDetailInfo *info = [channel.gameList objectAtIndex:indexPath.row];
+    cell.textLabel.text = info.name;
+    cell.detailTextLabel.text = info.gameId;
+    return cell;
+}
 
 @end

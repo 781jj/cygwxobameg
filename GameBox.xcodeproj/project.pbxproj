@@ -11,6 +11,9 @@
 		3D81717D19CD722500125961 /* VSUsersGameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81717C19CD722500125961 /* VSUsersGameResult.m */; };
 		3D81718019CD751900125961 /* VSChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81717F19CD751900125961 /* VSChannelViewController.m */; };
 		3D81718319CD757D00125961 /* VSChannelSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81718219CD757D00125961 /* VSChannelSwitch.m */; };
+		3DAC904B19D2A2D60039DAC3 /* game.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DAC904A19D2A2D60039DAC3 /* game.json */; };
+		3DAC905019D2B17A0039DAC3 /* VSGameImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC904F19D2B17A0039DAC3 /* VSGameImage.m */; };
+		3DAC905319D2B1840039DAC3 /* VSGameHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC905219D2B1840039DAC3 /* VSGameHtml.m */; };
 		3DEC306C19CD2236009FCCFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEC306B19CD2236009FCCFE /* Foundation.framework */; };
 		3DEC306E19CD2236009FCCFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEC306D19CD2236009FCCFE /* CoreGraphics.framework */; };
 		3DEC307019CD2236009FCCFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEC306F19CD2236009FCCFE /* UIKit.framework */; };
@@ -18,7 +21,6 @@
 		3DEC307819CD2236009FCCFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC307719CD2236009FCCFE /* main.m */; };
 		3DEC307C19CD2236009FCCFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC307B19CD2236009FCCFE /* AppDelegate.m */; };
 		3DEC307F19CD2236009FCCFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEC307D19CD2236009FCCFE /* Main.storyboard */; };
-		3DEC308219CD2236009FCCFE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC308119CD2236009FCCFE /* ViewController.m */; };
 		3DEC308419CD2236009FCCFE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DEC308319CD2236009FCCFE /* Images.xcassets */; };
 		3DEC308B19CD2236009FCCFE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEC308A19CD2236009FCCFE /* XCTest.framework */; };
 		3DEC308C19CD2236009FCCFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEC306B19CD2236009FCCFE /* Foundation.framework */; };
@@ -50,6 +52,11 @@
 		3D81717F19CD751900125961 /* VSChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSChannelViewController.m; sourceTree = "<group>"; };
 		3D81718119CD757D00125961 /* VSChannelSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSChannelSwitch.h; sourceTree = "<group>"; };
 		3D81718219CD757D00125961 /* VSChannelSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSChannelSwitch.m; sourceTree = "<group>"; };
+		3DAC904A19D2A2D60039DAC3 /* game.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = game.json; path = Resource/game.json; sourceTree = "<group>"; };
+		3DAC904E19D2B17A0039DAC3 /* VSGameImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSGameImage.h; sourceTree = "<group>"; };
+		3DAC904F19D2B17A0039DAC3 /* VSGameImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSGameImage.m; sourceTree = "<group>"; };
+		3DAC905119D2B1840039DAC3 /* VSGameHtml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSGameHtml.h; sourceTree = "<group>"; };
+		3DAC905219D2B1840039DAC3 /* VSGameHtml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSGameHtml.m; sourceTree = "<group>"; };
 		3DEC306819CD2236009FCCFE /* GameBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DEC306B19CD2236009FCCFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3DEC306D19CD2236009FCCFE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,8 +68,6 @@
 		3DEC307A19CD2236009FCCFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3DEC307B19CD2236009FCCFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3DEC307E19CD2236009FCCFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3DEC308019CD2236009FCCFE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3DEC308119CD2236009FCCFE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3DEC308319CD2236009FCCFE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3DEC308919CD2236009FCCFE /* GameBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DEC308A19CD2236009FCCFE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -103,9 +108,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DAC904919D2A2C80039DAC3 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3DAC904A19D2A2D60039DAC3 /* game.json */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
 		3DEC305F19CD2236009FCCFE = {
 			isa = PBXGroup;
 			children = (
+				3DAC904919D2A2C80039DAC3 /* Resource */,
 				3DEC307119CD2236009FCCFE /* GameBox */,
 				3DEC309019CD2236009FCCFE /* GameBoxTests */,
 				3DEC306A19CD2236009FCCFE /* Frameworks */,
@@ -142,8 +156,6 @@
 				3DEC307A19CD2236009FCCFE /* AppDelegate.h */,
 				3DEC307B19CD2236009FCCFE /* AppDelegate.m */,
 				3DEC307D19CD2236009FCCFE /* Main.storyboard */,
-				3DEC308019CD2236009FCCFE /* ViewController.h */,
-				3DEC308119CD2236009FCCFE /* ViewController.m */,
 				3DEC308319CD2236009FCCFE /* Images.xcassets */,
 				3DEC307219CD2236009FCCFE /* Supporting Files */,
 			);
@@ -212,6 +224,10 @@
 			children = (
 				3DEC30B419CD34A8009FCCFE /* VSRequest.h */,
 				3DEC30B519CD34A8009FCCFE /* VSRequest.m */,
+				3DAC904E19D2B17A0039DAC3 /* VSGameImage.h */,
+				3DAC904F19D2B17A0039DAC3 /* VSGameImage.m */,
+				3DAC905119D2B1840039DAC3 /* VSGameHtml.h */,
+				3DAC905219D2B1840039DAC3 /* VSGameHtml.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -226,6 +242,7 @@
 				3DEC306419CD2236009FCCFE /* Sources */,
 				3DEC306519CD2236009FCCFE /* Frameworks */,
 				3DEC306619CD2236009FCCFE /* Resources */,
+				3DAC904C19D2A3360039DAC3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -295,6 +312,7 @@
 				3DEC308419CD2236009FCCFE /* Images.xcassets in Resources */,
 				3DEC307619CD2236009FCCFE /* InfoPlist.strings in Resources */,
 				3DEC307F19CD2236009FCCFE /* Main.storyboard in Resources */,
+				3DAC904B19D2A2D60039DAC3 /* game.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +326,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3DAC904C19D2A3360039DAC3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#删除文件夹\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/game_bundle\"\n\n#创建文件夹\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/game_bundle\"\n\ncp -R -f $PROJECT_DIR/Resource/*.bundle $BUILT_PRODUCTS_DIR/${PRODUCT_NAME}.app/game_bundle";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3DEC306419CD2236009FCCFE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -315,15 +349,16 @@
 			files = (
 				3D81718319CD757D00125961 /* VSChannelSwitch.m in Sources */,
 				3DEC30AF19CD30F9009FCCFE /* VSChannel.m in Sources */,
+				3DAC905019D2B17A0039DAC3 /* VSGameImage.m in Sources */,
 				3DEC30B619CD34A8009FCCFE /* VSRequest.m in Sources */,
 				3D81717719CD6C9500125961 /* VSUserGameInfomationRefreshHandle.m in Sources */,
-				3DEC308219CD2236009FCCFE /* ViewController.m in Sources */,
 				3DEC307C19CD2236009FCCFE /* AppDelegate.m in Sources */,
 				3DEC307819CD2236009FCCFE /* main.m in Sources */,
 				3DEC30B019CD30F9009FCCFE /* VSChannelList.m in Sources */,
 				3D81717D19CD722500125961 /* VSUsersGameResult.m in Sources */,
 				3DEC30BC19CD60E4009FCCFE /* VSGameDetailInfo.m in Sources */,
 				3D81718019CD751900125961 /* VSChannelViewController.m in Sources */,
+				3DAC905319D2B1840039DAC3 /* VSGameHtml.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
