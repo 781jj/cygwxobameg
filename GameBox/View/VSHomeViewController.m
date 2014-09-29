@@ -7,14 +7,19 @@
 //
 
 #import "VSHomeViewController.h"
-
+#import "VSSessionManager.h"
+#import "VSLoginViewController.h"
 @interface VSHomeViewController ()
-
+{
+    BOOL _isshow ;
+}
 @end
 
 @implementation VSHomeViewController
 
 - (void)viewDidLoad {
+    
+
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -22,6 +27,19 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (!_isshow) {
+        _isshow = YES;
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *login = [storyBoard instantiateViewControllerWithIdentifier:@"VSLoginView"];
+        if (![VSSessionManager shareInstance].isLogin) {
+            [self.navigationController presentViewController:login animated:NO completion:nil];
+        }
+    }
 }
 
 /*

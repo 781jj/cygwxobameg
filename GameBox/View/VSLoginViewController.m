@@ -7,7 +7,8 @@
 //
 
 #import "VSLoginViewController.h"
-
+#import "VSSessionManager.h"
+#import "VSTempLoginMessage.h"
 @interface VSLoginViewController ()
 
 @end
@@ -24,6 +25,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)facebookLogin:(id)sender
+{
+    
+}
+
+- (IBAction)twitterLogin:(id)sender
+{
+    
+}
+
+- (IBAction)directLogin:(id)sender
+{
+    VSTempLoginMessage *info = [VSTempLoginMessage new];
+    [[VSSessionManager shareInstance] loginWithType:info finish:^(BOOL success,id msg){
+        if (success) {
+            [self dismissViewControllerAnimated:NO completion:nil];
+        }
+    }];
+}
 /*
 #pragma mark - Navigation
 
