@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>2048</title>
+
+  <link href="./2048_files/main.css" rel="stylesheet" type="text/css">
+  <link rel="apple-touch-icon" href="./2048_files/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
+</head>
+<body>
+  <div id="container" class="container">
+    <div class="heading">
+      <h1 class="title">2048</h1>
+
+      <div class="scores-container">
+        <div class="score-container">0</div>
+        <div class="best-container">460</div>
+      </div>
+    </div>
+	  
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+	        <a class="keep-playing-button">Keep going</a>
+          <a class="retry-button">Try again</a>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container"><div class="tile tile-2 tile-position-3-2 tile-new"><div class="tile-inner">2</div></div><div class="tile tile-2 tile-position-3-4 tile-new"><div class="tile-inner">2</div></div></div>
+    </div>
+
+  </div>
+
+  <script src="./2048_files/animframe_polyfill.js"></script>
+  <script src="./2048_files/keyboard_input_manager.js"></script>
+  <script src="./2048_files/html_actuator.js"></script>
+  <script src="./2048_files/grid.js"></script>
+  <script src="./2048_files/tile.js"></script>
+  <script src="./2048_files/local_score_manager.js"></script>
+  <script src="./2048_files/game_index.js"></script>
+  <script src="./2048_files/game_manager.js"></script>
+  <script src="./2048_files/application.js"></script>
+
+  <script type="text/javascript">
+      var P = {
+        showShare : function(op) {
+          window.Android.showShare(JSON.stringify(op));
+        }
+      }
+  </script>
+
+</body>
+
+
+</html>

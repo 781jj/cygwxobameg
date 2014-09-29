@@ -1,0 +1,203 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>是男人撑过30秒</title>
+		<script type="text/javascript" src="./index_files/jquery.min.js"></script>
+		<script src="./index_files/global.js" type="text/javascript"></script>
+		<script src="./index_files/init.js" type="text/javascript"></script>
+		<script type="text/javascript" src="./index_files/stats" charset="UTF-8"></script>
+		<style type="text/css">
+html {
+	-ms-touch-action: none;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #272727;
+}
+
+.sbgshow {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+	line-height: 50px;
+	background: rgba(0, 0, 0, 0.85);
+	z-index: 10000;
+}
+
+.sbgshow .arron {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	width: 100px;
+	height: 100px;
+	background-size: 100px 100px;
+}
+
+.sbgshow p {
+	padding-top: 78px;
+}
+
+.sbg {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: 26px;
+	line-height: 46px;
+	background: rgba(0, 0, 0, 0.85);
+	z-index: 10000;
+}
+
+.sbg .arron {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	width: 100px;
+	height: 100px;
+	background-size: 100px 100px;
+}
+
+.sbg p {
+	padding-top: 78px;
+}
+
+#warper {
+	position: absolute;
+	height: 100% !important;
+	background: #3c5aa8 url('./vapp/50/bg.jpg') top left no-repeat;
+	background-size: 100% auto;
+}
+
+#share-wx {
+	background: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+	display: none;
+}
+
+#wx-qr {
+	background: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+	display: none;
+}
+
+.lis {
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+	z-index: 122;
+}
+
+.lis a {
+	float: left;
+	width: 99.9%;
+	margin-right: 1px;
+	color: #ffffff;
+	font-size: 14px;
+	text-decoration: none;
+	background: #606783;
+	text-align: center;
+	opacity: 0.8;
+	line-height: 30px;
+	font-weight: bold;
+	font-family: "微软雅黑" ；
+}
+
+.lis a img {
+	position: relative;
+	top: 1px;
+}
+</style>
+
+	</head>
+	<body id="bd" style="text-align: center">
+	
+	
+		<div id="warper" style="width: 640px; left: 640px; overflow: hidden;">
+		
+		<script type="text/javascript" src="./index_files/ball2_Obfs.js"></script>
+
+
+		<tdiv style="position: absolute; font-size: 40px; color: rgb(255, 255, 255); text-align: center; top: 404px; left: 325px;">
+		</tdiv>
+		</div>
+
+		<script>
+			ShowStartWnd("Replay");
+		</script>
+		<script language="javascript">
+
+		var mebtnopenurl = 'http://www.duopao.com/games/more';
+
+		window.shareData = {
+		};
+				
+		function goHome(){
+			window.location="http://mp.weixin.qq.com/s?__biz=MjM5NjQ4NTU0MA==&mid=202267473&idx=1&sn=ee8c007caafdf34f03d90c3e405ca50e#rd";
+		}
+		function clickMore(){
+				window.location = "http://www.duopao.com/games/more";
+		}
+		function do_share(){
+			document.title ="我在【是男人就撑过30秒】中，坚持了"+myData.scoreName+rankStr+"，要不要来比试一下?";
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function do_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		</script>
+		<div id="share" style="display: none">
+			<img width="100%" src="./index_files/share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: " ontouchstart="document.getElementById(&#39;share&#39;).style.display=&#39;none&#39;;">
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+			var rankStr = "";
+            var myData = { gameid: "bsgcj" };
+            
+			function do_submitScore(score){
+				setTimeout(function(){
+		            window.__score__ = {
+		                score: score
+		            }
+		            if ( window.Android ) {
+		                window.Android.showShare(JSON.stringify(__score__));
+		            } else {
+		                window.P.showShare(__score__);
+		            }
+		       },1000);
+			}
+			
+			function onShareComplete(res) {
+			        
+	        }
+			</script>
+	
+</div></body></html>

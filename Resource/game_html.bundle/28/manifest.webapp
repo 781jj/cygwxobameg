@@ -1,0 +1,36 @@
+{
+	"name": "timberman",
+	"version": "1.1",
+	"description": "Simple game to pass time timberman. Timberman and help you to cut wood in several different locations! to end the world Timberman is a style of casual games. Become an Timberman, chop wood and avoid the branches. Master your skills to the beginning of records on the leaderboards. Take your ax does and how each lumberjack cut down the tree as fast as you can! Timberman is a fun filled game of quick reaction. Learn to be the best at Timberman! share on social networks",
+	"launch_path": "/indextimberman.html",
+	"permissions": 
+	{
+		"storage": 
+		{
+			"description": "Game by Lion Red"
+		}
+	},
+	
+	"developer": 
+	{
+		"name": "Lion Red",
+		"url": "https://play.google.com/store/apps/developer?id=Lion%20Red"
+	},
+	"icons":
+	{
+		"16": "/icon-16.png",
+		"32": "/icon-32.png",
+		"114": "/icon-114.png",
+		"128": "/icon-128.png"
+	},
+	"browser": {},
+	"installs_allowed_from": ["*"],
+    "embed-apps": {},
+	  "start_url": "/indextimberman.html",
+	"display": "fullscreen"
+
+	
+	
+
+
+ }

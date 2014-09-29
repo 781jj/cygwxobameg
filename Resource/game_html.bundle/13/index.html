@@ -1,0 +1,97 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Trap the Cat</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+
+
+    <style>
+        body {
+            text-align: center;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+
+        html {
+            -ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
+        }
+    </style>
+
+    <style type="text/css">.app2{position:fixed;z-index:1000;left:0;top:0; width:100%;padding:5px 12px;color:#fff;background:rgba(0,0,0,0.5);}.app2 .a{font-size:18px;font-weight:bold;padding-bottom:4px;}.app2 .b{font-size:10px;}.app2 .load{float:left;background:#f66;color:#fff;font-size:16px;margin-top:4px;padding:7px 14px;border-radius:5px;}
+    </style>
+
+</head>
+<body>
+<div style="display:inline-block;width:100%; height:100%;margin: 0 auto; background: black; position:relative;"
+     id="gameDiv">
+    <canvas id="gameCanvas" width="480" height="800" style="background-color: #000000"></canvas>
+</div>
+<div id="myfav">
+</div>
+
+
+<script>var document_class = "GameApp";</script><!--这部分内容在编译时会被替换，要修改文档类，请到工程目录下的egretProperties.json内编辑。-->
+<script src="./mao/jquery.min.js"></script>
+<script src="./mao/egret_loader.js"></script>
+<script src="./mao/game-min-07244.js"></script>
+
+
+
+<script>
+    window.shareData = {
+        desc: "Crazy again! trap the cat!",
+    };
+
+    function share(n , m){
+        if(m == 0){
+            window.shareData.lose = true;
+            window.shareData.steps = n;
+            window.shareData.desc = "Crazy again! trap the cat!";
+        }
+
+
+
+        if(m == 1){
+            window.shareData.steps = n;
+            window.shareData.desc = "I use "+n+" steps to trap the cat，I am better than "+(100-n)+"% people，how about you？";
+
+                window.__score__ = {
+                    score: window.shareData.steps,
+                }
+                if ( window.Android ) {
+                    window.Android.showShare(JSON.stringify(__score__));
+                } else {
+                    window.P.showShare(__score__);
+                }
+
+
+        }
+        if(m == 2){
+            window.shareData.lose = true;
+            window.shareData.steps = n;
+            window.shareData.desc = "I failed to trap it，anybody help?";
+        }
+        window.shareData.steps = n;
+    }
+
+    $(document).ready(function(){
+        egret_h5.startGame();
+    })
+    
+</script>
+
+
+</body>
+</html>

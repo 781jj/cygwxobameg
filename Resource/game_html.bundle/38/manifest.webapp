@@ -1,0 +1,19 @@
+{
+"name":"Lost Fish",
+"description":"Help the lost fish swimming as far as you can and beat the score.",
+"launch_path":"/index.html",
+"version":"1.02",
+"developer":{
+"name":"emer",
+"url":"http://emer.hostanio.pl/"
+},
+
+"icons":{
+"60":"/images/icon_60.png",
+"128":"/images/icon_128.png"
+},
+
+"default_locale":"en",
+"orientation": "portrait",
+"fullscreen": "true"
+}

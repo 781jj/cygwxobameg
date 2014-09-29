@@ -1,0 +1,92 @@
+
+<html>
+<head>
+<assembly name="obstacle">
+<div size="480 37" pos="0 0" group="true">
+	<img  pos="0 0"  src="images/sc_zhangai_body.png">
+		<img gname="CHUIZI1" pos="178 8"   style="transform-origin:center 14" src="images/sc_zhangai_chuizi.png"/>
+	</img>
+	<img pos="480 0" src="images/sc_zhangai_body.png">
+		<img gname="CHUIZI2" pos="-8 8"  style="transform-origin:center 14" src="images/sc_zhangai_chuizi.png"/>
+	</img>
+	<!--
+	<div name="info" pos="200 0" style="width:200;font-size:20" bgcolor="white"></div>
+	-->
+</div>
+</assembly>
+
+<style>
+@keyframes help1key{
+	0%{margin-top:0;alpha:1}
+	100%{margin-top:-550;alpha:1}
+}
+.help1hide{
+	margin-top:0;
+	visibility:visible;
+	alpha:1;
+	animation:help1key 1100 ease-out(3) 0 1;
+}
+@keyframes help2key{
+	0%{margin-top:-450;alpha:1}
+	60%{margin-top:0;alpha:1}
+	90%{margin-top:0;alpha:1}
+	100%{margin-top:0;alpha:0.2;
+		script:{
+			this.show(false);
+			Laya.I('GAMEBODY').start();
+		}
+	}
+}
+.help2show{
+	margin-top:0;
+	alpha:1;
+	visibility:visible;
+	animation:help2key 1200 ease-out(3) 0 1;
+}
+</style>
+
+</head>
+<body>
+	<gamebody id="GAMEBODY" pos="0 0" style="width:100%;height:100%;background:#8781BD;" >
+		
+		<div  id="cloud" pos="0 0">
+			<div pos="0 0">
+				 <img pos="243 47" src="images/sc_beijing.png" />
+				 <img pos="46 250" src="images/sc_beijing.png" />
+				 <img pos="243 444" src="images/sc_beijing.png" />
+				 <img pos="46 646" src="images/sc_beijing.png" />
+			</div>
+			<div pos="0 800">
+				 <img pos="243 47" src="images/sc_beijing.png" />
+				 <img pos="46 250" src="images/sc_beijing.png" />
+				 <img pos="243 444" src="images/sc_beijing.png" />
+				 <img pos="46 646" src="images/sc_beijing.png" />
+		   </div> 
+		</div>
+		
+		<div id="SCENEBK" pos="0 0" style="width:100%;height:100%">
+			<obstacle id="0"/>
+			<obstacle id="1"/>
+			<obstacle id="2"/>
+			<obstacle id="3"/>
+
+			<div id="hande"  pos="0 0" style="width:100%;height:100%" bgcolor2="red" show2="false">
+				<img pos="0 504" src="images/sc_fangwu.png" style="width:100%" />	
+				<div pos="0 582" style="background:url(images/sc_dixing.png) repeat-x;width:100%;height:218" />	
+			</div>			
+		</div>
+		
+		<avator pos="240 0" show="false"/>
+		
+		<div id="word" border2="red" pos="20 90" style="white-space2:nowrap;text-align:center;left:center;width:auto;height:25;font-family:fly;font-size:30;" show="false">01</div>
+		<!-- getready -->
+		<div id="READY" pos="0 0" style="width:100%;height:100%"  show="false">
+			<img ID="HELP1" pos="0 250" style="left:center;" src="images/sc_guidance.png"/>
+			<img ID="HELP2" pos="0 320" style="left:center;" src="images/sc_guidance_getready.png" show="false" />
+		</div>
+		<!-- 寮曞 -->
+		<img style="position:absolute;left:center;bottom:240;z-index:9;" src="images/sc_guidance.png" show="false"/>
+		
+	</gamebody>
+</body>
+</html>

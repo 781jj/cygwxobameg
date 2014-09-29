@@ -7,6 +7,8 @@
 //
 
 #import "VSRequest.h"
+
+#define SERVER_URL @"http://115.28.76.9:3000"
 @implementation VSRequest
 
 
@@ -33,6 +35,8 @@
          failed:(VSRespondFailed)failed
 
 {
+    url = [NSString stringWithFormat:@"%@/%@",SERVER_NAME,url];
+    
     NSString *URLFellowString = [@"?"stringByAppendingString:[[self class] HTTPBodyWithParameters:params]];
     
     NSString *finalURLString = [[url stringByAppendingString:URLFellowString]stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -79,6 +83,14 @@
          failed:(VSRespondFailed)failed;
 {
     [VSRequest request:url method:@"GET" params:params success:success failed:failed];
+}
+
++ (void)post:(NSString *)url
+      params:(NSDictionary *)params
+     success:(VSRespondSucess)success
+      failed:(VSRespondFailed)failed
+{
+    [VSRequest request:url method:@"POST" params:params success:success failed:failed];
 }
 
 //

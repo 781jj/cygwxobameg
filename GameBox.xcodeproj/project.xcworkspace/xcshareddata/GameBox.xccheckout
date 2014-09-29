@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FEEF155F-0A44-4B44-A3E8-5FB5698E949E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GameBox</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>A3039AE011027A19B7E02CEA90EA7DF05DBAF46A</key>
+		<string>https://github.com/781jj/cygwxobameg.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GameBox.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>A3039AE011027A19B7E02CEA90EA7DF05DBAF46A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/781jj/cygwxobameg.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>A3039AE011027A19B7E02CEA90EA7DF05DBAF46A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A3039AE011027A19B7E02CEA90EA7DF05DBAF46A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cygwxobameg</string>
+		</dict>
+	</array>
+</dict>
+</plist>

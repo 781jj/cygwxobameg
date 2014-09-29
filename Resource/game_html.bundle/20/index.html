@@ -1,0 +1,225 @@
+
+<!-- saved from url=(0039)http://www.17w67.com/games/20/fksz.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>疯狂手指</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="full-screen" content="true">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    
+    <!--QQ:16081752-->
+
+    <style>
+        body {
+            text-align: center;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+
+        * {
+            -webkit-touch-callout:none;
+            -webkit-user-select:none;
+            -khtml-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+            -webkit-tap-highlight-color:rgba(0,0,0,0);
+        }
+
+        html {
+            -ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
+        }
+        .button {
+        display: inline-block;
+        zoom: 1;
+        vertical-align: baseline;
+        margin: 0 2px;
+        outline: none;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        font: 14px/100% Arial, Helvetica, sans-serif;
+        padding: .5em 2em .55em;
+        text-shadow: 0 1px 1px rgba(0,0,0,.3);
+        -webkit-border-radius: .5em;
+        -moz-border-radius: .5em;
+        border-radius: .5em;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        }
+
+        .red {
+        color: #faddde;
+        border: solid 1px #980c10;
+        background: #d81b21;
+        background: -webkit-gradient(linear, left top, left bottom, from(#ed1c24), to(#aa1317));
+        background: -moz-linear-gradient(top, #ed1c24, #aa1317);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed1c24', endColorstr='#aa1317');
+        }
+
+        .active {
+            background: #d81b01;
+        }
+
+    </style>
+</head>
+<body>
+<div style="display:inline-block;width:100%; height:100%;margin: 0 auto; background: black; position:relative;" id="gameDiv">
+    <div style="text-align:center;margin:20px;">
+        <span id="timer" style="color:#fff;font-size:20px;">10.00 S</span>
+    </div>
+    <button id="button" class="button red" style="margin-top: 40px;width: 160px;height:160px;border-radius:80px;font-size:18px;font-weight:bold;">Tap me!</button>
+    <div style="margin:20px;text-align:center;">
+        <div id="result" style="color:#fff;font-size:30px;">0 times</div>
+        <div id="best" style="margin-top:20px;color:#fff;font-size:20px;"> </div>
+    </div>
+	
+</div>
+
+<script type="text/javascript" src="./index_files/stats" charset="UTF-8"></script>
+<script language="javascript">
+        var helptime=0;
+        function help(){
+        }
+
+        var mebtnopenurl = 'http://mp.weixin.qq.com/s?__biz=MzA5OTg3MTcyOA==&mid=200360286&idx=1&sn=d744e54a4cfe69fc749707c5ea00f4a7#rd';
+        var myscore=0;
+        window.shareData = {
+                "imgUrl": "http://mmbiz.qpic.cn/mmbiz/kG4NuD28mGictKFRXfZ0g7uqcLXTc8ObCL4X4wIDCiboe8U1LDNmd6RFs957EznDEbeHu04uTnIuBGzCRMgOOn0w/640",
+                "timeLineLink": "http://www.17w67.com/games/20/fksz.html?from=share",
+                "tTitle": "疯狂手指-根本停不下来，玩过之后我的手指已经不是我的了！",
+                "tContent": "在10秒内疯狂的点按钮，想赢？不容易。"
+        };
+                
+        function goHome(){
+            window.location="#";
+        }
+
+        function dp_Ranking(){
+            window.location="#";
+        }
+
+        function showAd(){
+        }
+        function hideAd(){
+        }
+        
+        </script>
+        <div id="result_panel" style="display:none;text-align:center;padding-top:20px;position:absolute;top:0;right:0;bottom:0;left:0;background-color:rgba(0,0,0,0.8)">
+            <div id="reset" style="font-size:36px; line-height: 350px; color: #fff">Play again</div>
+        </div>
+        <script src="./index_files/jquery.min.js"></script>
+        <div style="display: none;">
+            <script type="text/javascript">
+
+            function onShareComplete(res) {
+                    document.location.href = mebtnopenurl;
+            }
+            </script>
+
+            <script type="text/javascript">
+                    var initial = 1000;
+                    var count = initial;
+                    var counter; //10 will  run it every 100th of a second
+                    var state = 0;
+                    var total = 0;
+
+                    if (localStorage.max) {
+                        $('#best').html( 'Best record：' + localStorage.max + ' times');
+                    }
+
+                    function timer() {
+                        if (count <= 0) {
+                            clearInterval(counter);
+                            state = 0;
+
+                            $('#result_panel').show();
+
+                            if ( !localStorage.max || parseInt(localStorage.max) < total) {
+                                localStorage.max = total;
+                                $('#best').html( 'Best record：' + localStorage.max + ' times');
+                            }
+
+                            localStorage.max = parseInt(localStorage.max) > total ? localStorage.max: total;
+
+                            //setTimeout(function(){
+                                window.__score__ = {
+                                    score: localStorage.max
+                                }
+                                if ( window.Android ) {
+                                    window.Android.showShare(JSON.stringify(__score__));
+                                } else {
+                                    window.P.showShare(__score__);
+                                }
+                            //},1000);
+
+                            return;
+                        }
+                        count--;
+                        displayCount(count);
+                    }
+
+                    function displayCount(count) {
+                        var res = count / 100;
+                        document.getElementById("timer").innerHTML = res.toPrecision(count.toString().length) + " S";
+                    }
+
+                    $(document).on('touchmove', function(e) {
+                        e.preventDefault();
+                    })
+
+                    $('#button').on('touchstart click', function () {
+
+                        if (!state) {
+                            state = 1;
+                            counter = setInterval(timer, 10);
+                        }
+
+                        this.classList.add('active');
+                    });
+
+                    $('#button').on('touchend click', function () {
+                        if (state) {
+                            total++;
+                            $('#result').html(total + ' times');
+                        }
+                        this.classList.remove('active');
+                    });
+
+                    // $('#stop').on('click', function () {
+                    //     clearInterval(counter);
+                    // });
+
+                    function reset() {
+                        count = initial;
+                        total = 0;
+                        state = 0;
+                        $('#result').html(total + ' times');
+                        $('#timer').html(10 + ' S');
+                    }
+
+                    $('#reset').on('touchend', function () {
+                        reset();
+                        $('#result_panel').hide();
+                    });
+
+                    $('#doShare').on('touchend', function () {
+                        dp_share(total);
+                        $('#result_panel').hide();
+                        reset();
+                    });
+
+
+                    displayCount(initial);
+            </script>
+
+</div>
+</body></html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>4joys</title>
+    <script type="text/javascript" src="./index_files/createjs.min.js"></script>
+    <script type="text/javascript" src="./index_files/zepto.min.js"></script>
+    <script type="text/javascript" src="./index_files/common.js"></script>
+    <link type="text/css" href="./index_files/common.css" rel="stylesheet">
+    <style>
+    	body,html{padding:0;margin:0;width:100%;height:100%;background:#000;-webkit-tap-highlight-color:transparent}canvas{width:100%;height:100%}#container{position:absolute;top:-50px;left:0;width:100%;height:100%}.adbox{width:320px;height:50px;position:fixed;top:0;display:block;left:50%;margin-left:-160px;-webkit-animation:adbox .6s .2s;-webkit-animation-fill-mode:both}@-webkit-keyframes adbox{100%{bottom:0}}#share{background:url(static/img/t016074867a66df552f.png) rgba(0,0,0,.3) right top no-repeat;width:100%;height:100%;position:absolute;left:0;right:0;z-index:99;opacity:.8}
+            .lis {
+	overflow: hidden;
+	width: 100%;
+	z-index: 99999;
+	position: absolute;
+	bottom: 0px;
+}
+.lis a {
+	display: block;
+	width: 99.9%;
+	color: #ffffff;
+	font-size: 14px;
+	text-decoration: none;
+	background: #606783;
+	text-align: center;
+	opacity: 0.5;
+	line-height: 30px;
+	font-weight: bold;
+	font-family: "微软雅黑"
+}
+.lis a img {
+	position: relative;
+	top: 0px;
+}
+    </style>
+    
+<script>
+
+</script>
+    <style type="text/css">#myfav{display:none}.app2{position:fixed;z-index:1000;left:0;bottom:0;width:100%;padding:5px 12px;color:#fff;background:rgba(0,0,0,0.5);text-align:center;box-sizing:border-box}.app2 .a{font-size:18px;font-weight:bold;padding-bottom:4px}.app2 .b{font-size:14px}.app2 .load{float:left;background:#00ad19;color:#fff;font-size:16px;margin-top:4px;padding:7px 14px;border-radius:5px}.download-browser{position:absolute;bottom:15%;left:0;width:100%;height:15%;display:none}.download-browser a{height:100%;display:block}</style>
+
+	</head>
+<body>
+
+    <div id="container" style="width: 320px; height: 422.222222222222px; top: 72.8888888888889px; left: 0px;">
+        <canvas id="canvas" width="720" height="950"></canvas>
+    </div>
+    <div style="display: none;"></div>
+    <script type="text/javascript" src="./index_files/index.js"></script>
+    <script type="text/javascript" src="./index_files/fly.js"></script>
+    <script type="text/javascript">
+    function goHome() {
+    window.location = "#";
+}
+
+function clickMore() {
+    if ( window.Android ) {
+        window.Android.showShare(JSON.stringify());
+    } else {
+        window.P.showShare();
+    }
+}
+
+function dp_share() {
+    if ( window.Android ) {
+        window.Android.showShare(JSON.stringify());
+    } else {
+        window.P.showShare();
+    }
+}
+
+function dp_submitScore(e) {
+
+            window.__score__ = {
+                score: e
+            }
+            if ( window.Android ) {
+                window.Android.showShare(JSON.stringify(__score__));
+            } else {
+                window.P.showShare(__score__);
+            }
+ 
+}
+
+function dp_Ranking() {
+}
+
+function showAd() {}
+
+function hideAd() {}
+
+function onShareComplete() {
+ console.log(33)
+}
+    suffix = Math.floor(Math.random() * 10);
+	
+window.shareData = {
+    imgUrl: "",
+    tTitle: "",
+    tContent: ""
+}
+    </script>
+    <div id="share" style="display: none;" ontouchstart="document.getElementById(&#39;share&#39;).style.display=&#39;none&#39;;"></div>
+    
+
+
+
+</body></html>

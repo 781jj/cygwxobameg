@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<!-- <html manifest="cache.manifest"> -->
+    <head>
+        <title>Stickman Jump</title>
+        
+        <meta name="viewport" content="width=320,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,minimal-ui,target-densitydpi=medium-dpi" />
+        
+        <link rel="icon" type="image/png" href="promo/favicon.png" />
+        
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/add2home.css" />
+        
+        <script src="js/bundle-cmp.js"></script>
+        
+        <script>
+            window.crossPromoSettings = {
+                currentGame : 'stickmanjump'
+            };
+        </script>
+
+
+        <meta name="description" content="If you liked Doodle Jump, you'll love Stickman Jump! Play now on kik and challenge your friends for the high score. Make Stickman move from side to side by tilting your phone. The higher you jump, the better your score. Try not to fall!">
+        <!-- <link rel="kik-icon" href="promo/icon-256x256.png"> -->
+        
+        <script src="./js/kik.js"></script>
+        
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <link rel="apple-touch-icon" href="promo/icon-114x114.png" />
+    </head>
+    
+    <body>
+        <div id="game-table">
+            <div id="game-cell">
+                <div id="viewport">
+                    <canvas id="gamecanvas"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div id="ad-overlay">
+            <div id="ad-table">
+                <div id="ad-cell">
+                    <div id="ad-container">
+                        <div id="ad-close-button"></div>
+                        <div id="ad"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

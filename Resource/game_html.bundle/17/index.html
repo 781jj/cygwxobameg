@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://www.egret-labs.org/game/mario/build_1.0.0_1/release.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="full-screen" content="true">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    <meta name="viewport" id="viewport" content="initial-scale=1, user-scalable=no">
+
+    <meta name="baidu-tc-cerfication" content="61f5a0c039976d7c269887e235381f0a">
+
+    <style>
+        body {
+            text-align: center;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0 auto;
+        }
+
+        .finished {
+            text-decoration: line-through
+        }
+
+        .during {
+            color: #FF0000;
+        }
+
+        #loading {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 99999;
+            background: #000;
+        }
+        #loadingText {
+            position: absolute;
+            top: 35%;
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+            width: 100%;
+        }
+
+    </style>
+
+    <script>
+        jsFileListPrefix = "../../";
+        //        window.onerror = function(type,message,line){
+        //                                                     alert (type)
+        //        }
+
+        function loadingClose() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('loadingText').innerHTML = 'Loading... / 100%';
+        }
+    </script>
+
+</head>
+<body style="padding: 0px; border: 0px; margin: 0px;" onload="loadingClose()">
+
+
+    <div id="loading">
+        <h1 id="loadingText">Loading...<h1>
+            <script type="text/javascript">
+               var loadertext = document.getElementById('loadingText');
+                for(var i=0; i < 64; i++){
+                    setTimeout(function(){
+                        loadertext.innerHTML = 'Loading... / ' + i + '%';
+                    }, i*10);
+                }
+            </script>
+    </div>
+
+
+<div id="gameDiv" style="display: block; width: 533.3333333333333px; height: 320px; margin: 0px auto; position: relative; background: black;">
+    <canvas id="gameCanvas" width="400" height="240" style="width: 533.3333333333333px; height: 320px;"></canvas>
+</div>
+
+
+
+
+<script type="text/javascript" src="./index_files/mario-min.js"></script>
+<script>
+    egret_h5.startGame();
+</script>
+
+<embed id="xunlei_com_thunder_helper_plugin_d462f475-c18e-46be-bd10-327458d045bd" type="application/thunder_download_plugin" height="0" width="0"></body></html>

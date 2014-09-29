@@ -14,10 +14,15 @@ typedef void (^VSRespondFailed)(NSURLRequest*,id,NSError*);
 
 @interface VSRequest : NSObject
 
-+ (void)request:(NSString *)url
++ (void)get:(NSString *)url
          params:(NSDictionary *)params
         success:(VSRespondSucess)success
          failed:(VSRespondFailed)failed;
+
++ (void)post:(NSString *)url
+     params:(NSDictionary *)params
+    success:(VSRespondSucess)success
+     failed:(VSRespondFailed)failed;
 + (void)request:(NSString *)url
          method:(NSString *)method
          params:(NSDictionary *)params

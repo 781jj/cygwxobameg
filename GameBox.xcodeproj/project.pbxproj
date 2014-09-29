@@ -11,6 +11,13 @@
 		3D81717D19CD722500125961 /* VSUsersGameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81717C19CD722500125961 /* VSUsersGameResult.m */; };
 		3D81718019CD751900125961 /* VSChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81717F19CD751900125961 /* VSChannelViewController.m */; };
 		3D81718319CD757D00125961 /* VSChannelSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81718219CD757D00125961 /* VSChannelSwitch.m */; };
+		3D90421B19D9049600C26CD9 /* VSSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90421A19D9049600C26CD9 /* VSSessionManager.m */; };
+		3D90421F19D905AF00C26CD9 /* VSPassport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90421E19D905AF00C26CD9 /* VSPassport.m */; };
+		3D90422219D905C200C26CD9 /* VSTempPassport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90422119D905C200C26CD9 /* VSTempPassport.m */; };
+		3D90422519D908EC00C26CD9 /* VSLoginMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90422419D908EC00C26CD9 /* VSLoginMessage.m */; };
+		3D90422819D9090E00C26CD9 /* VSTempLoginMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90422719D9090E00C26CD9 /* VSTempLoginMessage.m */; };
+		3D90422B19D9092C00C26CD9 /* VSParamLoginMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90422A19D9092C00C26CD9 /* VSParamLoginMessage.m */; };
+		3D90422E19D90ABE00C26CD9 /* VSGamePassport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90422D19D90ABE00C26CD9 /* VSGamePassport.m */; };
 		3DAC904B19D2A2D60039DAC3 /* game.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DAC904A19D2A2D60039DAC3 /* game.json */; };
 		3DAC905019D2B17A0039DAC3 /* VSGameImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC904F19D2B17A0039DAC3 /* VSGameImage.m */; };
 		3DAC905319D2B1840039DAC3 /* VSGameHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC905219D2B1840039DAC3 /* VSGameHtml.m */; };
@@ -54,6 +61,20 @@
 		3D81717F19CD751900125961 /* VSChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSChannelViewController.m; sourceTree = "<group>"; };
 		3D81718119CD757D00125961 /* VSChannelSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSChannelSwitch.h; sourceTree = "<group>"; };
 		3D81718219CD757D00125961 /* VSChannelSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSChannelSwitch.m; sourceTree = "<group>"; };
+		3D90421919D9049600C26CD9 /* VSSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSSessionManager.h; sourceTree = "<group>"; };
+		3D90421A19D9049600C26CD9 /* VSSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSSessionManager.m; sourceTree = "<group>"; };
+		3D90421D19D905AF00C26CD9 /* VSPassport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSPassport.h; sourceTree = "<group>"; };
+		3D90421E19D905AF00C26CD9 /* VSPassport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSPassport.m; sourceTree = "<group>"; };
+		3D90422019D905C200C26CD9 /* VSTempPassport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSTempPassport.h; sourceTree = "<group>"; };
+		3D90422119D905C200C26CD9 /* VSTempPassport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSTempPassport.m; sourceTree = "<group>"; };
+		3D90422319D908EC00C26CD9 /* VSLoginMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSLoginMessage.h; sourceTree = "<group>"; };
+		3D90422419D908EC00C26CD9 /* VSLoginMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSLoginMessage.m; sourceTree = "<group>"; };
+		3D90422619D9090E00C26CD9 /* VSTempLoginMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSTempLoginMessage.h; sourceTree = "<group>"; };
+		3D90422719D9090E00C26CD9 /* VSTempLoginMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSTempLoginMessage.m; sourceTree = "<group>"; };
+		3D90422919D9092C00C26CD9 /* VSParamLoginMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSParamLoginMessage.h; sourceTree = "<group>"; };
+		3D90422A19D9092C00C26CD9 /* VSParamLoginMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSParamLoginMessage.m; sourceTree = "<group>"; };
+		3D90422C19D90ABE00C26CD9 /* VSGamePassport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSGamePassport.h; sourceTree = "<group>"; };
+		3D90422D19D90ABE00C26CD9 /* VSGamePassport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSGamePassport.m; sourceTree = "<group>"; };
 		3DAC904A19D2A2D60039DAC3 /* game.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = game.json; path = Resource/game.json; sourceTree = "<group>"; };
 		3DAC904E19D2B17A0039DAC3 /* VSGameImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSGameImage.h; sourceTree = "<group>"; };
 		3DAC904F19D2B17A0039DAC3 /* VSGameImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSGameImage.m; sourceTree = "<group>"; };
@@ -114,6 +135,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D90421C19D9049B00C26CD9 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				3D90423019D90B2E00C26CD9 /* LoginInfo */,
+				3D90422F19D90B2400C26CD9 /* Passport */,
+				3D90421919D9049600C26CD9 /* VSSessionManager.h */,
+				3D90421A19D9049600C26CD9 /* VSSessionManager.m */,
+			);
+			name = Session;
+			sourceTree = "<group>";
+		};
+		3D90422F19D90B2400C26CD9 /* Passport */ = {
+			isa = PBXGroup;
+			children = (
+				3D90421D19D905AF00C26CD9 /* VSPassport.h */,
+				3D90421E19D905AF00C26CD9 /* VSPassport.m */,
+				3D90422019D905C200C26CD9 /* VSTempPassport.h */,
+				3D90422119D905C200C26CD9 /* VSTempPassport.m */,
+				3D90422C19D90ABE00C26CD9 /* VSGamePassport.h */,
+				3D90422D19D90ABE00C26CD9 /* VSGamePassport.m */,
+			);
+			name = Passport;
+			sourceTree = "<group>";
+		};
+		3D90423019D90B2E00C26CD9 /* LoginInfo */ = {
+			isa = PBXGroup;
+			children = (
+				3D90422319D908EC00C26CD9 /* VSLoginMessage.h */,
+				3D90422419D908EC00C26CD9 /* VSLoginMessage.m */,
+				3D90422619D9090E00C26CD9 /* VSTempLoginMessage.h */,
+				3D90422719D9090E00C26CD9 /* VSTempLoginMessage.m */,
+				3D90422919D9092C00C26CD9 /* VSParamLoginMessage.h */,
+				3D90422A19D9092C00C26CD9 /* VSParamLoginMessage.m */,
+			);
+			name = LoginInfo;
+			sourceTree = "<group>";
+		};
 		3DAC904919D2A2C80039DAC3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +273,7 @@
 		3DEC30AA19CD30F9009FCCFE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3D90421C19D9049B00C26CD9 /* Session */,
 				3DEC30AB19CD30F9009FCCFE /* VSChannel.h */,
 				3DEC30AC19CD30F9009FCCFE /* VSChannel.m */,
 				3DEC30AD19CD30F9009FCCFE /* VSChannelList.h */,
@@ -357,17 +416,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D90422519D908EC00C26CD9 /* VSLoginMessage.m in Sources */,
 				3D81718319CD757D00125961 /* VSChannelSwitch.m in Sources */,
+				3D90422219D905C200C26CD9 /* VSTempPassport.m in Sources */,
 				3DEC30AF19CD30F9009FCCFE /* VSChannel.m in Sources */,
+				3D90422B19D9092C00C26CD9 /* VSParamLoginMessage.m in Sources */,
 				3DAC905019D2B17A0039DAC3 /* VSGameImage.m in Sources */,
 				3DEC30B619CD34A8009FCCFE /* VSRequest.m in Sources */,
+				3D90421B19D9049600C26CD9 /* VSSessionManager.m in Sources */,
 				3D81717719CD6C9500125961 /* VSUserGameInfomationRefreshHandle.m in Sources */,
 				3DEC307C19CD2236009FCCFE /* AppDelegate.m in Sources */,
 				3DAC905619D2B7530039DAC3 /* VSGameDetailViewController.m in Sources */,
+				3D90422819D9090E00C26CD9 /* VSTempLoginMessage.m in Sources */,
 				3DEC307819CD2236009FCCFE /* main.m in Sources */,
 				3DEC30B019CD30F9009FCCFE /* VSChannelList.m in Sources */,
 				3D81717D19CD722500125961 /* VSUsersGameResult.m in Sources */,
 				3DEC30BC19CD60E4009FCCFE /* VSGameDetailInfo.m in Sources */,
+				3D90421F19D905AF00C26CD9 /* VSPassport.m in Sources */,
+				3D90422E19D90ABE00C26CD9 /* VSGamePassport.m in Sources */,
 				3DAC905919D2B7690039DAC3 /* VSGamePlayViewController.m in Sources */,
 				3D81718019CD751900125961 /* VSChannelViewController.m in Sources */,
 				3DAC905319D2B1840039DAC3 /* VSGameHtml.m in Sources */,

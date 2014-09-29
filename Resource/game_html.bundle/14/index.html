@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>萝莉来了</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="full-screen" content="true">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    <!--<base href="../">--><base href=".">
+
+    <style>
+        body {
+            text-align: center;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+        html {
+            -ms-touch-action: none;  /*Direct all pointer events to JavaScript code. */
+        }
+    </style>
+</head>
+<body style="padding: 0px; border: 0px; margin: 0px;">
+<div style="display: inline-block; width: 480px; height: 800px; margin: 0px auto; position: relative; background: black;" id="gameDiv">
+    <canvas id="gameCanvas" width="480" height="800" style="width: 480px; height: 800px; background-color: rgb(0, 0, 0);"></canvas>
+</div>
+<script src="./index_files/loligo-min.js"></script>
+
+<script>
+    //alert("Powered By Egret");
+    egret_h5.startGame();
+
+
+viewportRevise = {
+    width: true
+};
+</script>
+
+
+</body></html>

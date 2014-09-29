@@ -1,0 +1,129 @@
+
+<html>
+<head>
+	<style type="text/css">
+		.normalbutton{
+			gray:0;
+			light:1 1 1;
+		}
+		.overbutton{
+			gray:0;
+			light:1.3 1.3 1.3;
+		}
+		.pressedbutton{
+			gray:0;
+			light:0.9 0.9 0.9;
+		}
+		@keyframes logkeyfm{
+			0%{margin-top:10;}
+			50%{margin-top:0;}
+			100%{margin-top:10;}
+		}
+		.logani{
+			animation:logkeyfm 500 linear 0 infinite;
+		}
+		
+		@keyframes uishowkey{
+			0%{margin-top:-80;alpha:0.9}
+			100%{margin-top:0;alpha:1}
+		}
+		.uishow{
+			visibility:visible;
+			animation:uishowkey 200 ease-out(4) 0 1;
+		}
+		
+		
+	</style>
+	
+	<link src="images/sc_cishu_56x67.png" type="image" />
+	<file type="image" src="font://fly(0)" with="images/sc_cishu_56x67.png" withdata="left:0,top:0,width:56,height:67"/>
+	<file type="image" src="font://fly(1)" with="images/sc_cishu_56x67.png" withdata="left:56,top:0,width:56,height:67"/>
+	<file type="image" src="font://fly(2)" with="images/sc_cishu_56x67.png" withdata="left:112,top:0,width:56,height:67"/>
+	<file type="image" src="font://fly(3)" with="images/sc_cishu_56x67.png" withdata="left:168,top:0,width:56,height:67"/>
+	<file type="image" src="font://fly(4)" with="images/sc_cishu_56x67.png" withdata="left:224,top:0,width:56,height:67"/>
+	<file type="image" src="font://fly(5)" with="images/sc_cishu_56x67.png" withdata="left:0,top:67,width:56,height:67"/>
+	<file type="image" src="font://fly(6)" with="images/sc_cishu_56x67.png" withdata="left:56,top:67,width:56,height:67"/>
+	<file type="image" src="font://fly(7)" with="images/sc_cishu_56x67.png" withdata="left:112,top:67,width:56,height:67"/>
+	<file type="image" src="font://fly(8)" with="images/sc_cishu_56x67.png" withdata="left:168,top:67,width:56,height:67"/>
+	<file type="image" src="font://fly(9)" with="images/sc_cishu_56x67.png" withdata="left:224,top:67,width:56,height:67"/>
+	
+	<!--
+	<link type="image" href="sc_01.png"/>
+	<imagespack src="sc_01.plist" mustloadimg="true" />
+	-->
+	<link type="image" href="images/sc_guidance_getready.png"/>
+	<link type="image" href="images/sc_juese_biyan_00.png"/>
+	<link type="image" href="images/sc_juese_biyan_01.png"/>
+	<link type="image" href="images/sc_juese_idle_00.png"/>
+	<link type="image" href="images/sc_juese_idle_01.png"/>
+	<link type="image" href="images/sc_juese_siwang_01.png"/>
+	<link type="image" href="images/sc_juese_siwang_02.png"/>
+	<link type="image" href="images/jiangpai0.png"/>
+	<link type="image" href="images/jiangpai1.png"/>
+	<link type="image" href="images/jiangpai2.png"/>
+	<link type="image" href="images/sc_beijing.png"/>
+	<link type="image" href="images/sc_cishu_56x67.png"/>
+	<link type="image" href="images/sc_dixing.png"/>
+	<link type="image" href="images/sc_fangwu.png"/>
+	<link type="image" href="images/sc_guidance.png"/>
+	<link type="image" href="images/sc_laya.png"/>
+	<link type="image" href="images/sc_ui_clearing.png"/>
+	<link type="image" href="images/sc_ui_clearing_new.png"/>
+	<link type="image" href="images/sc_ui_gameover.png"/>
+	<link type="image" href="images/sc_ui_logo.png"/>
+	<link type="image" href="images/sc_ui_paihang.png"/>
+	<link type="image" href="images/sc_ui_play.png"/>
+	<link type="image" href="images/sc_ui_ranking.png"/>
+	<link type="image" href="images/sc_ui_return.png"/>
+	<link type="image" href="images/sc_zhangai_body.png"/>
+	<link type="image" href="images/sc_zhangai_chuizi.png"/>
+
+	<link type="text/html" href="coper.html" rel="prefetch"/>
+</head>
+<body>
+	<div id="STARTUI" style="position:absolute;left:center;top:0;width:480;height:800;z-index:999999;" cancelbubble="true">
+		<div style="position:absolute;left:center;top:132;width:375;height:78"  class="logani">
+			<ani pos="310 -60" src="images/sc_juese_idle_0*.png"  totalframes="2" speed="15"  count="99999999"/>
+			<img  id="GAMELOG" src="images/sc_ui_logo.png" pos="0 0" />
+			<img  id="GAMEOVER" src="images/sc_ui_gameover.png" pos="0 0" show="false" />
+		</div>
+		<!-- 寮€濮� -->
+		<button pos="38 550" normalimg="images/sc_ui_play.png" normalcss="normalbutton" pressedcss="pressedbutton" overcss="overbutton" 
+		disabledcss="disablebutton" onclick="Laya.I('GAMEBODY').willStart();" />
+		<!-- 鎺掕 -->
+		<button pos="250 550" onclick="Laya.I('BATTLEUI').show(false);Laya.I('GAMEBODY').showPaiHane();" normalimg="images/sc_ui_ranking.png" normalcss="normalbutton" pressedcss="pressedbutton" overcss="overbutton" 
+		disabledcss="disablebutton"/>
+
+		<div id="PAHIHANG"  pos="0 0" style="width:100%;height:100%;z-index:9999999;font-family:fly;" show="false">
+			<!-- 鎺掕 -->
+			<div style="position:absolute;left:center;top:270;width:424;height:214;background:url(images/sc_ui_paihang.png);">
+				<div id="pahihang-no." pos="300 60" style="white-space:nowrap;width:100;height:50;text-align:center;vertical-align:middle;font-size:30;font-weight:bold;">
+					0
+				</div>
+				<div id="pahihang-best"pos="300 140" style="white-space:nowrap;width:100;height:50;text-align:center;vertical-align:middle;font-size:30;font-weight:bold;">
+					0
+				</div>
+			</div>
+		</div>
+		
+		<div id="BATTLEUI"  pos="0 0" style="width:100%;height:100%;z-index:9999999" show="false">
+			<div style="position:absolute;left:center;top:270;width:424;height:214;background:url(images/sc_ui_clearing.png);font-family:fly;">
+				<!-- 濂栫墝 -->
+				<img pos="45 80" src="images/jiangpai0.png" />
+				<div id="battleui-score" pos="300 60" style="white-space:nowrap;width:100;height:50;text-align:center;vertical-align:middle;font-size:30;font-weight:bold;">
+					0
+				</div>
+				<div id="battleui-best" pos="300 140" style="white-space:nowrap;width:100;height:50;text-align:center;vertical-align:middle;font-size:30;font-weight:bold;">
+					0
+				</div>
+				<!-- new -->
+				<img id="battleui-new" pos="250 110" src="images/sc_ui_clearing_new.png" show="false"/>
+			</div>
+		</div>
+
+	</div>
+	
+	<to.LOADINGUI destroy="true"/>
+	<link type="text/html" href="coper.html" rel="TOPUI"/>
+</body>
+</html>

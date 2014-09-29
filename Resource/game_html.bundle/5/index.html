@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://www.pathuku.com/ -->
+<html lang="zh-CHS"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- verification-key:88f180e6-7397-4ea9-90d6-8479085d129a -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,target-densitydpi=device-dpi"> 
+    <meta content="True" name="HandheldFriendly">
+    <meta name="apple-mobile-web-app-capable" content="yes"> 
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+
+    <title>将电话线连接</title>
+    <meta name="author" content="Robert Baker">
+    <meta name="Title" content="Pathuku |将电话线连接">
+    
+    <meta name="description" content="欢迎来到 Pathuku，一个真正的 HTML5 游戏。完成只是 5 个级别，你就会上瘾 ！在上播放： iPhone、 iPad、 平板电脑，Windows Phone 和所有其他 HTML5 兼容的智能手机/手机"> 
+    <meta name="keywords" content="pathuku，免费，游戏，HTML5、 在线游戏、 戏剧、 pathuku app、 铬、 谷歌 chrome、 web 浏览器、 路径、 画布、 街机游戏、 在线播放 pathuku、 iphone、 android、 ipad、 爆炸、 水平、 星星、 高分数、 chrome os、 chrome web 存储、 免费 iphone 应用程序">
+
+    <link href="./app/style.css" rel="stylesheet" type="text/css">
+    
+
+    <script src="./app/json.min.js" type="text/javascript"></script>
+    <script src="./app/main.js" type="text/javascript"></script>           
+    <script src="./app/lang.zh-CHS.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        (function() {
+            //override main
+            var fnload=window.onload;
+            window.onload=function() {
+                var dvAdd=document.getElementById('adds');
+
+                var pathukuSettings={
+                    drawn: false,
+                    comp: 0,
+                    graphic: true,
+                    dp: 'mb',
+                    dj: (function(o) {
+                        //only show the banner if there is enough space
+                        var iHeight=window.innerHeight;
+
+                        if(iHeight>o.h+100) {
+                            o.ut=90+25;
+                            if(!this.drawn) {
+                                showAdd(pathukuSettings.graphic);
+                            }
+                            dvAdd.style.display='block';
+                            //alert('zD:'+o.zD+'\nut:'+o.ut+'\nw:'+o.w+'\nh:'+o.h+'\n');
+                        } else {
+                            dvAdd.style.display='none';
+                        }
+                        this.drawn=true;
+                        return o;
+                    }),
+                    handle: {}
+                };
+                
+                fnload(pathukuSettings);
+                var sUserAgent=navigator.userAgent.toLowerCase();
+                if(sUserAgent.indexOf('chrome')> -1) {
+                    pathukuSettings.handle.g.S.dl='https://chrome.google.com/webstore/detail/pathuku/hkiilmogcdkeefnbemdagpmcediekadb/reviews';
+                }
+                if(sUserAgent.indexOf('firefox')> -1) {
+                    pathukuSettings.handle.g.S.dl='https://marketplace.mozilla.org/app/pathuku/';
+                }
+                if(sUserAgent.indexOf('kf')> -1) {
+                    pathukuSettings.handle.g.S.dl='http://www.amazon.com/gp/product/B00CHRDBNC';//'http://www.amazon.com/Robert-Baker-Pathuku-Connect-lines/dp/B00CHRDBNC/';
+                }
+                
+                pathukuSettings.handle.g.ds=function() {
+                    pathukuSettings.comp++;
+                    if(pathukuSettings.comp>2) {
+                        pathukuSettings.comp=0;
+                        pathukuSettings.graphic=!pathukuSettings.graphic;
+                        showAdd(pathukuSettings.graphic);
+                    }
+                    //this.u3();
+                    //document.location.href=document.location.href+'';
+
+                    return true;
+                };
+
+                pathukuSettings.handle.g.de=function(bShowAdds) {
+                    return;
+                    //.da
+                    if(bShowAdds) {
+                        dvAdd.style.display='block';
+                    } else {
+                        dvAdd.style.display='none';
+                        if(Math.random()>0.5) {
+                            pathukuSettings.handle.g.Y4.da=25;
+                            dvAdd.style.top=pathukuSettings.handle.ut+'px';
+                        } else {
+                            pathukuSettings.handle.g.Y4.da= -25;
+                            dvAdd.style.top=(window.innerHeight-50)+'px';
+                        }
+                    }
+                };
+
+                function showAdd(bGraphic) {
+                    if(bGraphic) {
+                        //dvAdd.innerHTML='<iframe src="http://www.advertisegame.com/show.php?pl=7647" width="728" height="90" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>';
+                        //dvAdd.innerHTML="<iframe id='adf1fd11' name='adf1fd11' src='https://ads.ad4game.com/www/delivery/afr.php?zoneid=30960&amp;cb=INSERT_RANDOM_NUMBER_HERE' framespacing='0' frameborder='no' scrolling='no' width='728' height='90'><a href='https://ads.ad4game.com/www/delivery/ck.php?n=a2b35487&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='https://ads.ad4game.com/www/delivery/avw.php?zoneid=30960&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a2b35487' border='0' alt='' /></a></iframe>";
+                    } else {
+                        //dvAdd.innerHTML='<iframe src="/content/adds/advertiseGame728x90.html" width="728" height="90" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>';
+                        //dvAdd.innerHTML="<iframe id='adf1fd11' name='adf1fd11' src='https://ads.ad4game.com/www/delivery/afr.php?zoneid=30960&amp;cb=INSERT_RANDOM_NUMBER_HERE' framespacing='0' frameborder='no' scrolling='no' width='728' height='90'><a href='https://ads.ad4game.com/www/delivery/ck.php?n=a2b35487&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='https://ads.ad4game.com/www/delivery/avw.php?zoneid=30960&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a2b35487' border='0' alt='' /></a></iframe>";
+                    }
+                }
+            }
+        })();
+     </script>
+
+    <script type="text/javascript">
+            var P = {
+                showShare : function(op) {
+                    window.Android.showShare(JSON.stringify(op));
+                }
+            }
+    </script>
+    
+
+   <!--  <link rel="image_src" href="http://www.pathuku.com/images/icon_128_curve.png">
+    <link rel="shortcut icon" href="http://www.pathuku.com/favicon.ico">
+    <link rel="apple-touch-icon" href="http://www.pathuku.com/images/icon57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://www.pathuku.com/images/icon72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://www.pathuku.com/images/icon114x114.png">
+    <link rel="apple-touch-startup-image" href="http://www.pathuku.com/images/loadingSmall.png"> -->
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div id="title" class="hideInGame">
+                <h1>将电话线连接</h1>
+            </div>
+
+        </header>
+        <section id="main">
+            <div class="clsImages">
+            
+
+
+<h2></h2>
+<br><a href="http://www.google.com/play/">所有级别 |Pathuku</a><br>
+
+<h3>简介</h3><br>通过查找一次使用每行一个路径完成的水平。开始通过选择一个点，然后使线的路径。它的难度比你想象。<br><br>
+<h3>追逐者</h3><br>我们需要保留它有趣，所以我们决定到赶紧你的追逐者。别让它抓住你 ！<br><br>
+<h3>路线</h3><br>有时两个点由多个线路连接。请记住，每行必须仍然使用一次。所以你可能得去几次同一点与点之间<br><br>
+<h3>共享</h3><br>你觉得这个游戏？帮助我们做得更好通过分享它 ！<br><br>
+<br>10 新的水平。有很多更多的级别，将很快被释放。<br>帮助我改善游戏，给我一些反馈，与你的朋友分享。<br><br>
+ 
+            </div>
+               <div class="clsAdd">
+                    <div id="adds" style="display: none;">
+                    </div>
+                </div>
+
+            <div id="content" class="clsConatiner">
+            </div>
+        </section>
+        <footer>
+        </footer>
+    </div>
+
+
+<div class="clsContainer" style="width: 320px; height: 480px; left: 0px; top: 44px;"><canvas width="320" height="480" style="width: 320px; height: 480px;">Sorry your browser does not support HTML5</canvas><canvas width="320" height="480" style="width: 320px; height: 480px;">Sorry your browser does not support HTML5</canvas><canvas width="320" height="480" style="width: 320px; height: 480px;">Sorry your browser does not support HTML5</canvas><canvas width="320" height="480" style="width: 320px; height: 480px;">Sorry your browser does not support HTML5</canvas></div></body></html>
