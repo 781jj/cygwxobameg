@@ -20,7 +20,7 @@
     {
         _gameId = [[dic objectForKey:@"id"] stringValue];
         _name = [dic objectForKey:@"name"];
-        _description = [dic objectForKey:@"description"];
+        _abstract = [dic objectForKey:@"description"];
         _shareInfo = [dic objectForKey:@"share"];
     }
     return self;

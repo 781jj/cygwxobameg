@@ -89,6 +89,6 @@ static VSSessionManager *_sessionManager = nil;
 
 - (BOOL)isLogin
 {
-    return [_passport isLogin];
+    return _passport && [_passport isLogin];
 }
 @end

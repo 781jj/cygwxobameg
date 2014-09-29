@@ -18,6 +18,8 @@
 		3D90422819D9090E00C26CD9 /* VSTempLoginMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90422719D9090E00C26CD9 /* VSTempLoginMessage.m */; };
 		3D90422B19D9092C00C26CD9 /* VSParamLoginMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90422A19D9092C00C26CD9 /* VSParamLoginMessage.m */; };
 		3D90422E19D90ABE00C26CD9 /* VSGamePassport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90422D19D90ABE00C26CD9 /* VSGamePassport.m */; };
+		3D90423319D94E2400C26CD9 /* VSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90423219D94E2400C26CD9 /* VSLoginViewController.m */; };
+		3D90423619D953C500C26CD9 /* VSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90423519D953C500C26CD9 /* VSHomeViewController.m */; };
 		3DAC904B19D2A2D60039DAC3 /* game.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DAC904A19D2A2D60039DAC3 /* game.json */; };
 		3DAC905019D2B17A0039DAC3 /* VSGameImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC904F19D2B17A0039DAC3 /* VSGameImage.m */; };
 		3DAC905319D2B1840039DAC3 /* VSGameHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC905219D2B1840039DAC3 /* VSGameHtml.m */; };
@@ -75,6 +77,10 @@
 		3D90422A19D9092C00C26CD9 /* VSParamLoginMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSParamLoginMessage.m; sourceTree = "<group>"; };
 		3D90422C19D90ABE00C26CD9 /* VSGamePassport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSGamePassport.h; sourceTree = "<group>"; };
 		3D90422D19D90ABE00C26CD9 /* VSGamePassport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSGamePassport.m; sourceTree = "<group>"; };
+		3D90423119D94E2400C26CD9 /* VSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSLoginViewController.h; sourceTree = "<group>"; };
+		3D90423219D94E2400C26CD9 /* VSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSLoginViewController.m; sourceTree = "<group>"; };
+		3D90423419D953C500C26CD9 /* VSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSHomeViewController.h; sourceTree = "<group>"; };
+		3D90423519D953C500C26CD9 /* VSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSHomeViewController.m; sourceTree = "<group>"; };
 		3DAC904A19D2A2D60039DAC3 /* game.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = game.json; path = Resource/game.json; sourceTree = "<group>"; };
 		3DAC904E19D2B17A0039DAC3 /* VSGameImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSGameImage.h; sourceTree = "<group>"; };
 		3DAC904F19D2B17A0039DAC3 /* VSGameImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSGameImage.m; sourceTree = "<group>"; };
@@ -266,6 +272,10 @@
 				3DAC905519D2B7530039DAC3 /* VSGameDetailViewController.m */,
 				3DAC905719D2B7690039DAC3 /* VSGamePlayViewController.h */,
 				3DAC905819D2B7690039DAC3 /* VSGamePlayViewController.m */,
+				3D90423119D94E2400C26CD9 /* VSLoginViewController.h */,
+				3D90423219D94E2400C26CD9 /* VSLoginViewController.m */,
+				3D90423419D953C500C26CD9 /* VSHomeViewController.h */,
+				3D90423519D953C500C26CD9 /* VSHomeViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -417,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D90422519D908EC00C26CD9 /* VSLoginMessage.m in Sources */,
+				3D90423619D953C500C26CD9 /* VSHomeViewController.m in Sources */,
 				3D81718319CD757D00125961 /* VSChannelSwitch.m in Sources */,
 				3D90422219D905C200C26CD9 /* VSTempPassport.m in Sources */,
 				3DEC30AF19CD30F9009FCCFE /* VSChannel.m in Sources */,
@@ -433,6 +444,7 @@
 				3D81717D19CD722500125961 /* VSUsersGameResult.m in Sources */,
 				3DEC30BC19CD60E4009FCCFE /* VSGameDetailInfo.m in Sources */,
 				3D90421F19D905AF00C26CD9 /* VSPassport.m in Sources */,
+				3D90423319D94E2400C26CD9 /* VSLoginViewController.m in Sources */,
 				3D90422E19D90ABE00C26CD9 /* VSGamePassport.m in Sources */,
 				3DAC905919D2B7690039DAC3 /* VSGamePlayViewController.m in Sources */,
 				3D81718019CD751900125961 /* VSChannelViewController.m in Sources */,

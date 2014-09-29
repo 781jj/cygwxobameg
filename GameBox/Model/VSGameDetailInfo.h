@@ -13,7 +13,7 @@
 @property (nonatomic,copy)NSString *name;
 @property (nonatomic,copy)NSString *gameId;
 @property (nonatomic,readonly)NSString *iconPath;
-@property (nonatomic,copy)NSString *description;
+@property (nonatomic,copy)NSString *abstract;
 //玩法
 @property (nonatomic,copy)NSString *gameplay;
 @property (nonatomic,assign)NSInteger players;

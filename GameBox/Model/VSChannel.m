@@ -28,7 +28,7 @@
     if (_type == VSHotChannel) {
         parm = @"hot";
     }
-    [VSRequest request:SERVER_NAME params:@{@"listType":parm} success:^(NSURLRequest *request, id obj) {
+    [VSRequest post:@"123" params:@{@"listType":parm} success:^(NSURLRequest *request, id obj) {
         callback(YES,obj);
     } failed:^(NSURLRequest *request, id obj, NSError *error) {
         callback(NO,obj);

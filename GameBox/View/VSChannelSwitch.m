@@ -8,6 +8,13 @@
 
 #import "VSChannelSwitch.h"
 
+@interface VSChannelSwitch ()
+
+@property (nonatomic,weak)UIButton *right;
+@property (nonatomic,weak)UIButton *left;
+
+@end
+
 @implementation VSChannelSwitch
 
 - (id)initWithFrame:(CGRect)frame

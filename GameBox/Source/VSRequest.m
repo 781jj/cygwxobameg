@@ -35,17 +35,32 @@
          failed:(VSRespondFailed)failed
 
 {
-    url = [NSString stringWithFormat:@"%@/%@",SERVER_NAME,url];
-    
-    NSString *URLFellowString = [@"?"stringByAppendingString:[[self class] HTTPBodyWithParameters:params]];
-    
-    NSString *finalURLString = [[url stringByAppendingString:URLFellowString]stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
-    NSURL *finalURL = [NSURL URLWithString:finalURLString];
-    
-    NSMutableURLRequest *URLRequest = [[NSMutableURLRequest alloc]initWithURL:finalURL cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:TIME_OUT_INTERVAL];
-    [URLRequest setHTTPMethod:method];
-    
+    NSString *finalURLString = [NSString stringWithFormat:@"%@/%@",SERVER_URL,url];
+    NSMutableURLRequest *URLRequest ;
+    if (params) {
+        if ([method isEqualToString:@"GET"]) {
+            NSString *URLFellowString = [@"?"stringByAppendingString:[[self class] HTTPBodyWithParameters:params]];
+            finalURLString = [[finalURLString stringByAppendingString:URLFellowString]stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            NSURL *finalURL = [NSURL URLWithString:finalURLString];
+            
+            URLRequest = [[NSMutableURLRequest alloc]initWithURL:finalURL cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:TIME_OUT_INTERVAL];
+            [URLRequest setHTTPMethod:method];
+
+        }else{
+            
+            
+            NSURL *finalURL = [NSURL URLWithString:finalURLString];
+            URLRequest = [[NSMutableURLRequest alloc]initWithURL:finalURL cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:TIME_OUT_INTERVAL];
+            [URLRequest setHTTPMethod:method];
+            
+            NSString *HTTPBodyString = [self HTTPBodyWithParameters:params];
+            [URLRequest setHTTPBody:[HTTPBodyString dataUsingEncoding:NSUTF8StringEncoding]];
+        }
+    }else{
+        NSURL *finalURL = [NSURL URLWithString:finalURLString];
+        URLRequest = [[NSMutableURLRequest alloc]initWithURL:finalURL cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:TIME_OUT_INTERVAL];
+        [URLRequest setHTTPMethod:method];
+    }
     
     [NSURLConnection sendAsynchronousRequest:URLRequest
                                        queue:[[NSOperationQueue alloc] init]
@@ -61,12 +76,7 @@
                        options:kNilOptions
                        error:&serialError];
              if ([json isKindOfClass:[NSDictionary class]]) {
-                 NSDictionary *dic = (NSDictionary *)json;
-                 if ([dic objectForKey:@"result"]&&[[dic objectForKey:@"result"] intValue] == 1) {
-                     success(URLRequest,dic);
-                 }else{
-                     failed(URLRequest,data,nil);
-                 }
+                     success(URLRequest,json);
              }else{
                  failed(URLRequest,data,nil);
              }
@@ -77,7 +87,7 @@
 }
 
 
-+ (void)request:(NSString *)url
++ (void)get:(NSString *)url
          params:(NSDictionary *)params
         success:(VSRespondSucess)success
          failed:(VSRespondFailed)failed;

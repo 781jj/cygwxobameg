@@ -11,20 +11,18 @@
 @implementation VSTempPassport
 - (void)doLogin:(VSPassportLoginCallback)finish;
 {
-    [VSRequest request:@"users/register" method:@"POST" params:nil success:^(NSURLRequest * request , id info) {
+    [VSRequest post :@"users/register"  params:nil success:^(NSURLRequest * request , id info) {
         NSDictionary *dic = (NSDictionary *)info;
-        if ([dic objectForKey:@"code"]) {
-            if ([[dic objectForKey:@"code"] integerValue] == 1) {
+        if ([dic objectForKey:@"returnCode"]) {
+            if ([[dic objectForKey:@"returnCode"] integerValue] == 1) {
                 NSDictionary *data = [dic objectForKey:@"data"];
                 if (data && [data objectForKey:@"_id"]) {
-                    self.userId = [data objectForKey:@"_id"];
+                    _passportUserId = [data objectForKey:@"_id"];
                     [self storeInfo];
                      finish(YES,info);
                 }else{
                      finish(NO,info);
                 }
-                
-               
             }else{
                 finish(NO,info);
             }
@@ -51,7 +49,7 @@
 
 - (BOOL)isLogin
 {
-    return self.userId && ![self.userId isEqualToString:@""];
+    return _passportUserId && ![_passportUserId isEqualToString:@""];
 }
 
 #pragma mark -- coder delegate
@@ -64,6 +62,11 @@
 
 -(void) encodeWithCoder: (NSCoder *) aCoder{
     [aCoder encodeObject:_passportUserId forKey:@"userId"];
+}
+
+- (NSString *)userId
+{
+    return _passportUserId;
 }
 
 @end

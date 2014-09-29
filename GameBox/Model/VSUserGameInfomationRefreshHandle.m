@@ -37,7 +37,7 @@ static VSUserGameInfomationRefreshHandle *_PKHandle = nil;
 - (void)refresh:(id)sender
 {
     __weak typeof (self) blockself = self;
-    [VSRequest request:SERVER_NAME params:nil success:^(NSURLRequest *request, id obj) {
+    [VSRequest get:@"123" params:nil success:^(NSURLRequest *request, id obj) {
         blockself.calllback(YES,obj);
     } failed:^(NSURLRequest *request, id obj, NSError *error) {
         blockself.calllback(NO,obj);
