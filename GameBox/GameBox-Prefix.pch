@@ -17,3 +17,7 @@
 
 
 #define SERVER_NAME @"http://www.baidu.com"
+
+//错误
+//尺寸错误 3
+//加载不出 14，17，18，33，34，35，41，44，43

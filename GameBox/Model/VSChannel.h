@@ -19,6 +19,7 @@ typedef  void(^VSChannelLoadDataBlock)(BOOL success,id );
 
 @property (nonatomic,assign)VSChannelType type;
 @property (nonatomic,strong)NSArray *gameList;
+@property (nonatomic,copy)NSString *currentGameId;
 - (id)initWithType:(VSChannelType )type;
 
 - (void)loadData:(VSChannelLoadDataBlock)callback;

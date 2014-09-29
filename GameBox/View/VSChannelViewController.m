@@ -9,7 +9,7 @@
 #import "VSChannelViewController.h"
 #import "VSChannelList.h"
 #import "VSGameDetailInfo.h"
-
+#import "VSGamePlayViewController.h"
 @interface VSChannelViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,weak)IBOutlet UITableView *table;
 @end
@@ -54,6 +54,19 @@
     cell.textLabel.text = info.name;
     cell.detailTextLabel.text = info.gameId;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
+
+    NSInteger index = indexPath.row;
+    VSGameDetailInfo *info = [channel.gameList objectAtIndex:index];
+    channel.currentGameId = info.gameId;
+    
+    VSGamePlayViewController *play = [[VSGamePlayViewController alloc] init];
+    
+    [self.navigationController pushViewController:play animated:YES];
 }
 
 @end

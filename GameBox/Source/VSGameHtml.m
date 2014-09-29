@@ -20,7 +20,7 @@ static VSGameHtml *_gameHtml = nil;
     if (self) {
         NSString *home = [[NSBundle mainBundle] resourcePath];
         NSString *bundleFound = [home stringByAppendingPathComponent:@"game_bundle"];
-        NSBundle *bundle = [NSBundle bundleWithPath:[bundleFound stringByAppendingPathComponent:@"game_image.bundle"]];
+        NSBundle *bundle = [NSBundle bundleWithPath:[bundleFound stringByAppendingPathComponent:@"game_html.bundle"]];
         _gameHtmlPath = [bundle resourcePath];
         
     }
