@@ -41,7 +41,7 @@
     VSTempLoginMessage *info = [VSTempLoginMessage new];
     [[VSSessionManager shareInstance] loginWithType:info finish:^(BOOL success,id msg){
         if (success) {
-            [self dismissViewControllerAnimated:NO completion:nil];
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];
 }
