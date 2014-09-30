@@ -10,6 +10,7 @@
 #import "VSChannelList.h"
 #import "VSGameDetailInfo.h"
 #import "VSGamePlayViewController.h"
+#import "VSChannel.h"
 @interface VSChannelViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong )UITableView *table;
 @end
@@ -24,9 +25,19 @@
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableView.bounces = YES;
+    
     [self.view addSubview:tableView];
-    NSLog(@"%f,%f,%f,%f",tableView.frame.origin.x,tableView.frame.origin.y,
-          tableView.frame.size.width,tableView.frame.size.height);
+
+    _table = tableView;
+    
+    VSChannel *channel = [[VSChannelList shareInstance] channelWithType:_type];
+    [channel loadData:^(BOOL success,id msg){
+        if (success) {
+            [_table reloadData];
+        }
+    }];
+
     
     // Do any additional setup after loading the view.
 }
@@ -44,22 +55,38 @@
     return [channel.gameList count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *CellIdentifier = @"test";
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-    }
-    VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row >= [channel.gameList count] ) {
+    VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
+    NSInteger index = indexPath.row;
+    if (index >= [channel.gameList count] ) {
+        static NSString *CellIdentifier = @"UITableViewCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (!cell){
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        }
         return cell;
     }
     
-    VSGameDetailInfo *info = [channel.gameList objectAtIndex:indexPath.row];
-    cell.textLabel.text = info.name;
-    cell.detailTextLabel.text = info.gameId;
+    
+    id cellInfo = [channel.gameList objectAtIndex:index];
+    NSString *identifier = NSStringFromClass([cellInfo class]);
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
+    }
+    
+    if ([cellInfo isKindOfClass:[VSGameDetailInfo class]]) {
+        VSGameDetailInfo *info = (VSGameDetailInfo *)cellInfo;
+        cell.textLabel.text = info.name;
+        cell.detailTextLabel.text = info.gameId;
+    }
+
     return cell;
 }
 
@@ -67,6 +94,7 @@
 {
     VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
 
+    
     NSInteger index = indexPath.row;
     VSGameDetailInfo *info = [channel.gameList objectAtIndex:index];
     channel.currentGameId = info.gameId;

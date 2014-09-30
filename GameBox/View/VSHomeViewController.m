@@ -25,8 +25,10 @@ CGRectGetWidth(self.scrollview.frame), CGRectGetHeight(self.scrollview.frame))
 @implementation VSHomeViewController
 
 - (void)viewDidLoad {
+    self.automaticallyAdjustsScrollViewInsets = NO;
+
     [_scrollview setContentSize:CGSizeMake(_scrollview.bounds.size.width*2.0, _scrollview.bounds.size.height)];
-    NSLog(@"%@",_scrollview);
+  
     for (int i = 0; i<2; i++) {
         VSChannelViewController *controller = [[VSChannelViewController alloc] init];
         controller.type = i+1;
@@ -39,8 +41,7 @@ CGRectGetWidth(self.scrollview.frame), CGRectGetHeight(self.scrollview.frame))
         [_scrollview scrollRectToVisible:CGRectMake (0, 0, 0, 0) animated:NO];
         [_scrollview addSubview:controller.view];
         [controller didMoveToParentViewController:self];
-        NSLog(@"%f,%f,%f,%f",controller.view.frame.origin.x,controller.view.frame.origin.y,
-              controller.view.frame.size.width,controller.view.frame.size.height);
+
 
     }
     [super viewDidLoad];
