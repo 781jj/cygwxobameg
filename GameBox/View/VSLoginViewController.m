@@ -9,6 +9,7 @@
 #import "VSLoginViewController.h"
 #import "VSSessionManager.h"
 #import "VSTempLoginMessage.h"
+#import "VSCommon.h"
 @interface VSLoginViewController ()
 
 @end
@@ -38,13 +39,19 @@
 
 - (IBAction)directLogin:(id)sender
 {
+ 
+    [M2DHudView showLoading];
     VSTempLoginMessage *info = [VSTempLoginMessage new];
     [[VSSessionManager shareInstance] loginWithType:info finish:^(BOOL success,id msg){
         if (success) {
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [M2DHudView hideLoading];
+            [self dismissViewControllerAnimated:NO completion:nil];
         }
     }];
+    
 }
+
+
 /*
 #pragma mark - Navigation
 

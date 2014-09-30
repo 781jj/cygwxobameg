@@ -20,6 +20,8 @@
 		3D90422E19D90ABE00C26CD9 /* VSGamePassport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90422D19D90ABE00C26CD9 /* VSGamePassport.m */; };
 		3D90423319D94E2400C26CD9 /* VSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90423219D94E2400C26CD9 /* VSLoginViewController.m */; };
 		3D90423619D953C500C26CD9 /* VSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90423519D953C500C26CD9 /* VSHomeViewController.m */; };
+		3D97A84019DA51D8005468F5 /* M2DHudView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D97A83D19DA51D8005468F5 /* M2DHudView.bundle */; };
+		3D97A84119DA51D8005468F5 /* M2DHudView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D97A83F19DA51D8005468F5 /* M2DHudView.m */; };
 		3DAC904B19D2A2D60039DAC3 /* game.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DAC904A19D2A2D60039DAC3 /* game.json */; };
 		3DAC905019D2B17A0039DAC3 /* VSGameImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC904F19D2B17A0039DAC3 /* VSGameImage.m */; };
 		3DAC905319D2B1840039DAC3 /* VSGameHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC905219D2B1840039DAC3 /* VSGameHtml.m */; };
@@ -81,6 +83,10 @@
 		3D90423219D94E2400C26CD9 /* VSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSLoginViewController.m; sourceTree = "<group>"; };
 		3D90423419D953C500C26CD9 /* VSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSHomeViewController.h; sourceTree = "<group>"; };
 		3D90423519D953C500C26CD9 /* VSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSHomeViewController.m; sourceTree = "<group>"; };
+		3D97A83D19DA51D8005468F5 /* M2DHudView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = M2DHudView.bundle; sourceTree = "<group>"; };
+		3D97A83E19DA51D8005468F5 /* M2DHudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2DHudView.h; sourceTree = "<group>"; };
+		3D97A83F19DA51D8005468F5 /* M2DHudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2DHudView.m; sourceTree = "<group>"; };
+		3D97A84219DA52B6005468F5 /* VSCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSCommon.h; sourceTree = "<group>"; };
 		3DAC904A19D2A2D60039DAC3 /* game.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = game.json; path = Resource/game.json; sourceTree = "<group>"; };
 		3DAC904E19D2B17A0039DAC3 /* VSGameImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSGameImage.h; sourceTree = "<group>"; };
 		3DAC904F19D2B17A0039DAC3 /* VSGameImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSGameImage.m; sourceTree = "<group>"; };
@@ -178,6 +184,25 @@
 			name = LoginInfo;
 			sourceTree = "<group>";
 		};
+		3D97A83819DA4C28005468F5 /* Univesal */ = {
+			isa = PBXGroup;
+			children = (
+				3D97A83C19DA51D8005468F5 /* M2DHudView */,
+				3D97A84219DA52B6005468F5 /* VSCommon.h */,
+			);
+			path = Univesal;
+			sourceTree = "<group>";
+		};
+		3D97A83C19DA51D8005468F5 /* M2DHudView */ = {
+			isa = PBXGroup;
+			children = (
+				3D97A83D19DA51D8005468F5 /* M2DHudView.bundle */,
+				3D97A83E19DA51D8005468F5 /* M2DHudView.h */,
+				3D97A83F19DA51D8005468F5 /* M2DHudView.m */,
+			);
+			path = M2DHudView;
+			sourceTree = "<group>";
+		};
 		3DAC904919D2A2C80039DAC3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +245,7 @@
 		3DEC307119CD2236009FCCFE /* GameBox */ = {
 			isa = PBXGroup;
 			children = (
+				3D97A83819DA4C28005468F5 /* Univesal */,
 				3DEC30B319CD34A8009FCCFE /* Source */,
 				3DEC30A919CD30F9009FCCFE /* View */,
 				3DEC30AA19CD30F9009FCCFE /* Model */,
@@ -390,6 +416,7 @@
 			files = (
 				3DEC308419CD2236009FCCFE /* Images.xcassets in Resources */,
 				3DEC307619CD2236009FCCFE /* InfoPlist.strings in Resources */,
+				3D97A84019DA51D8005468F5 /* M2DHudView.bundle in Resources */,
 				3DEC307F19CD2236009FCCFE /* Main.storyboard in Resources */,
 				3DAC904B19D2A2D60039DAC3 /* game.json in Resources */,
 			);
@@ -432,6 +459,7 @@
 				3D90422219D905C200C26CD9 /* VSTempPassport.m in Sources */,
 				3DEC30AF19CD30F9009FCCFE /* VSChannel.m in Sources */,
 				3D90422B19D9092C00C26CD9 /* VSParamLoginMessage.m in Sources */,
+				3D97A84119DA51D8005468F5 /* M2DHudView.m in Sources */,
 				3DAC905019D2B17A0039DAC3 /* VSGameImage.m in Sources */,
 				3DEC30B619CD34A8009FCCFE /* VSRequest.m in Sources */,
 				3D90421B19D9049600C26CD9 /* VSSessionManager.m in Sources */,

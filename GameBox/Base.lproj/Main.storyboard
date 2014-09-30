@@ -5,35 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Play Game-->
-        <scene sceneID="aBF-Dk-qS0">
-            <objects>
-                <viewController id="0YS-Ka-dSe" customClass="VSChannelViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Pjv-Lf-NpO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ZTC-up-ir4">
-                                <rect key="frame" x="0.0" y="40" width="320" height="528"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="0YS-Ka-dSe" id="Tdu-V2-Xn0"/>
-                                    <outlet property="delegate" destination="0YS-Ka-dSe" id="KjV-0V-dIe"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Play Game" id="kVI-x8-cPE"/>
-                    <connections>
-                        <outlet property="table" destination="ZTC-up-ir4" id="Y4v-mm-9P7"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pW5-H2-ChM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="955" y="-628"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="K1D-B8-zlV">
             <objects>
@@ -57,10 +28,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Nry-tn-8ob">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" id="Nry-tn-8ob">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.90196084980000002" green="0.3803921938" blue="0.25098040700000002" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="98D-71-kIh" id="Xir-65-cFJ"/>
+                                </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" id="jJJ-cA-24h">
                                 <rect key="frame" x="0.0" y="508" width="320" height="60"/>
@@ -87,6 +61,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Play Game" id="GVQ-m4-GWB"/>
+                    <connections>
+                        <outlet property="scrollview" destination="Nry-tn-8ob" id="EMY-d3-eL8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmp-Pv-c1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

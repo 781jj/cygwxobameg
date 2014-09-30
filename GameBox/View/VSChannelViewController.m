@@ -11,7 +11,7 @@
 #import "VSGameDetailInfo.h"
 #import "VSGamePlayViewController.h"
 @interface VSChannelViewController ()<UITableViewDataSource,UITableViewDelegate>
-@property (nonatomic,weak)IBOutlet UITableView *table;
+@property (nonatomic,strong )UITableView *table;
 @end
 
 @implementation VSChannelViewController
@@ -20,7 +20,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) style:UITableViewStylePlain];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:tableView];
+    NSLog(@"%f,%f,%f,%f",tableView.frame.origin.x,tableView.frame.origin.y,
+          tableView.frame.size.width,tableView.frame.size.height);
+    
     // Do any additional setup after loading the view.
 }
 

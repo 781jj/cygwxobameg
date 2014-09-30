@@ -10,4 +10,5 @@
 
 @interface VSChannelViewController : UIViewController
 
+@property (nonatomic,assign)NSInteger type;
 @end
