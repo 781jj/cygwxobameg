@@ -10,7 +10,7 @@
 #import "VSSessionManager.h"
 #import "VSLoginViewController.h"
 #import "VSChannelViewController.h"
-
+#import "VSChannelSwitch.h"
 #define CGRectForVCAtIndex(index) CGRectMake(index*(CGRectGetWidth(self.scrollview.frame)), 0, \
 CGRectGetWidth(self.scrollview.frame), CGRectGetHeight(self.scrollview.frame))
 
@@ -20,35 +20,38 @@ CGRectGetWidth(self.scrollview.frame), CGRectGetHeight(self.scrollview.frame))
 }
 
 @property (nonatomic,weak)IBOutlet UIScrollView *scrollview;
+@property (nonatomic,weak)IBOutlet VSChannelSwitch *channelSwitch;
 @end
 
 @implementation VSHomeViewController
 
 - (void)viewDidLoad {
-    self.automaticallyAdjustsScrollViewInsets = NO;
 
+    [super viewDidLoad];
+    
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     [_scrollview setContentSize:CGSizeMake(_scrollview.bounds.size.width*2.0, _scrollview.bounds.size.height)];
-  
+    
     for (int i = 0; i<2; i++) {
         VSChannelViewController *controller = [[VSChannelViewController alloc] init];
         controller.type = i+1;
         [self addChildViewController:controller];
-
         controller.view.frame = CGRectForVCAtIndex(i);
-        
         _scrollview.scrollsToTop = YES;
-
         [_scrollview scrollRectToVisible:CGRectMake (0, 0, 0, 0) animated:NO];
         [_scrollview addSubview:controller.view];
         [controller didMoveToParentViewController:self];
-
-
     }
-    [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
 
+- (void)moveToChannel:(NSInteger )index
+{
+    [_scrollview setContentOffset:CGPointMake(_scrollview.frame.size.width*index, 0) animated:YES];
+}
 
 
 - (void)didReceiveMemoryWarning {

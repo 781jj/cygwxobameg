@@ -7,23 +7,59 @@
 //
 
 #import "VSChannelSwitch.h"
-
+#import "VSHomeController.h"
 @interface VSChannelSwitch ()
+{
+    NSInteger _channelType; //默认0，hot
+}
 
-@property (nonatomic,weak)UIButton *right;
-@property (nonatomic,weak)UIButton *left;
-
+@property (nonatomic,weak)IBOutlet UIImageView *tapView;
 @end
 
 @implementation VSChannelSwitch
 
-- (id)initWithFrame:(CGRect)frame
+
+
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithCoder:aDecoder];
     if (self) {
         // Initialization code
     }
     return self;
+}
+
+- (IBAction)hotClick:(id)sender
+{
+    if (_channelType == 0) {
+        return;
+    }
+    
+    _channelType = 0;
+    _tapView.image = [UIImage  imageNamed:@"btn_Alternative_hot"];
+    [[VSHomeController shareInstance] channelClick:@"hot"];
+}
+
+- (IBAction)newClick:(id)sender
+{
+    if (_channelType == 1) {
+        return;
+    }
+    
+    _channelType = 1;
+    _tapView.image = [UIImage  imageNamed:@"btn_Alternative_new"];
+    [[VSHomeController shareInstance] channelClick:@"new"];
+
+}
+
+- (void)moveToChannel:(NSInteger )index
+{
+    _channelType = index;
+    if (_channelType) {
+        _tapView.image = [UIImage  imageNamed:@"btn_Alternative_new"];
+    }else{
+        _tapView.image = [UIImage  imageNamed:@"btn_Alternative_hot"];
+    }
 }
 
 /*

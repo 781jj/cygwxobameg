@@ -18,8 +18,8 @@
 @property (nonatomic,copy)NSString *gameplay;
 @property (nonatomic,assign)NSInteger players;
 @property (nonatomic,readonly)NSArray *showImagesPath;
-@property (nonatomic,strong)NSArray *shareInfo;
-@property (nonatomic,readonly)NSArray *htmlPath;
+@property (nonatomic,strong)NSString *shareInfo;
+@property (nonatomic,readonly)NSString *htmlPath;
 
 - (id)initWithDic:(NSDictionary *)dic;
 @end

@@ -11,6 +11,12 @@
 #import "VSGameDetailInfo.h"
 #import "VSGamePlayViewController.h"
 #import "VSChannel.h"
+
+#import "VSFavorGame.h"
+#import "VSGameBroadcast.h"
+#import "VSGalleryTableViewCell.h"
+#import "VSBroastTableViewCell.h"
+#import "VSGameAbstractTableViewCell.h"
 @interface VSChannelViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong )UITableView *table;
 @end
@@ -26,6 +32,7 @@
     tableView.dataSource = self;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.bounces = YES;
+    tableView.backgroundColor = UIColorFromRGB(0xf0f2f5);
     
     [self.view addSubview:tableView];
 
@@ -49,7 +56,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
-
 {
     VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
     return [channel.gameList count];
@@ -58,8 +64,22 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44;
+    VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
+    NSInteger index = indexPath.row;
+    if (index >= [channel.gameList count] ) {
+         return 44;
+    }
+    
+    id data = [channel.gameList objectAtIndex:index];
+    if ([data isKindOfClass:[VSFavorGame class]]) {
+        return VSGalleryTableViewCellHeight;
+    }else if ([data isKindOfClass:[VSGameBroadcast class]]){
+        return VSBroastTableViewCellHeight;
+    }else{
+        return VSGameAbstractTableViewCellHeight;
+    }
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
@@ -74,34 +94,26 @@
     }
     
     
-    id cellInfo = [channel.gameList objectAtIndex:index];
-    NSString *identifier = NSStringFromClass([cellInfo class]);
+    id data = [channel.gameList objectAtIndex:index];
+    NSString *identifier = NSStringFromClass([data class]);
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
+        if ([data isKindOfClass:[VSFavorGame class]]) {
+            cell = [[VSGalleryTableViewCell alloc] initWithReuseId:identifier];
+        }else if ([data isKindOfClass:[VSGameBroadcast class]]){
+            cell = [[VSBroastTableViewCell alloc] initWithReuseId:identifier];
+        }else{
+            cell = [[VSGameAbstractTableViewCell alloc] initWithReuseId:identifier AtIndex:index];
+        }
+    }else{
+        if ([cell respondsToSelector:@selector(update)]) {
+            [cell performSelector:@selector(update) withObject:nil];
+        }
     }
     
-    if ([cellInfo isKindOfClass:[VSGameDetailInfo class]]) {
-        VSGameDetailInfo *info = (VSGameDetailInfo *)cellInfo;
-        cell.textLabel.text = info.name;
-        cell.detailTextLabel.text = info.gameId;
-    }
-
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
 
-    
-    NSInteger index = indexPath.row;
-    VSGameDetailInfo *info = [channel.gameList objectAtIndex:index];
-    channel.currentGameId = info.gameId;
-    
-    VSGamePlayViewController *play = [[VSGamePlayViewController alloc] init];
-    
-    [self.navigationController pushViewController:play animated:YES];
-}
 
 @end

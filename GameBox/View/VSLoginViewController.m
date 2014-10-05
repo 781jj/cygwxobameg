@@ -40,14 +40,16 @@
 - (IBAction)directLogin:(id)sender
 {
  
-    [M2DHudView showLoading];
-    VSTempLoginMessage *info = [VSTempLoginMessage new];
-    [[VSSessionManager shareInstance] loginWithType:info finish:^(BOOL success,id msg){
-        if (success) {
-            [M2DHudView hideLoading];
-            [self dismissViewControllerAnimated:NO completion:nil];
-        }
-    }];
+    [self dismissViewControllerAnimated:NO completion:nil];
+
+//    [M2DHudView showLoading];
+//    VSTempLoginMessage *info = [VSTempLoginMessage new];
+//    [[VSSessionManager shareInstance] loginWithType:info finish:^(BOOL success,id msg){
+//  //      if (success) {
+//            [M2DHudView hideLoading];
+//            [self dismissViewControllerAnimated:NO completion:nil];
+//   //     }
+//    }];
     
 }
 

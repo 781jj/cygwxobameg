@@ -37,20 +37,34 @@
             NSMutableArray *array = [NSMutableArray array];
             if ([[obj objectForKey:@"returnCode"] integerValue] == 1) {
                 NSDictionary *dic = [obj objectForKey:@"data"];
-                if ([dic objectForKey:@"favorlist"]) {
-                    NSArray *list = (NSArray *)[dic objectForKey:@"favorlist"];
-                    if (list && [list count]>0) {
-                        NSMutableArray *favor = [NSMutableArray array];
-                        [list enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                            VSGameDetailInfo *info = [[VSGameDetailInfo alloc] initWithDic:obj];
-                            [favor addObject:info];
-                        }];
-                        VSFavorGame *favorGame = [VSFavorGame new];
-                        favorGame.favorlist = favor;
-                        [array addObject:favor];
-                    }
-                }
+//                if ([dic objectForKey:@"favorlist"]) {
+//                    NSArray *list = (NSArray *)[dic objectForKey:@"favorlist"];
+//                    if (list && [list count]>0) {
+//                        NSMutableArray *favor = [NSMutableArray array];
+//                        [list enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//                            VSGameDetailInfo *info = [[VSGameDetailInfo alloc] initWithDic:obj];
+//                            [favor addObject:info];
+//                        }];
+//                        VSFavorGame *favorGame = [VSFavorGame new];
+//                        favorGame.favorlist = favor;
+//                        [array addObject:favor];
+//                    }
+//                }
   
+                if([dic objectForKey:@"gamelist"]){
+                    NSArray *list = (NSArray *)[dic objectForKey:@"gamelist"];
+                    NSMutableArray *favor = [NSMutableArray array];
+
+                    for (int i = 0; i<4; i++) {
+                        NSDictionary *dic = [list objectAtIndex:i];
+                        VSGameDetailInfo *info = [[VSGameDetailInfo alloc] initWithDic:dic];
+                        [favor addObject:info];
+                    }
+                    VSFavorGame *favorGame = [VSFavorGame new];
+                    favorGame.favorlist = favor;
+                    [array addObject:favor]; 
+                }
+                
                 [array addObject:[VSGameBroadcast shareInstance]];
                 if([dic objectForKey:@"gamelist"]){
                     NSArray *list = (NSArray *)[dic objectForKey:@"gamelist"];
@@ -59,6 +73,7 @@
                         [array addObject:info];
                     }];
                 }
+                
                 
                 
                 blockself.gameList = array;

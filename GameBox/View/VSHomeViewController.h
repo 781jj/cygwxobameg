@@ -10,4 +10,5 @@
 
 @interface VSHomeViewController : UIViewController
 
+- (void)moveToChannel:(NSInteger )index;
 @end
