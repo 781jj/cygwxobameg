@@ -31,7 +31,7 @@
     VSChannel *currentChannel = [[VSChannelList shareInstance] currentChannel];
     
     NSString *gameId = currentChannel.currentGameId;
-     NSString *foudler = [[VSGameHtml shareInstance] htmlPath:gameId];
+    NSString *foudler = [[VSGameHtml shareInstance] htmlPath:gameId];
     NSString *filePath = [foudler stringByAppendingPathComponent:@"index.html"];
     NSURL *url = [NSURL fileURLWithPath:filePath];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

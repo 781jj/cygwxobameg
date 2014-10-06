@@ -19,16 +19,6 @@
 @implementation VSChannelSwitch
 
 
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
 - (IBAction)hotClick:(id)sender
 {
     if (_channelType == 0) {

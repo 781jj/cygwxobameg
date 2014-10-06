@@ -62,7 +62,7 @@
                     }
                     VSFavorGame *favorGame = [VSFavorGame new];
                     favorGame.favorlist = favor;
-                    [array addObject:favor]; 
+                    [array addObject:favorGame];
                 }
                 
                 [array addObject:[VSGameBroadcast shareInstance]];

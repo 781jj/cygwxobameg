@@ -28,6 +28,7 @@
         button.frame = CGRectMake(frame.size.width*0.05, 0, frame.size.width*0.9, frame.size.height);
         [button setImage:[UIImage imageWithContentsOfFile:path] forState:UIControlStateNormal];
         [button addTarget:[VSHomeController shareInstance] action:@selector(galleryClick:) forControlEvents:UIControlEventTouchUpInside];
+        button.tag = _index+1;
         [self addSubview:button];
     }
     return self;

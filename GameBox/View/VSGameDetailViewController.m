@@ -7,25 +7,30 @@
 //
 
 #import "VSGameDetailViewController.h"
-
+#import "VSGameDetailInfoView.h"
+#import "VSGameIntroduceView.h"
+#import "VSBroastView.h"
+#import "VSGameDetailInfo.h"
+#import "VSChannel.h"
+#import "VSChannelList.h"
 @interface VSGameDetailViewController ()
-
+@property(nonatomic,weak)IBOutlet VSBroastView *broastView;
+@property(nonatomic,weak)IBOutlet VSGameDetailInfoView *detailView;
+@property(nonatomic,weak)IBOutlet VSGameIntroduceView *introduceView;
 @end
 
 @implementation VSGameDetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    VSChannel *channel = [VSChannelList shareInstance].currentChannel;
+    if ([channel.gameList count]>[channel.currentGameId integerValue]) {
+        VSGameDetailInfo *info = [channel.gameList objectAtIndex:[channel.currentGameId integerValue]];
+        [_detailView reloadData:info];
+        [_introduceView reloadData:info];
+    }
     // Do any additional setup after loading the view.
 }
 

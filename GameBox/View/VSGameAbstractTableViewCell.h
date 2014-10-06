@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#define VSGameAbstractTableViewCellHeight  81
+#define VSGameAbstractTableViewCellHeight  83
 
 @interface VSGameAbstractTableViewCell : UITableViewCell
 - (id)initWithReuseId:(NSString *)reuseId AtIndex:(NSInteger )index;

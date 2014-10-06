@@ -10,6 +10,6 @@
 
 @interface VSPageView : UIView
 
-
+@property (nonatomic,assign)NSInteger index;
 - (id) initWithFrame:(CGRect)frame imagePath:(NSString *)path;
 @end

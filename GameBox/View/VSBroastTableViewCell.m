@@ -7,7 +7,7 @@
 //
 
 #import "VSBroastTableViewCell.h"
-
+#import "VSBroastView.h"
 @implementation VSBroastTableViewCell
 
 - (id)initWithReuseId:(NSString *)reuseId 
@@ -16,8 +16,8 @@
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
 
-        UILabel *info = [[UILabel alloc] initWithFrame:self.bounds];
-        info.text = @"广播位置";
+        VSBroastView *info = [[VSBroastView alloc] initWithFrame:self.bounds];
+        info.backgroundColor = [UIColor blueColor];
         [self addSubview:info];
     }
     return self;

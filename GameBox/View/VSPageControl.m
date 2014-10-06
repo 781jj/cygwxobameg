@@ -48,7 +48,7 @@
         dotImageView_h.frame = CGRectMake(0, 0, self.dotsSize, self.dotsSize);
         self.highlightedDotImageView = dotImageView_h;
 
-        for (int i = 0; i != __pageNumbers; ++ i) {
+        for (int i = 0; i != _pageNumbers; ++ i) {
             UIImageView *dotsImageView = [[UIImageView alloc] init];
             dotsImageView.userInteractionEnabled = YES;
             dotsImageView.frame = CGRectMake((size + gap) * i, 0, size, size);

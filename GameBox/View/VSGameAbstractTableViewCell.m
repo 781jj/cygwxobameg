@@ -29,7 +29,7 @@
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];
     if (self) {
         _cellIndex = index;
-        
+        self.backgroundColor = [UIColor clearColor];
         VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
         if (index  >= [channel.gameList count] ) {
             return self;
@@ -38,7 +38,7 @@
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(self.bounds.size.width*0.025, 6, self.bounds.size.width*0.95, VSGameAbstractTableViewCellHeight)];
+        UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(self.bounds.size.width*0.025, 6, self.bounds.size.width*0.95, VSGameAbstractTableViewCellHeight*0.9)];
         contentView.backgroundColor = [UIColor whiteColor];
         [self addSubview:contentView];
         
@@ -48,17 +48,17 @@
         _iconImageView = pic;
         
         UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(pic.frame.origin.x+pic.frame.size.width+contentView.frame.size.width*0.05, contentView.frame.size.height*0.1,  contentView.frame.size.width*0.45, contentView.frame.size.height*0.25)];
-        title.font = [UIFont boldSystemFontOfSize:18];
+        title.font = [UIFont systemFontOfSize:18];
         title.textColor = [UIColor blackColor];
         title.textAlignment = 0;
         title.text = gameDetail.name;
         [contentView addSubview:title];
         _nameLabel = title;
         
-        UILabel *abstract = [[UILabel alloc] initWithFrame:CGRectMake(pic.frame.origin.x+pic.frame.size.width+contentView.frame.size.width*0.05, title.frame.origin.y+title.frame.size.height+contentView.frame.size.height*0.1,  contentView.frame.size.width*0.45, contentView.frame.size.height*0.45)];
+        UILabel *abstract = [[UILabel alloc] initWithFrame:CGRectMake(pic.frame.origin.x+pic.frame.size.width+contentView.frame.size.width*0.05, title.frame.origin.y+title.frame.size.height,  contentView.frame.size.width*0.45, contentView.frame.size.height*0.6)];
         abstract.lineBreakMode = NSLineBreakByWordWrapping;
         abstract.numberOfLines = 3;
-        abstract.font = [UIFont boldSystemFontOfSize:10];
+        abstract.font = [UIFont systemFontOfSize:10];
         abstract.textColor = UIColorFromRGB(0x868686);
         abstract.textAlignment = 0;
         abstract.text = gameDetail.abstract;
@@ -66,16 +66,17 @@
         _abstrctLabel = abstract;
         
         UIButton *playButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        playButton.frame = CGRectMake(abstract.frame.origin.x+abstract.frame.size.width+contentView.frame.size.width*0.15, contentView.frame.size.height*0.25, contentView.frame.size.width*0.22, contentView.frame.size.width*0.11);
+        playButton.frame = CGRectMake(abstract.frame.origin.x+abstract.frame.size.width+5, contentView.frame.size.height*0.15, contentView.frame.size.width*0.24, contentView.frame.size.width*0.11);
         [playButton setImage:[UIImage imageNamed:@"btn_play_release"] forState:UIControlStateNormal];
-        [playButton addTarget:[VSHomeController shareInstance] action:@selector(gameClick:) forControlEvents:UIControlEventTouchDragInside];
+        [playButton addTarget:[VSHomeController shareInstance] action:@selector(gameClick:) forControlEvents:UIControlEventTouchUpInside];
+        playButton.tag = _cellIndex+1;
         [contentView addSubview:playButton];
         
-        UILabel *players = [[UILabel alloc] initWithFrame:CGRectMake(playButton.frame.origin.x + playButton.frame.origin.x+playButton.frame.size.width*0.3,playButton.frame.origin.y+playButton.frame.size.height+contentView.frame.size.height*0.1, contentView.frame.size.width*0.2, contentView.frame.size.height*0.2)];
-        players.font = [UIFont boldSystemFontOfSize:12];
+        UILabel *players = [[UILabel alloc] initWithFrame:CGRectMake(playButton.frame.origin.x+playButton.frame.size.width*0.25,playButton.frame.origin.y+playButton.frame.size.height+contentView.frame.size.height*0.05, contentView.frame.size.width*0.2, contentView.frame.size.height*0.2)];
+        players.font = [UIFont systemFontOfSize:12];
         players.textColor = [UIColor blackColor];
         players.textAlignment = 0;
-        players.text = [NSString stringWithFormat:@"+%ld",(long)gameDetail.players];
+        players.text = [NSString stringWithFormat:@"+%ld",gameDetail.players];
         [contentView addSubview:players];
         _playsLabel = players;
         

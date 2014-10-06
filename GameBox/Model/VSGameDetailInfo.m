@@ -19,6 +19,7 @@
     self = [super init];
     if(self)
     {
+        _players = 1234;
         _gameId = [dic objectForKey:@"gamenumber"] ;
     }
     return self;
@@ -54,4 +55,6 @@
 {
     return [[VSGameText shareInstance] gameShare:_gameId];
 }
+
+
 @end
