@@ -13,4 +13,6 @@
 - (void)gameClick:(id)sender;
 - (void)galleryClick:(id)sender;
 - (void)channelClick:(id)sender;
+
+- (void)pkClick:(id)sender;
 @end

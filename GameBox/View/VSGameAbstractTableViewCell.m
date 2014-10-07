@@ -12,30 +12,22 @@
 #import "VSGameDetailInfo.h"
 #import "VSHomeController.h"
 @interface VSGameAbstractTableViewCell ()
-{
-    NSInteger _cellIndex;
-}
+
 @property (nonatomic,strong)UIImageView *iconImageView;
 @property (nonatomic,strong)UILabel *nameLabel;
 @property (nonatomic,strong)UILabel *abstrctLabel;
 @property (nonatomic,strong)UILabel *playsLabel;
+@property (nonatomic,strong)UIButton *playButton;
 
 @end
 @implementation VSGameAbstractTableViewCell
 
-- (id)initWithReuseId:(NSString *)reuseId AtIndex:(NSInteger )index;
+- (id)initWithReuseId:(NSString *)reuseId;
 
 {
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];
     if (self) {
-        _cellIndex = index;
         self.backgroundColor = [UIColor clearColor];
-        VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
-        if (index  >= [channel.gameList count] ) {
-            return self;
-        }
-        VSGameDetailInfo *gameDetail  = [channel.gameList objectAtIndex:index];
-        
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(self.bounds.size.width*0.025, 6, self.bounds.size.width*0.95, VSGameAbstractTableViewCellHeight*0.9)];
@@ -43,7 +35,6 @@
         [self addSubview:contentView];
         
         UIImageView *pic = [[UIImageView alloc] initWithFrame:CGRectMake(contentView.frame.size.height*0.05, contentView.frame.size.height*0.05, contentView.frame.size.height*0.9, contentView.frame.size.height*0.9)];
-        pic.image = [UIImage imageWithContentsOfFile:gameDetail.iconPath];
         [contentView addSubview:pic];
         _iconImageView = pic;
         
@@ -51,7 +42,6 @@
         title.font = [UIFont systemFontOfSize:18];
         title.textColor = [UIColor blackColor];
         title.textAlignment = 0;
-        title.text = gameDetail.name;
         [contentView addSubview:title];
         _nameLabel = title;
         
@@ -61,7 +51,6 @@
         abstract.font = [UIFont systemFontOfSize:10];
         abstract.textColor = UIColorFromRGB(0x868686);
         abstract.textAlignment = 0;
-        abstract.text = gameDetail.abstract;
         [contentView addSubview:abstract];
         _abstrctLabel = abstract;
         
@@ -69,14 +58,13 @@
         playButton.frame = CGRectMake(abstract.frame.origin.x+abstract.frame.size.width+5, contentView.frame.size.height*0.15, contentView.frame.size.width*0.24, contentView.frame.size.width*0.11);
         [playButton setImage:[UIImage imageNamed:@"btn_play_release"] forState:UIControlStateNormal];
         [playButton addTarget:[VSHomeController shareInstance] action:@selector(gameClick:) forControlEvents:UIControlEventTouchUpInside];
-        playButton.tag = _cellIndex+1;
         [contentView addSubview:playButton];
+        _playButton = playButton;
         
         UILabel *players = [[UILabel alloc] initWithFrame:CGRectMake(playButton.frame.origin.x+playButton.frame.size.width*0.25,playButton.frame.origin.y+playButton.frame.size.height+contentView.frame.size.height*0.05, contentView.frame.size.width*0.2, contentView.frame.size.height*0.2)];
         players.font = [UIFont systemFontOfSize:12];
         players.textColor = [UIColor blackColor];
         players.textAlignment = 0;
-        players.text = [NSString stringWithFormat:@"+%ld",gameDetail.players];
         [contentView addSubview:players];
         _playsLabel = players;
         
@@ -86,19 +74,20 @@
 }
 
 
-- (void)update
+- (void)update:(NSInteger )index;
 {
     
     VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
-    if (_cellIndex  >= [channel.gameList count] ) {
+    if (index  >= [channel.gameList count] ) {
         return;
     }
-    VSGameDetailInfo *gameDetail  = [channel.gameList objectAtIndex:_cellIndex];
-    
+    VSGameDetailInfo *gameDetail  = [channel.gameList objectAtIndex:index];
+
     _iconImageView.image = [UIImage imageWithContentsOfFile:gameDetail.iconPath];
     _nameLabel.text = gameDetail.name;
     _abstrctLabel.text = gameDetail.abstract;
     _playsLabel.text = [NSString stringWithFormat:@"+%ld",(long)gameDetail.players];
+    _playButton.tag = index+1;
 
 }
 

@@ -13,6 +13,7 @@
 #import "VSGameDetailInfo.h"
 #import "VSChannel.h"
 #import "VSChannelList.h"
+#import "VSBackBarButtonItem.h"
 @interface VSGameDetailViewController ()
 @property(nonatomic,weak)IBOutlet VSBroastView *broastView;
 @property(nonatomic,weak)IBOutlet VSGameDetailInfoView *detailView;
@@ -22,22 +23,32 @@
 @implementation VSGameDetailViewController
 
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.leftBarButtonItem = [VSBackBarButtonItem backBarButtonItem:self selector:@selector(backButtonClick)];
+
+    
     VSChannel *channel = [VSChannelList shareInstance].currentChannel;
-    if ([channel.gameList count]>[channel.currentGameId integerValue]) {
-        VSGameDetailInfo *info = [channel.gameList objectAtIndex:[channel.currentGameId integerValue]];
-        [_detailView reloadData:info];
-        [_introduceView reloadData:info];
-    }
+    VSGameDetailInfo *info = [[VSGameDetailInfo alloc] initWithGameId:channel.currentGameId];
+    [_introduceView reloadData:info];
+
+    [_detailView reloadData:info];
+    
     // Do any additional setup after loading the view.
 }
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)backButtonClick
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

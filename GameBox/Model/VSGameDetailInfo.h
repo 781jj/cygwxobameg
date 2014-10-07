@@ -7,8 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+typedef  void(^VSGameRankBlock)(BOOL success,NSArray *rankList);
+
 
 @interface VSGameDetailInfo : NSObject
+{
+    NSArray *_rankings;
+}
 
 @property (nonatomic,copy)NSString *name;
 @property (nonatomic,copy)NSString *gameId;
@@ -20,6 +25,10 @@
 @property (nonatomic,readonly)NSArray *showImagesPath;
 @property (nonatomic,strong)NSString *shareInfo;
 @property (nonatomic,readonly)NSString *htmlPath;
+@property (nonatomic,readonly)NSArray *rankList;
+
 
 - (id)initWithDic:(NSDictionary *)dic;
+- (id)initWithGameId:(NSString *)gameID;
+- (void)rankingList:(VSGameRankBlock)callback;
 @end

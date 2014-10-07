@@ -11,5 +11,4 @@
 @interface VSGalleryTableViewCell : UITableViewCell
 
 - (id)initWithReuseId:(NSString *)reuseId;
-- (void)update;
 @end

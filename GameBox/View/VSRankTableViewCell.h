@@ -1,16 +1,14 @@
 //
-//  VSGameAbstractTableViewCell.h
+//  VSRankTableViewCell.h
 //  GameBox
 //
-//  Created by YaoMing on 14-10-5.
+//  Created by YaoMing on 14-10-7.
 //  Copyright (c) 2014年 cyggame. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#define VSGameAbstractTableViewCellHeight  83
 
-@interface VSGameAbstractTableViewCell : UITableViewCell
+@interface VSRankTableViewCell : UITableViewCell
 - (id)initWithReuseId:(NSString *)reuseId;
 - (void)update:(NSInteger )index;
-
 @end

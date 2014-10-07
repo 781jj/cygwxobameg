@@ -9,24 +9,24 @@
 #import "VSGamePlayViewController.h"
 #import "VSChannelList.h"
 #import "VSGameHtml.h"
+#import "VSBackBarButtonItem.h"
 @interface VSGamePlayViewController ()<UIWebViewDelegate>
-@property (nonatomic,strong)UIWebView *webView;
+@property (nonatomic,weak)IBOutlet UIWebView *webView;
 @end
 
 @implementation VSGamePlayViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)dealloc
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    [_webView stopLoading];
 }
+
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+     self.navigationItem.leftBarButtonItem = [VSBackBarButtonItem backBarButtonItem:self selector:@selector(backButtonClick)];
     
     VSChannel *currentChannel = [[VSChannelList shareInstance] currentChannel];
     
@@ -35,12 +35,15 @@
     NSString *filePath = [foudler stringByAppendingPathComponent:@"index.html"];
     NSURL *url = [NSURL fileURLWithPath:filePath];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    _webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-    _webView.delegate = self;
     
     [_webView loadRequest:request];
-    [self.view addSubview:_webView];
     // Do any additional setup after loading the view.
+}
+
+
+- (void)backButtonClick
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,7 +54,13 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView;
 {
+    NSLog(@"succes");
     [webView stringByEvaluatingJavaScriptFromString:@"window.ios = {};"];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    NSLog(@"fail");
 }
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -59,5 +68,7 @@
     NSLog(@"request:%@", request.URL);
     return YES;
 }
+
+
 
 @end

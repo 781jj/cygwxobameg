@@ -104,12 +104,12 @@
         }else if ([data isKindOfClass:[VSGameBroadcast class]]){
             cell = [[VSBroastTableViewCell alloc] initWithReuseId:identifier];
         }else{
-            cell = [[VSGameAbstractTableViewCell alloc] initWithReuseId:identifier AtIndex:index];
+            cell = [[VSGameAbstractTableViewCell alloc] initWithReuseId:identifier];
         }
-    }else{
-        if ([cell respondsToSelector:@selector(update)]) {
-            [cell performSelector:@selector(update) withObject:nil];
-        }
+    }
+    
+    if ([data isKindOfClass:[VSGameDetailInfo class]]){
+        [(VSGameAbstractTableViewCell *)cell update:index];
     }
     
     return cell;

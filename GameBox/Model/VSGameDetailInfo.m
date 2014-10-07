@@ -10,6 +10,8 @@
 #import "VSGameImage.h"
 #import "VSGameHtml.h"
 #import "VSGameText.h"
+#import "VSRequest.h"
+#import "VSRankingInfo.h"
 @implementation VSGameDetailInfo
 
 
@@ -21,6 +23,17 @@
     {
         _players = 1234;
         _gameId = [dic objectForKey:@"gamenumber"] ;
+    }
+    return self;
+}
+
+- (id)initWithGameId:(NSString *)gameID
+{
+    self = [super init];
+    if(self)
+    {
+        _players = 1234;
+        _gameId = gameID;
     }
     return self;
 }
@@ -55,6 +68,35 @@
 {
     return [[VSGameText shareInstance] gameShare:_gameId];
 }
+
+- (NSArray *)rankList
+{
+    return _rankings;
+}
+
+- (void)rankingList:(VSGameRankBlock)callback
+{
+    [VSRequest get:@"games/gamerank" params:@{@"gamenumber":_gameId} success:^(NSURLRequest *request, id obj) {
+        if ([obj isKindOfClass:[NSDictionary class]]) {
+            if ([[obj objectForKey:@"returnCode"] integerValue] == 1) {
+                NSArray *list = [obj objectForKey:@"data"];
+                if ([list count]>0) {
+                    NSMutableArray *array  = [NSMutableArray array];
+                    for (NSDictionary *dic in list) {
+                        VSRankingInfo *info = [[VSRankingInfo alloc] initWithDic:dic];
+                        [array addObject:info];
+                    }
+                    _rankings = array;
+                    callback(YES,array);
+                }
+            }
+        }
+        callback(NO,nil);
+    }failed:^(NSURLRequest * request, id msg, NSError * error) {
+         callback(NO,nil);
+    }];
+}
+
 
 
 @end

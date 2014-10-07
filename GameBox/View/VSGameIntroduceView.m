@@ -18,6 +18,7 @@
 
 - (void)reloadData:(VSGameDetailInfo *)gameInfo
 {
+    
     [_pic setImage:[UIImage imageWithContentsOfFile:gameInfo.iconPath]];
     _nameLabel.text = gameInfo.name;
     _abstractLabel.text = gameInfo.abstract;
