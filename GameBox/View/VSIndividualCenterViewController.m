@@ -7,11 +7,13 @@
 //
 
 #import "VSIndividualCenterViewController.h"
-
-@interface VSIndividualCenterViewController ()
+#import "VSSessionManager.h"
+#import "VSPassport.h"
+@interface VSIndividualCenterViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,weak)IBOutlet UIImageView *photo;
 @property (nonatomic,weak)IBOutlet UILabel *nameLabel;
 @property (nonatomic,weak)IBOutlet UIView *errorView;
+@property (nonatomic,weak)IBOutlet UITableView *tableView;
 
 @end
 
@@ -22,6 +24,10 @@
     
     _photo.layer.masksToBounds = YES;
     _photo.layer.cornerRadius = _photo.frame.size.width/2.0;
+    
+    [[VSSessionManager shareInstance].passport reloadInfo:^(BOOL success){
+        
+    }];
     
     
     // Do any additional setup after loading the view.

@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 typedef  void(^VSSessionLoginCallback)(BOOL,id);
-
+typedef  void(^VSUserInfoReloadBlock)(BOOL success);
+typedef  void(^VSUserGameInfoReloadBlock)(BOOL success);
 @class VSLoginMessage;
 @class  VSPassport;
 @interface VSSessionManager : NSObject

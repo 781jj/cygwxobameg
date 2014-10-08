@@ -91,4 +91,6 @@ static VSSessionManager *_sessionManager = nil;
 {
     return _passport && [_passport isLogin];
 }
+
+
 @end

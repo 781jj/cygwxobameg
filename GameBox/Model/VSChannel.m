@@ -77,6 +77,7 @@
                 
                 
                 blockself.gameList = array;
+                callback(YES,array);
             }else{
                callback(NO,obj);
             }

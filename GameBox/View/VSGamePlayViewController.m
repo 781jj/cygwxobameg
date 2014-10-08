@@ -55,7 +55,6 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView;
 {
     NSLog(@"succes");
-    [webView stringByEvaluatingJavaScriptFromString:@"window.ios = {};"];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
