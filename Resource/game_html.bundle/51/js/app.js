@@ -89,6 +89,11 @@ function startGame() {
     })
 };
 function newGame() {
+    if (window.ios){
+        var req = new XMLHttpRequest();
+        req.open("GET", "gamebox://gamestart", false);
+        req.send();
+    }
     roundMsg = new createjs.Text(" " + round + "/10 ", s05 + "px Arial", "#ffffff");
     roundMsg.textAlign = 'left';
     roundMsg.x = s03;
@@ -329,7 +334,11 @@ function checkGame() {
     }
     if ( window.Android ) {
         window.Android.showShare(JSON.stringify(__score__));
-    } else {
+    } else if (window.ios) {
+        var req = new XMLHttpRequest();
+        req.open("GET", "gamebox://gameover?score=" + __score__, false);
+        req.send();
+    }else {
         window.P.showShare(__score__);
     }
 };
