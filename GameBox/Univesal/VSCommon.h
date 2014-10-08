@@ -6,4 +6,4 @@
 //  Copyright (c) 2014年 cyggame. All rights reserved.
 //
 
-#import "M2DHudView.h"
+//#import "M2DHudView.h"

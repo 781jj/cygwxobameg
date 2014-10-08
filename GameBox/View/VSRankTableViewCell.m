@@ -13,12 +13,14 @@
 #import "VSChannelList.h"
 #import "VSGameDetailInfo.h"
 #import "VSRankingInfo.h"
+#import "UIImageView+WebCache.h"
+#import "VSImageView.h"
 @interface VSRankTableViewCell ()
 
 @property (nonatomic,strong)UILabel *rankLabel;
 @property (nonatomic,strong)UIImageView *rankTrendImageView;
 @property (nonatomic,strong)UILabel *varietyLabel;
-@property (nonatomic,strong)UIImageView *photoView;
+@property (nonatomic,strong)VSImageView *photoView;
 @property (nonatomic,strong)UIImageView *genderView;
 @property (nonatomic,strong)UILabel *scoreLabel;
 @property (nonatomic,strong)UILabel *nameLabel;
@@ -117,7 +119,8 @@
             VSRankingInfo *rank = [game.rankList objectAtIndex:index];
             [self updateRank:rank];
             
-            _photoView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:rank.photoPath]]];
+            [_photoView reloadImage:rank.photoPath];
+        
             if (rank.gender) {
                 _genderView.image = [UIImage imageNamed:@"symbol_male"];
             }else{
