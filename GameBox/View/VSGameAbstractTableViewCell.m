@@ -28,7 +28,6 @@
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(self.bounds.size.width*0.025, 6, self.bounds.size.width*0.95, VSGameAbstractTableViewCellHeight*0.9)];
         contentView.backgroundColor = [UIColor whiteColor];
@@ -57,7 +56,7 @@
         UIButton *playButton = [UIButton buttonWithType:UIButtonTypeCustom];
         playButton.frame = CGRectMake(abstract.frame.origin.x+abstract.frame.size.width+5, contentView.frame.size.height*0.15, contentView.frame.size.width*0.24, contentView.frame.size.width*0.11);
         [playButton setImage:[UIImage imageNamed:@"btn_play_release"] forState:UIControlStateNormal];
-        [playButton addTarget:[VSHomeController shareInstance] action:@selector(gameClick:) forControlEvents:UIControlEventTouchUpInside];
+        [playButton addTarget:[VSHomeController shareInstance] action:@selector(gamePlayClick:) forControlEvents:UIControlEventTouchUpInside];
         [contentView addSubview:playButton];
         _playButton = playButton;
         

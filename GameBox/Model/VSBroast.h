@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+
+typedef  void(^VSBroastRefreshCallback)(BOOL,id message);
+
 @interface VSBroast : NSObject
+
++ (VSBroast *)handel;
+
+- (void)startRefresh:(VSBroastRefreshCallback )callback;
+- (void)cancle;
 
 @end

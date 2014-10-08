@@ -17,6 +17,7 @@
 #import "VSGalleryTableViewCell.h"
 #import "VSBroastTableViewCell.h"
 #import "VSGameAbstractTableViewCell.h"
+#import "VSHomeController.h"
 @interface VSChannelViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong )UITableView *table;
 @end
@@ -28,7 +29,7 @@
 {
     [super viewDidLoad];
 
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-100) style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -115,6 +116,11 @@
     return cell;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [[VSHomeController shareInstance] gameClick:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
+}
 
 
 @end

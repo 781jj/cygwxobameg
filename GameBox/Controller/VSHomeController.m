@@ -25,11 +25,33 @@ static VSHomeController *_homeController = nil;
     return _homeController;
 }
 
-
-- (void)gameClick:(UIButton *)sender
+- (void)gameClick:(NSString *)sender
 {
-    
+    NSInteger index = [(NSString *)sender integerValue];
     UIViewController *controller =   [[UIApplication sharedApplication] keyWindow].rootViewController;
+    if([controller isKindOfClass:[UINavigationController class]] ){
+        NSInteger gameIndex = index;
+        VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
+        if (gameIndex < [channel.gameList count] && gameIndex>=0) {
+            VSGameDetailInfo *info = [channel.gameList objectAtIndex:gameIndex];
+            if ([info isKindOfClass:[VSGameDetailInfo class]]) {
+                channel.currentGameId = info.gameId;
+            }
+        }
+        
+        UINavigationController *nav = (UINavigationController *)controller;
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *detail = [storyBoard instantiateViewControllerWithIdentifier:@"VSGameDetailView"];
+        [nav pushViewController:detail animated:YES];
+    }
+
+}
+
+
+- (void)gamePlayClick:(UIButton *)sender
+{
+    UIViewController *controller =   [[UIApplication sharedApplication] keyWindow].rootViewController;
+
     if([controller isKindOfClass:[UINavigationController class]] ){
         NSInteger tag = sender.tag;
         NSInteger gameIndex = tag - 1;
@@ -43,7 +65,7 @@ static VSHomeController *_homeController = nil;
         
         UINavigationController *nav = (UINavigationController *)controller;
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *detail = [storyBoard instantiateViewControllerWithIdentifier:@"VSGameDetailView"];
+        UIViewController *detail = [storyBoard instantiateViewControllerWithIdentifier:@"VSGamePlayViewController"];
         [nav pushViewController:detail animated:YES];
     }
 

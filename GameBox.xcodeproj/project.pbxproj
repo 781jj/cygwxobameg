@@ -15,8 +15,6 @@
 		3D3D122419E1456B002116C9 /* btn_play_release@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D3D122319E1456B002116C9 /* btn_play_release@2x.png */; };
 		3D3D122719E14E27002116C9 /* btn_Alternative_new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D3D122519E14E27002116C9 /* btn_Alternative_new@2x.png */; };
 		3D3D122819E14E27002116C9 /* btn_Alternative_hot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D3D122619E14E27002116C9 /* btn_Alternative_hot@2x.png */; };
-		3D81717719CD6C9500125961 /* VSUserGameInfomationRefreshHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81717619CD6C9500125961 /* VSUserGameInfomationRefreshHandle.m */; };
-		3D81717D19CD722500125961 /* VSUsersGameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81717C19CD722500125961 /* VSUsersGameResult.m */; };
 		3D81718019CD751900125961 /* VSChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81717F19CD751900125961 /* VSChannelViewController.m */; };
 		3D81718319CD757D00125961 /* VSChannelSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81718219CD757D00125961 /* VSChannelSwitch.m */; };
 		3D8B58DA19E0F965007F075B /* VSGalleryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B58D919E0F965007F075B /* VSGalleryTableViewCell.m */; };
@@ -43,6 +41,16 @@
 		3D987A0A19E28DA80069C26F /* btn_userhome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D987A0919E28DA80069C26F /* btn_userhome@2x.png */; };
 		3D987A0F19E299A00069C26F /* VSDetailGalleryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D987A0E19E299A00069C26F /* VSDetailGalleryView.m */; };
 		3D987A1219E299BB0069C26F /* VSRankingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D987A1119E299BB0069C26F /* VSRankingView.m */; };
+		3D9F174E19E4E96A0090C101 /* VSIndividualCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F174D19E4E96A0090C101 /* VSIndividualCenterViewController.m */; };
+		3D9F175119E4E9CF0090C101 /* VSEditUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F175019E4E9CF0090C101 /* VSEditUserInfoViewController.m */; };
+		3D9F175419E4E9E30090C101 /* VSPlayerPKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F175319E4E9E30090C101 /* VSPlayerPKViewController.m */; };
+		3D9F175A19E516C40090C101 /* head_default_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F175519E516C40090C101 /* head_default_big@2x.png */; };
+		3D9F175B19E516C40090C101 /* btn_share_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F175619E516C40090C101 /* btn_share_pressed@2x.png */; };
+		3D9F175C19E516C40090C101 /* btn_rank_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F175719E516C40090C101 /* btn_rank_pressed@2x.png */; };
+		3D9F175D19E516C40090C101 /* btn_edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F175819E516C40090C101 /* btn_edit@2x.png */; };
+		3D9F175E19E516C40090C101 /* btn_detele_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F175919E516C40090C101 /* btn_detele_pressed@2x.png */; };
+		3D9F176019E51CEB0090C101 /* VSUsersGameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F175F19E51CEB0090C101 /* VSUsersGameResult.m */; };
+		3D9F176319E51D0D0090C101 /* VSUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F176219E51D0D0090C101 /* VSUserManager.m */; };
 		3DA7966019E3922D00AB1340 /* btn_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DA7965F19E3922D00AB1340 /* btn_back@2x.png */; };
 		3DA7966319E3934E00AB1340 /* VSBackBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA7966119E3934E00AB1340 /* VSBackBarButtonItem.m */; };
 		3DA7966919E3BEA400AB1340 /* VSRankingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA7966819E3BEA400AB1340 /* VSRankingInfo.m */; };
@@ -98,10 +106,7 @@
 		3D3D122319E1456B002116C9 /* btn_play_release@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_play_release@2x.png"; path = "Resource/btn_play_release@2x.png"; sourceTree = "<group>"; };
 		3D3D122519E14E27002116C9 /* btn_Alternative_new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_Alternative_new@2x.png"; path = "Resource/btn_Alternative_new@2x.png"; sourceTree = "<group>"; };
 		3D3D122619E14E27002116C9 /* btn_Alternative_hot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_Alternative_hot@2x.png"; path = "Resource/btn_Alternative_hot@2x.png"; sourceTree = "<group>"; };
-		3D81717519CD6C9500125961 /* VSUserGameInfomationRefreshHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = VSUserGameInfomationRefreshHandle.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		3D81717619CD6C9500125961 /* VSUserGameInfomationRefreshHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = VSUserGameInfomationRefreshHandle.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		3D81717B19CD722500125961 /* VSUsersGameResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSUsersGameResult.h; sourceTree = "<group>"; };
-		3D81717C19CD722500125961 /* VSUsersGameResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSUsersGameResult.m; sourceTree = "<group>"; };
 		3D81717E19CD751900125961 /* VSChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSChannelViewController.h; sourceTree = "<group>"; };
 		3D81717F19CD751900125961 /* VSChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSChannelViewController.m; sourceTree = "<group>"; };
 		3D81718119CD757D00125961 /* VSChannelSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSChannelSwitch.h; sourceTree = "<group>"; };
@@ -153,6 +158,20 @@
 		3D987A0E19E299A00069C26F /* VSDetailGalleryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDetailGalleryView.m; sourceTree = "<group>"; };
 		3D987A1019E299BB0069C26F /* VSRankingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSRankingView.h; sourceTree = "<group>"; };
 		3D987A1119E299BB0069C26F /* VSRankingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSRankingView.m; sourceTree = "<group>"; };
+		3D9F174C19E4E96A0090C101 /* VSIndividualCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSIndividualCenterViewController.h; sourceTree = "<group>"; };
+		3D9F174D19E4E96A0090C101 /* VSIndividualCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSIndividualCenterViewController.m; sourceTree = "<group>"; };
+		3D9F174F19E4E9CF0090C101 /* VSEditUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSEditUserInfoViewController.h; sourceTree = "<group>"; };
+		3D9F175019E4E9CF0090C101 /* VSEditUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSEditUserInfoViewController.m; sourceTree = "<group>"; };
+		3D9F175219E4E9E30090C101 /* VSPlayerPKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSPlayerPKViewController.h; sourceTree = "<group>"; };
+		3D9F175319E4E9E30090C101 /* VSPlayerPKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSPlayerPKViewController.m; sourceTree = "<group>"; };
+		3D9F175519E516C40090C101 /* head_default_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "head_default_big@2x.png"; path = "Resource/head_default_big@2x.png"; sourceTree = "<group>"; };
+		3D9F175619E516C40090C101 /* btn_share_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_share_pressed@2x.png"; path = "Resource/btn_share_pressed@2x.png"; sourceTree = "<group>"; };
+		3D9F175719E516C40090C101 /* btn_rank_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_rank_pressed@2x.png"; path = "Resource/btn_rank_pressed@2x.png"; sourceTree = "<group>"; };
+		3D9F175819E516C40090C101 /* btn_edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_edit@2x.png"; path = "Resource/btn_edit@2x.png"; sourceTree = "<group>"; };
+		3D9F175919E516C40090C101 /* btn_detele_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_detele_pressed@2x.png"; path = "Resource/btn_detele_pressed@2x.png"; sourceTree = "<group>"; };
+		3D9F175F19E51CEB0090C101 /* VSUsersGameResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSUsersGameResult.m; sourceTree = "<group>"; };
+		3D9F176119E51D0D0090C101 /* VSUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSUserManager.h; sourceTree = "<group>"; };
+		3D9F176219E51D0D0090C101 /* VSUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSUserManager.m; sourceTree = "<group>"; };
 		3DA7965F19E3922D00AB1340 /* btn_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_back@2x.png"; path = "Resource/btn_back@2x.png"; sourceTree = "<group>"; };
 		3DA7966119E3934E00AB1340 /* VSBackBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSBackBarButtonItem.m; sourceTree = "<group>"; };
 		3DA7966219E3934E00AB1340 /* VSBackBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSBackBarButtonItem.h; sourceTree = "<group>"; };
@@ -308,10 +327,10 @@
 		3D97A84419DA9D44005468F5 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				3D81717519CD6C9500125961 /* VSUserGameInfomationRefreshHandle.h */,
-				3D81717619CD6C9500125961 /* VSUserGameInfomationRefreshHandle.m */,
+				3D9F175F19E51CEB0090C101 /* VSUsersGameResult.m */,
 				3D81717B19CD722500125961 /* VSUsersGameResult.h */,
-				3D81717C19CD722500125961 /* VSUsersGameResult.m */,
+				3D9F176119E51D0D0090C101 /* VSUserManager.h */,
+				3D9F176219E51D0D0090C101 /* VSUserManager.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -365,9 +384,25 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		3D9F174B19E4E92C0090C101 /* IndividualCenter */ = {
+			isa = PBXGroup;
+			children = (
+				3D9F174C19E4E96A0090C101 /* VSIndividualCenterViewController.h */,
+				3D9F174D19E4E96A0090C101 /* VSIndividualCenterViewController.m */,
+				3D9F174F19E4E9CF0090C101 /* VSEditUserInfoViewController.h */,
+				3D9F175019E4E9CF0090C101 /* VSEditUserInfoViewController.m */,
+			);
+			name = IndividualCenter;
+			sourceTree = "<group>";
+		};
 		3DAC904919D2A2C80039DAC3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3D9F175519E516C40090C101 /* head_default_big@2x.png */,
+				3D9F175619E516C40090C101 /* btn_share_pressed@2x.png */,
+				3D9F175719E516C40090C101 /* btn_rank_pressed@2x.png */,
+				3D9F175819E516C40090C101 /* btn_edit@2x.png */,
+				3D9F175919E516C40090C101 /* btn_detele_pressed@2x.png */,
 				3DA7967519E3D11200AB1340 /* btn_pk_released@2x.png */,
 				3DA7966D19E3C96A00AB1340 /* triangle_red_down@2x.png */,
 				3DA7966E19E3C96A00AB1340 /* triangle_green_up@2x.png */,
@@ -465,6 +500,7 @@
 		3DEC30A919CD30F9009FCCFE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3D9F174B19E4E92C0090C101 /* IndividualCenter */,
 				3D987A0719E284120069C26F /* SubView */,
 				3D987A0619E283FF0069C26F /* Cell */,
 				3D987A0819E284570069C26F /* Login */,
@@ -476,6 +512,8 @@
 				3DAC905519D2B7530039DAC3 /* VSGameDetailViewController.m */,
 				3DAC905719D2B7690039DAC3 /* VSGamePlayViewController.h */,
 				3DAC905819D2B7690039DAC3 /* VSGamePlayViewController.m */,
+				3D9F175219E4E9E30090C101 /* VSPlayerPKViewController.h */,
+				3D9F175319E4E9E30090C101 /* VSPlayerPKViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -592,6 +630,8 @@
 				3DA7966019E3922D00AB1340 /* btn_back@2x.png in Resources */,
 				3DA7967319E3C96A00AB1340 /* symbol_male@2x.png in Resources */,
 				3DA7967219E3C96A00AB1340 /* triangle_green_up@2x.png in Resources */,
+				3D9F175C19E516C40090C101 /* btn_rank_pressed@2x.png in Resources */,
+				3D9F175E19E516C40090C101 /* btn_detele_pressed@2x.png in Resources */,
 				3DA7967119E3C96A00AB1340 /* triangle_red_down@2x.png in Resources */,
 				3D3D122219E13532002116C9 /* dot_banner_red@2x.png in Resources */,
 				3DEC308419CD2236009FCCFE /* Images.xcassets in Resources */,
@@ -599,9 +639,12 @@
 				3DEC307619CD2236009FCCFE /* InfoPlist.strings in Resources */,
 				3D97A84019DA51D8005468F5 /* M2DHudView.bundle in Resources */,
 				3DA7967619E3D11200AB1340 /* btn_pk_released@2x.png in Resources */,
+				3D9F175A19E516C40090C101 /* head_default_big@2x.png in Resources */,
 				3D3D122719E14E27002116C9 /* btn_Alternative_new@2x.png in Resources */,
 				3DEC307F19CD2236009FCCFE /* Main.storyboard in Resources */,
+				3D9F175D19E516C40090C101 /* btn_edit@2x.png in Resources */,
 				3D3D122419E1456B002116C9 /* btn_play_release@2x.png in Resources */,
+				3D9F175B19E516C40090C101 /* btn_share_pressed@2x.png in Resources */,
 				3DAC904B19D2A2D60039DAC3 /* game.json in Resources */,
 				3D987A0A19E28DA80069C26F /* btn_userhome@2x.png in Resources */,
 				3D3D122119E13532002116C9 /* dot_banner_white@2x.png in Resources */,
@@ -644,6 +687,7 @@
 				3D3D121319E123D8002116C9 /* VSPageView.m in Sources */,
 				3D3D121B19E126C5002116C9 /* VSHomeController.m in Sources */,
 				3D81718319CD757D00125961 /* VSChannelSwitch.m in Sources */,
+				3D9F174E19E4E96A0090C101 /* VSIndividualCenterViewController.m in Sources */,
 				3D987A1219E299BB0069C26F /* VSRankingView.m in Sources */,
 				3D90422219D905C200C26CD9 /* VSTempPassport.m in Sources */,
 				3D987A0519E26C100069C26F /* VSGameIntroduceView.m in Sources */,
@@ -652,10 +696,10 @@
 				3D90422B19D9092C00C26CD9 /* VSParamLoginMessage.m in Sources */,
 				3D987A0F19E299A00069C26F /* VSDetailGalleryView.m in Sources */,
 				3D97A84119DA51D8005468F5 /* M2DHudView.m in Sources */,
+				3D9F176019E51CEB0090C101 /* VSUsersGameResult.m in Sources */,
 				3DAC905019D2B17A0039DAC3 /* VSGameImage.m in Sources */,
 				3DEC30B619CD34A8009FCCFE /* VSRequest.m in Sources */,
 				3D90421B19D9049600C26CD9 /* VSSessionManager.m in Sources */,
-				3D81717719CD6C9500125961 /* VSUserGameInfomationRefreshHandle.m in Sources */,
 				3DEC307C19CD2236009FCCFE /* AppDelegate.m in Sources */,
 				3DAC905619D2B7530039DAC3 /* VSGameDetailViewController.m in Sources */,
 				3D90422819D9090E00C26CD9 /* VSTempLoginMessage.m in Sources */,
@@ -664,12 +708,14 @@
 				3D97A84719DA9D66005468F5 /* VSFavorGame.m in Sources */,
 				3D9879FF19E26BB20069C26F /* VSBroast.m in Sources */,
 				3D8B58DD19E0F983007F075B /* VSBroastTableViewCell.m in Sources */,
+				3D9F175119E4E9CF0090C101 /* VSEditUserInfoViewController.m in Sources */,
 				3DEC30B019CD30F9009FCCFE /* VSChannelList.m in Sources */,
 				3D987A0219E26BFC0069C26F /* VSGameDetailInfoView.m in Sources */,
+				3D9F176319E51D0D0090C101 /* VSUserManager.m in Sources */,
 				3DA7966319E3934E00AB1340 /* VSBackBarButtonItem.m in Sources */,
 				3D8B58E019E0F99B007F075B /* VSGameAbstractTableViewCell.m in Sources */,
 				3D9879FC19E26B8D0069C26F /* VSBroastView.m in Sources */,
-				3D81717D19CD722500125961 /* VSUsersGameResult.m in Sources */,
+				3D9F175419E4E9E30090C101 /* VSPlayerPKViewController.m in Sources */,
 				3DEC30BC19CD60E4009FCCFE /* VSGameDetailInfo.m in Sources */,
 				3D8B58DA19E0F965007F075B /* VSGalleryTableViewCell.m in Sources */,
 				3D90421F19D905AF00C26CD9 /* VSPassport.m in Sources */,

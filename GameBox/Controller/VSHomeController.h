@@ -10,9 +10,9 @@
 
 @interface VSHomeController : NSObject
 + (VSHomeController *)shareInstance;
-- (void)gameClick:(id)sender;
+- (void)gamePlayClick:(id)sender;
 - (void)galleryClick:(id)sender;
 - (void)channelClick:(id)sender;
-
+- (void)gameClick:(id)sender;
 - (void)pkClick:(id)sender;
 @end
