@@ -12,7 +12,7 @@ static NSString *const M2DHudViewNotificationWithIdentifier = @"M2DHudViewNotifi
 static NSString *const M2DHudViewGlobalNotification = @"M2DHudViewGlobalNotification";
 static NSString *const M2DHudViewDismissNotification = @"M2DHudViewDismissNotification";
 NSString *const M2DHudViewIdentifier = @"M2DHudViewIdentifier";
-static CGFloat const M2DHudViewEdgeSize = 160.;
+static CGFloat const M2DHudViewEdgeSize = 80;
 static NSTimeInterval const M2DHudViewAnimationDuration = 0.1;
 static CGFloat const M2DHudViewBackgroundAlpha = 0.7;
 
@@ -118,17 +118,17 @@ static M2DHudView *_hudLoadingView = nil;
 	self = [self init];
 	if (self) {
 		UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-		imageView.frame = CGRectMake(0, 0, 50, 50);
+		imageView.frame = CGRectMake(0, 0, 23, 23);
 		imageView.center = contentView_.center;
 		[contentView_ addSubview:imageView];
-		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-		label.textAlignment = NSTextAlignmentCenter;
-		label.center = CGPointMake(imageView.center.x, imageView.center.y + 55);
-		[label setText:title];
-		label.textColor = [UIColor whiteColor];
-		label.backgroundColor = [UIColor clearColor];
-		label.font = [UIFont fontWithName:@"Helvetica" size:15];
-		[contentView_ addSubview:label];
+//		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 15)];
+//		label.textAlignment = NSTextAlignmentCenter;
+//		label.center = CGPointMake(imageView.center.x, imageView.center.y + 22);
+//		[label setText:title];
+//		label.textColor = [UIColor whiteColor];
+//		label.backgroundColor = [UIColor clearColor];
+//		label.font = [UIFont fontWithName:@"Helvetica" size:15];
+//		[contentView_ addSubview:label];
 	}
 	
 	return self;
@@ -202,16 +202,16 @@ static M2DHudView *_hudLoadingView = nil;
 			image.frame = CGRectMake(0, 0, 80, 80);
 			image.center = contentView_.center;
 			[contentView_ addSubview:image];
-			UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-			label.textAlignment = NSTextAlignmentCenter;
-			label.center = CGPointMake(image.center.x, image.center.y + 55);
-			[label setText:title?:@"Success"];
-			label.adjustsFontSizeToFitWidth = YES;
-			label.textColor = [UIColor whiteColor];
-			label.backgroundColor = [UIColor clearColor];
-			label.font = [UIFont fontWithName:@"Helvetica" size:15];
-			label.font = [UIFont boldSystemFontOfSize:15];
-			[contentView_ addSubview:label];
+//			UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+//			label.textAlignment = NSTextAlignmentCenter;
+//			label.center = CGPointMake(image.center.x, image.center.y + 55);
+//			[label setText:title?:@"Success"];
+//			label.adjustsFontSizeToFitWidth = YES;
+//			label.textColor = [UIColor whiteColor];
+//			label.backgroundColor = [UIColor clearColor];
+//			label.font = [UIFont fontWithName:@"Helvetica" size:15];
+//			label.font = [UIFont boldSystemFontOfSize:15];
+//			[contentView_ addSubview:label];
 			break;
 		}
 		case M2DHudViewStyleError: {
@@ -219,16 +219,16 @@ static M2DHudView *_hudLoadingView = nil;
 			image.frame = CGRectMake(0, 0, 50, 50);
 			image.center = contentView_.center;
 			[contentView_ addSubview:image];
-			UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-			label.textAlignment = NSTextAlignmentCenter;
-			label.center = CGPointMake(image.center.x, image.center.y + 55);
-			[label setText:title?:@"Error"];
-			label.adjustsFontSizeToFitWidth = YES;
-			label.textColor = [UIColor whiteColor];
-			label.backgroundColor = [UIColor clearColor];
-			label.font = [UIFont fontWithName:@"Helvetica" size:15];
-			label.font = [UIFont boldSystemFontOfSize:15];
-			[contentView_ addSubview:label];
+//			UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+//			label.textAlignment = NSTextAlignmentCenter;
+//			label.center = CGPointMake(image.center.x, image.center.y + 55);
+//			[label setText:title?:@"Error"];
+//			label.adjustsFontSizeToFitWidth = YES;
+//			label.textColor = [UIColor whiteColor];
+//			label.backgroundColor = [UIColor clearColor];
+//			label.font = [UIFont fontWithName:@"Helvetica" size:15];
+//			label.font = [UIFont boldSystemFontOfSize:15];
+//			[contentView_ addSubview:label];
 			break;
 		}
 		case M2DHudViewStyleLoading: {
@@ -237,16 +237,16 @@ static M2DHudView *_hudLoadingView = nil;
 			indicator.center = contentView_.center;
 			[indicator startAnimating];
 			[contentView_ addSubview:indicator];
-			UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-			label.textAlignment = NSTextAlignmentCenter;
-			label.center = CGPointMake(indicator.center.x, indicator.center.y + 55);
-			[label setText:title?:@"Loading..."];
-			label.adjustsFontSizeToFitWidth = YES;
-			label.textColor = [UIColor whiteColor];
-			label.backgroundColor = [UIColor clearColor];
-			label.font = [UIFont fontWithName:@"Helvetica" size:15];
-			label.font = [UIFont boldSystemFontOfSize:15];
-			[contentView_ addSubview:label];
+//			UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+//			label.textAlignment = NSTextAlignmentCenter;
+//			label.center = CGPointMake(indicator.center.x, indicator.center.y + 55);
+//			[label setText:title?:@"Loading..."];
+//			label.adjustsFontSizeToFitWidth = YES;
+//			label.textColor = [UIColor whiteColor];
+//			label.backgroundColor = [UIColor clearColor];
+//			label.font = [UIFont fontWithName:@"Helvetica" size:15];
+//			label.font = [UIFont boldSystemFontOfSize:15];
+//			[contentView_ addSubview:label];
 			break;
 		}
 		default:
