@@ -89,11 +89,10 @@ function startGame() {
     })
 };
 function newGame() {
-    if (window.ios){
-        var req = new XMLHttpRequest();
-        req.open("GET", "gamebox://gamestart", false);
-        req.send();
-    }
+    // 发送给iphone设备记录游戏次数
+    
+    window.location='gamebox://gamestart?gamenumber=51';  
+
     roundMsg = new createjs.Text(" " + round + "/10 ", s05 + "px Arial", "#ffffff");
     roundMsg.textAlign = 'left';
     roundMsg.x = s03;
@@ -330,17 +329,22 @@ function checkGame() {
     // window.wxFriend.desc = "我打出了" + Math.floor(scoreAll / 10) + "." + scoreAll % 10 + "环，并销魂命中一发" + Math.floor(maxScore / 10) + "." + maxScore % 10 + "环！快来挑战我吧！"
 
     window.__score__ = {
-        score: Math.floor(scoreAll)
+        score: Math.floor(scoreAll / 10) + "." + scoreAll % 10 
     }
+
+
+    // 发送给iPhone设备记录分数
+    window.location='gamebox://gameover?score=' + __score__.score; 
+
     if ( window.Android ) {
         window.Android.showShare(JSON.stringify(__score__));
-    } else if (window.ios) {
-        var req = new XMLHttpRequest();
-        req.open("GET", "gamebox://gameover?score=" + __score__, false);
-        req.send();
-    }else {
+    } else {
         window.P.showShare(__score__);
+        
+        window.location='gamebox://gamestart?score=' + window.__score__;  
     }
+
+     
 };
 function updateSql() {
 

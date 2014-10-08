@@ -10,6 +10,11 @@
 #import "VSChannelList.h"
 #import "VSGameHtml.h"
 #import "VSBackBarButtonItem.h"
+
+
+
+static NSString* const kGameboxSchema = @"gamebox";
+
 @interface VSGamePlayViewController ()<UIWebViewDelegate>
 @property (nonatomic,weak)IBOutlet UIWebView *webView;
 @end
@@ -55,6 +60,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView;
 {
     NSLog(@"succes");
+
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
@@ -65,6 +71,10 @@
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     NSLog(@"request:%@", request.URL);
+    if ([request.URL.scheme isEqualToString:kGameboxSchema]){
+        
+        return NO;
+    }
     return YES;
 }
 
