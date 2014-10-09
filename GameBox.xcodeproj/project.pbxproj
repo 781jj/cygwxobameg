@@ -98,6 +98,7 @@
 		3DEC30B019CD30F9009FCCFE /* VSChannelList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC30AE19CD30F9009FCCFE /* VSChannelList.m */; };
 		3DEC30B619CD34A8009FCCFE /* VSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC30B519CD34A8009FCCFE /* VSRequest.m */; };
 		3DEC30BC19CD60E4009FCCFE /* VSGameDetailInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC30BB19CD60E4009FCCFE /* VSGameDetailInfo.m */; };
+		F423898019E667F1004651E5 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F423897F19E667F1004651E5 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -267,6 +268,7 @@
 		3DEC30B519CD34A8009FCCFE /* VSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = VSRequest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		3DEC30BA19CD60E4009FCCFE /* VSGameDetailInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSGameDetailInfo.h; sourceTree = "<group>"; };
 		3DEC30BB19CD60E4009FCCFE /* VSGameDetailInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSGameDetailInfo.m; sourceTree = "<group>"; };
+		F423897F19E667F1004651E5 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Plugin/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DEC306E19CD2236009FCCFE /* CoreGraphics.framework in Frameworks */,
+				F423898019E667F1004651E5 /* FacebookSDK.framework in Frameworks */,
 				3DEC307019CD2236009FCCFE /* UIKit.framework in Frameworks */,
 				3DEC306C19CD2236009FCCFE /* Foundation.framework in Frameworks */,
 			);
@@ -532,6 +535,7 @@
 		3DEC306A19CD2236009FCCFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F423897F19E667F1004651E5 /* FacebookSDK.framework */,
 				3DEC306B19CD2236009FCCFE /* Foundation.framework */,
 				3DEC306D19CD2236009FCCFE /* CoreGraphics.framework */,
 				3DEC306F19CD2236009FCCFE /* UIKit.framework */,
@@ -699,6 +703,7 @@
 			knownRegions = (
 				en,
 				Base,
+				he,
 			);
 			mainGroup = 3DEC305F19CD2236009FCCFE;
 			productRefGroup = 3DEC306919CD2236009FCCFE /* Products */;
@@ -960,6 +965,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Plugin/FacebookSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameBox/GameBox-Prefix.pch";
@@ -978,6 +984,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Plugin/FacebookSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GameBox/GameBox-Prefix.pch";
