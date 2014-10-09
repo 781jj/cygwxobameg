@@ -180,13 +180,14 @@ var shareConfig = {
 	}
 	var _gameBBList = [], _gameBBListIndex = 0, _gameOver = false, _gameStart = false, _gameTime, _gameTimeNum, _gameScore;
 	function gameInit(){
+
         createjs.Sound.registerSound( {src:"oneNightNine/err.mp3", id:"err"} );
         createjs.Sound.registerSound( {src:"oneNightNine/end.mp3", id:"end"} );
         createjs.Sound.registerSound( {src:"oneNightNine/tap.mp3", id:"tap"} );
 		gameRestart();
 	}
 	function gameRestart(){
-		console.log('gameRestart');
+
 		_gameBBList = [];
 		_gameBBListIndex = 0;
 		_gameScore = 0;
@@ -199,6 +200,8 @@ var shareConfig = {
 		refreshGameLayer(GameLayer[1], 1);
 	}
 	function gameStart(){
+		// 发送给iphone设备记录游戏次数
+        window.location='gamebox://gamestart?gamenumber=4';  
 		_gameStart = true;
 		_gameTime = setInterval(gameTime, 10);
 	}
@@ -337,6 +340,11 @@ var shareConfig = {
 				}
 			})
 		}, 1000)
+
+		// 发送给iPhone设备记录分数
+    	window.location='gamebox://gameover?gamenumber=4&score=' + _gameScore; 
+
+
 		var l = document.getElementById('GameScoreLayer');
 		var c = document.getElementById(_gameBBList[_gameBBListIndex-1].id).className.match(_ttreg)[1];
 		l.className = l.className.replace(/bgc\d/, 'bgc'+c);

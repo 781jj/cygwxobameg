@@ -173,6 +173,7 @@ function crossAjax(config){
 //上传积分(每一关完成都会上传积分)
 var loginCounter=0;
 function dp_submitScore(vLevel,vScore){
+
     crossAjax({
         url:rootIndex+'games/uploadscore',
         data:{
@@ -424,6 +425,7 @@ window.addEventListener('load',function(e) {
 	};
 	//初始化函数
 	function _init () {
+		alert('init');
 		_resetFrame();
 		_createTopMenu();
 	}

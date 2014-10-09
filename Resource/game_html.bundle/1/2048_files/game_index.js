@@ -6,6 +6,8 @@ function dp_submitScore(vLevel,vScore){
 			title: "Typical 2048 game, click to play." + " I got " + vScore + " points, " + vLevel + "level in this game, come on!"
 		}
 	})
+
+	
 }
 
 var shareConfig = {

@@ -4642,6 +4642,7 @@ var shareConfig = {
 					} catch (c) {}
 					return tq
 				}, c.zm.ontouchstart = function(a) {
+					
 					var b;
 					if (this.zF.UG || this.zF.moused) {
 						try {
@@ -4730,6 +4731,7 @@ var shareConfig = {
 		UI: function(a, b) {
 			b && (a.ontouchstart = function(a) {
 				try {
+					
 					a.preventDefault(), a.bubbles = tq
 				} catch (b) {}
 				return tq
@@ -5832,6 +5834,7 @@ var shareConfig = {
 					a.g.dR()
 				};
 			d[d[pZ]] = new _Y4I(e.Sa, f), d[d[pZ]] = new _Y4I(e.sB, function() {
+				alert('h8782UU898weruii9w777IYYSIH');
 				this.g.aJ.clear(), this.g.sL(this.g.levels[this.g.UJ])
 			}), b.KY > b.Zz ? this.zv(a, this.S.kH, e.sN + ":" + b.Zz, "", d) : this.zv(a, this.S.kH, e.sM, "", d), a.save(), a.font = "10pt Arial", a[ZK] = "white", a.textAlign = "center", a.textBaseline = "middle", a.shadowColor = "white", a.shadowBlur = 6, c = (this[w_] - this.S.kH.y) / 2 + 50 + this.da, b.dV ? a[ZH](e.sZZ + ":" + b.Zz, this[W_] / 2, c) : a[ZH](e.sZX + ":" + b.Zz, this[W_] / 2, c), a.shadowBlur = 8, this.O.uj(a, (this[W_] - this.S.kH.x) / 2 + 10, (this[w_] - this.S.kH.y) / 2 + 80 + this.da, this.S.kH.x - 20, 40, 15, b.qds), a[ZS]()
 		},

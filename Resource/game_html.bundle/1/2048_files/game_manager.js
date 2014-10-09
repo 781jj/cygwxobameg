@@ -1,4 +1,5 @@
 function GameManager(size, InputManager, Actuator, ScoreManager) {
+
   this.size         = size; // Size of the grid
   this.inputManager = new InputManager;
   this.scoreManager = new ScoreManager;
@@ -15,6 +16,7 @@ function GameManager(size, InputManager, Actuator, ScoreManager) {
 
 // Restart the game
 GameManager.prototype.restart = function () {
+  
   this.actuator.continue();
   this.setup();
 };
@@ -35,6 +37,10 @@ GameManager.prototype.isGameTerminated = function () {
 
 // Set up the game
 GameManager.prototype.setup = function () {
+  
+  // 发送给iphone设备记录游戏次数
+  window.location='gamebox://gamestart?gamenumber=1';  
+
   this.grid        = new Grid(this.size);
 
   this.score       = 0;

@@ -334,7 +334,7 @@ function checkGame() {
 
 
     // 发送给iPhone设备记录分数
-    window.location='gamebox://gameover?score=' + __score__.score; 
+    window.location='gamebox://gameover?gamenumber=51&score=' + __score__.score; 
 
     if ( window.Android ) {
         window.Android.showShare(JSON.stringify(__score__));
