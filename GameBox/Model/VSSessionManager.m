@@ -22,7 +22,7 @@ static VSSessionManager *_sessionManager = nil;
 {
     self = [super init];
     if (self) {
-        [_sessionManager wakeup];
+        [self wakeup];
     }
     return self;
 }

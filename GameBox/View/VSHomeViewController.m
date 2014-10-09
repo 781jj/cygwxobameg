@@ -44,6 +44,7 @@ CGRectGetWidth(self.scrollview.frame), CGRectGetHeight(self.scrollview.frame))
         [_scrollview scrollRectToVisible:CGRectMake (0, 0, 0, 0) animated:NO];
         [_scrollview addSubview:controller.view];
         [controller didMoveToParentViewController:self];
+        
     }
     // Do any additional setup after loading the view.
 }

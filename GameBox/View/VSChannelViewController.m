@@ -43,7 +43,7 @@
     VSChannel *channel = [[VSChannelList shareInstance] channelWithType:_type];
     [channel loadData:^(BOOL success,id msg){
         if (success) {
-            [_table reloadData];
+            [_table performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
         }
     }];
 

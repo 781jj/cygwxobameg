@@ -10,7 +10,7 @@
 #import "VSChannelList.h"
 #import "VSGameHtml.h"
 #import "VSBackBarButtonItem.h"
-
+#import "VSUserManager.h"
 
 
 static NSString* const kGameboxSchema = @"gamebox";
@@ -42,6 +42,8 @@ static NSString* const kGameboxSchema = @"gamebox";
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     [_webView loadRequest:request];
+    
+    [[VSUserManager shareInstance]updateUserPlayInfo];
     // Do any additional setup after loading the view.
 }
 
@@ -60,6 +62,7 @@ static NSString* const kGameboxSchema = @"gamebox";
 - (void)webViewDidFinishLoad:(UIWebView *)webView;
 {
     NSLog(@"succes");
+    
 
 }
 
@@ -77,6 +80,8 @@ static NSString* const kGameboxSchema = @"gamebox";
     }
     return YES;
 }
+
+
 
 
 

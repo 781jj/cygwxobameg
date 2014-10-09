@@ -65,7 +65,7 @@
                     [array addObject:favorGame];
                 }
                 
-                [array addObject:[VSGameBroadcast shareInstance]];
+                //[array addObject:[VSGameBroadcast shareInstance]];
                 if([dic objectForKey:@"gamelist"]){
                     NSArray *list = (NSArray *)[dic objectForKey:@"gamelist"];
                     [list enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D05337D19E6650F00812CB6 /* VSUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D05337C19E6650F00812CB6 /* VSUserManager.m */; };
 		3D3D121319E123D8002116C9 /* VSPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3D121219E123D8002116C9 /* VSPageView.m */; };
 		3D3D121B19E126C5002116C9 /* VSHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3D121A19E126C5002116C9 /* VSHomeController.m */; };
 		3D3D121E19E133F8002116C9 /* VSPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3D121C19E133F8002116C9 /* VSPageControl.m */; };
@@ -29,6 +30,8 @@
 		3D90422E19D90ABE00C26CD9 /* VSGamePassport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90422D19D90ABE00C26CD9 /* VSGamePassport.m */; };
 		3D90423319D94E2400C26CD9 /* VSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90423219D94E2400C26CD9 /* VSLoginViewController.m */; };
 		3D90423619D953C500C26CD9 /* VSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90423519D953C500C26CD9 /* VSHomeViewController.m */; };
+		3D945ED919E5668800C316E8 /* SKSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D945ED419E5668800C316E8 /* SKSTableViewCell.m */; };
+		3D945EDA19E5668800C316E8 /* SKSTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D945ED619E5668800C316E8 /* SKSTableView.m */; };
 		3D97A84019DA51D8005468F5 /* M2DHudView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D97A83D19DA51D8005468F5 /* M2DHudView.bundle */; };
 		3D97A84119DA51D8005468F5 /* M2DHudView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D97A83F19DA51D8005468F5 /* M2DHudView.m */; };
 		3D97A84719DA9D66005468F5 /* VSFavorGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D97A84619DA9D66005468F5 /* VSFavorGame.m */; };
@@ -49,7 +52,6 @@
 		3D9F175C19E516C40090C101 /* btn_rank_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F175719E516C40090C101 /* btn_rank_pressed@2x.png */; };
 		3D9F175D19E516C40090C101 /* btn_edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F175819E516C40090C101 /* btn_edit@2x.png */; };
 		3D9F175E19E516C40090C101 /* btn_detele_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F175919E516C40090C101 /* btn_detele_pressed@2x.png */; };
-		3D9F176019E51CEB0090C101 /* VSUsersGameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F175F19E51CEB0090C101 /* VSUsersGameResult.m */; };
 		3D9F179619E551AC0090C101 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F177619E551AC0090C101 /* MKAnnotationView+WebCache.m */; };
 		3D9F179719E551AC0090C101 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F177819E551AC0090C101 /* NSData+ImageContentType.m */; };
 		3D9F179819E551AC0090C101 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F177A19E551AC0090C101 /* SDImageCache.m */; };
@@ -112,6 +114,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D05337B19E6650F00812CB6 /* VSUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSUserManager.h; sourceTree = "<group>"; };
+		3D05337C19E6650F00812CB6 /* VSUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSUserManager.m; sourceTree = "<group>"; };
 		3D3D121119E123D8002116C9 /* VSPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSPageView.h; sourceTree = "<group>"; };
 		3D3D121219E123D8002116C9 /* VSPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSPageView.m; sourceTree = "<group>"; };
 		3D3D121919E126C5002116C9 /* VSHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSHomeController.h; sourceTree = "<group>"; };
@@ -123,7 +127,6 @@
 		3D3D122319E1456B002116C9 /* btn_play_release@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_play_release@2x.png"; path = "Resource/btn_play_release@2x.png"; sourceTree = "<group>"; };
 		3D3D122519E14E27002116C9 /* btn_Alternative_new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_Alternative_new@2x.png"; path = "Resource/btn_Alternative_new@2x.png"; sourceTree = "<group>"; };
 		3D3D122619E14E27002116C9 /* btn_Alternative_hot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_Alternative_hot@2x.png"; path = "Resource/btn_Alternative_hot@2x.png"; sourceTree = "<group>"; };
-		3D81717B19CD722500125961 /* VSUsersGameResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSUsersGameResult.h; sourceTree = "<group>"; };
 		3D81717E19CD751900125961 /* VSChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSChannelViewController.h; sourceTree = "<group>"; };
 		3D81717F19CD751900125961 /* VSChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSChannelViewController.m; sourceTree = "<group>"; };
 		3D81718119CD757D00125961 /* VSChannelSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSChannelSwitch.h; sourceTree = "<group>"; };
@@ -152,6 +155,10 @@
 		3D90423219D94E2400C26CD9 /* VSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSLoginViewController.m; sourceTree = "<group>"; };
 		3D90423419D953C500C26CD9 /* VSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSHomeViewController.h; sourceTree = "<group>"; };
 		3D90423519D953C500C26CD9 /* VSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSHomeViewController.m; sourceTree = "<group>"; };
+		3D945ED419E5668800C316E8 /* SKSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSTableViewCell.m; sourceTree = "<group>"; };
+		3D945ED519E5668800C316E8 /* SKSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSTableViewCell.h; sourceTree = "<group>"; };
+		3D945ED619E5668800C316E8 /* SKSTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSTableView.m; sourceTree = "<group>"; };
+		3D945ED719E5668800C316E8 /* SKSTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSTableView.h; sourceTree = "<group>"; };
 		3D97A83D19DA51D8005468F5 /* M2DHudView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = M2DHudView.bundle; sourceTree = "<group>"; };
 		3D97A83E19DA51D8005468F5 /* M2DHudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2DHudView.h; sourceTree = "<group>"; };
 		3D97A83F19DA51D8005468F5 /* M2DHudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2DHudView.m; sourceTree = "<group>"; };
@@ -186,7 +193,6 @@
 		3D9F175719E516C40090C101 /* btn_rank_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_rank_pressed@2x.png"; path = "Resource/btn_rank_pressed@2x.png"; sourceTree = "<group>"; };
 		3D9F175819E516C40090C101 /* btn_edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_edit@2x.png"; path = "Resource/btn_edit@2x.png"; sourceTree = "<group>"; };
 		3D9F175919E516C40090C101 /* btn_detele_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_detele_pressed@2x.png"; path = "Resource/btn_detele_pressed@2x.png"; sourceTree = "<group>"; };
-		3D9F175F19E51CEB0090C101 /* VSUsersGameResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSUsersGameResult.m; sourceTree = "<group>"; };
 		3D9F177519E551AC0090C101 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		3D9F177619E551AC0090C101 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		3D9F177719E551AC0090C101 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -379,8 +385,8 @@
 		3D97A84419DA9D44005468F5 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				3D9F175F19E51CEB0090C101 /* VSUsersGameResult.m */,
-				3D81717B19CD722500125961 /* VSUsersGameResult.h */,
+				3D05337B19E6650F00812CB6 /* VSUserManager.h */,
+				3D05337C19E6650F00812CB6 /* VSUserManager.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -439,6 +445,10 @@
 		3D9F174B19E4E92C0090C101 /* IndividualCenter */ = {
 			isa = PBXGroup;
 			children = (
+				3D945ED419E5668800C316E8 /* SKSTableViewCell.m */,
+				3D945ED519E5668800C316E8 /* SKSTableViewCell.h */,
+				3D945ED619E5668800C316E8 /* SKSTableView.m */,
+				3D945ED719E5668800C316E8 /* SKSTableView.h */,
 				3D9F174C19E4E96A0090C101 /* VSIndividualCenterViewController.h */,
 				3D9F174D19E4E96A0090C101 /* VSIndividualCenterViewController.m */,
 				3D9F174F19E4E9CF0090C101 /* VSEditUserInfoViewController.h */,
@@ -797,7 +807,6 @@
 				3D9F179B19E551AC0090C101 /* SDWebImageDownloader.m in Sources */,
 				3D987A0F19E299A00069C26F /* VSDetailGalleryView.m in Sources */,
 				3D97A84119DA51D8005468F5 /* M2DHudView.m in Sources */,
-				3D9F176019E51CEB0090C101 /* VSUsersGameResult.m in Sources */,
 				3D9F17A319E551AC0090C101 /* UIImageView+HighlightedWebCache.m in Sources */,
 				3D9F179719E551AC0090C101 /* NSData+ImageContentType.m in Sources */,
 				3DAC905019D2B17A0039DAC3 /* VSGameImage.m in Sources */,
@@ -806,6 +815,7 @@
 				3DEC307C19CD2236009FCCFE /* AppDelegate.m in Sources */,
 				3D9F17A419E551AC0090C101 /* UIImageView+WebCache.m in Sources */,
 				3D9F17A119E551AC0090C101 /* UIImage+MultiFormat.m in Sources */,
+				3D945EDA19E5668800C316E8 /* SKSTableView.m in Sources */,
 				3DAC905619D2B7530039DAC3 /* VSGameDetailViewController.m in Sources */,
 				3D9F179F19E551AC0090C101 /* UIButton+WebCache.m in Sources */,
 				3D90422819D9090E00C26CD9 /* VSTempLoginMessage.m in Sources */,
@@ -820,6 +830,8 @@
 				3D9F175119E4E9CF0090C101 /* VSEditUserInfoViewController.m in Sources */,
 				3DEC30B019CD30F9009FCCFE /* VSChannelList.m in Sources */,
 				3D987A0219E26BFC0069C26F /* VSGameDetailInfoView.m in Sources */,
+				3D945ED919E5668800C316E8 /* SKSTableViewCell.m in Sources */,
+				3D05337D19E6650F00812CB6 /* VSUserManager.m in Sources */,
 				3DA7966319E3934E00AB1340 /* VSBackBarButtonItem.m in Sources */,
 				3D8B58E019E0F99B007F075B /* VSGameAbstractTableViewCell.m in Sources */,
 				3D9879FC19E26B8D0069C26F /* VSBroastView.m in Sources */,
