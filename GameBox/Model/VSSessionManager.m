@@ -9,6 +9,7 @@
 #import "VSSessionManager.h"
 #import "VSPassport.h"
 #import "VSTempPassport.h"
+#import "VSParamLoginMessage.h"
 #import "VSLoginMessage.h"
 #import "VSGamePassport.h"
 @interface VSSessionManager()
@@ -64,6 +65,8 @@ static VSSessionManager *_sessionManager = nil;
         case VSPara:
         {
             VSGamePassport *temp = [[VSGamePassport alloc] init];
+            temp.nickname = ((VSParamLoginMessage *)info).nickName;
+            temp.userName = ((VSParamLoginMessage *)info).userName;
             [temp doLogin:^(BOOL success,id msg){
                 finish(success,msg);
             }];

@@ -8,6 +8,7 @@
 
 #import "VSPassport.h"
 
-@interface VSGamePassport : VSPassport
-
+@interface VSGamePassport : VSPassport<NSCoding>
+@property(nonatomic,copy)NSString *userName;
+@property(nonatomic,copy)NSString *nickname;
 @end

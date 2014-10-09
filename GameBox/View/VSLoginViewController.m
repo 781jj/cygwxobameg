@@ -11,7 +11,7 @@
 #import "VSTempLoginMessage.h"
 #import "VSCommon.h"
 #import <FacebookSDK/FacebookSDK.h>
-
+#import "VSParamLoginMessage.h"
 
 @interface VSLoginViewController ()<FBLoginViewDelegate>
 @property(nonatomic, strong)FBLoginView *loginView;
@@ -23,8 +23,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _loginView = [[FBLoginView alloc] initWithReadPermissions:@[@"public_profile"]];
+    _loginView.center = self.view.center;
+    _loginView.frame = CGRectMake(_loginView.frame.origin.x,200, _loginView.frame.size.width, _loginView.frame.size.height);
     _loginView.delegate = self;
-    _loginView.hidden = YES;
+    _loginView.hidden = NO;
     [self.view addSubview:_loginView];
     
     
@@ -38,8 +40,7 @@
 
 - (IBAction)facebookLogin:(id)sender
 {
-    _loginView.center = self.view.center;
-    _loginView.hidden = NO;
+   
     
     
 //    // If the session state is any of the two "open" states when the button is clicked
@@ -136,7 +137,18 @@
 
 -(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
 {
-    NSLog(@":%@", user);
+    
+    [M2DHudView showLoading];
+    VSParamLoginMessage *info = [VSParamLoginMessage new];
+    info.nickName = user.name;
+    info.userName = user.id;
+    
+    [[VSSessionManager shareInstance] loginWithType:info finish:^(BOOL success,id msg){
+        if (success) {
+            [M2DHudView hideLoading];
+            [self dismissViewControllerAnimated:NO completion:nil];
+        }
+    }];
 }
 
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
