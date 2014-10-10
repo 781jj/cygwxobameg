@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://www.17w67.com/games/66/wzq.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>4joys</title>
+<meta content="width=640, initial-scale=0.5, maximum-scale=1, minimum-scale=0.5" name="viewport">
+<link href="./index_files/wuzi.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script> alert("对不起，您的浏览器不支持HTML5，请升级浏览器至IE9、firefox或者谷歌浏览器！")</script>
+<![endif]-->
+<style type="text/css">
+.adbox{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom: -50px;
+    display: block;
+    left: 50%;
+    margin-left: -50%;
+    background-size: contain;
+    -webkit-animation: adbox .6s .2s;
+    -webkit-animation-fill-mode: both;
+}
+.adbox2{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: -50px;
+    display: block;
+    left: 50%;
+    margin-left: -50%;
+    background-size: contain;
+    -webkit-animation: adbox2 .6s .2s;
+    -webkit-animation-fill-mode: both;
+}
+@-webkit-keyframes adbox{
+    100%{bottom: 0; }
+}
+@-webkit-keyframes adbox2{
+    100%{top: 0; }
+}
+</style>
+
+<script type="text/javascript">
+	function share (argument) {
+        if ( window.Android ) {
+            window.Android.showShare(JSON.stringify());
+        } else {
+            window.P.showShare();
+        }
+	}
+</script>
+
+
+<div class="game-box">
+	<div class="game-box-title"><span id="reckonTime">295.6</span>"</div>
+	<div class="game-box-body">
+		<div class="game-box-winner" id="winner" style="display: none;"></div>
+		<div class="game-box-loser" id="loser" style="display: none;"></div>
+		<div class="game-box-red" id="red" style="display: none;"></div>
+		<div class="game-box-gesture-open" id="gestureOpen" style="display: none;"></div>
+		<div class="game-box-gesture-close" id="gestureClose" style="display: none;"></div>
+		<canvas id="wuzi" class="wuzi" width="640" height="640"></canvas>
+	</div>
+	<div class="btn-box"> 
+		<a href="javascript:" id="restartBtnEcho">Replay</a>
+		<a href="javascript:share()" id="aboutus">Share</a>
+		<a href="javascript:" style="display: none; opacity: 1;" id="regretBtn">Undo(3)</a>
+	</div>
+</div>
+
+<div class="menu-box" id="menuBox" style="display: none;">
+	<div class="overcast" id="overcast"></div>
+	<div class="menu">
+		<div class="menu-body" id="menuBody">
+			<div class="h1" id="h1">You Win! </div>
+			<div class="h2" id="h2"></div>
+			<a href="javascript:" id="shareBtn" style="display: none;"></a>
+			<a href="javascript:" id="shareBtnEcho" style="display: none;"></a>
+			<a href="javascript:" id="vsBtn" style="display: block;">Next</a>
+			<a href="javascript:" id="restartBtn" style="display: block;">Again</a>
+			<a href="#" id="goMoneyBtn" style="display: none;"></a>
+		</div>
+	</div>
+</div>
+<div class="share-box" id="shareBox">
+	<div class="share-overcast" id="shareOvercast"></div>
+	<div class="share-bg" id="shareBg"></div>
+</div>
+<script type="text/javascript" src="./index_files/gameshare.js"></script> 
+<script type="text/javascript" src="./index_files/common.js"></script> 
+<script type="text/javascript" src="./index_files/play.js"></script> 
+<script type="text/javascript" src="./index_files/AI.js"></script>
+<script type="text/javascript" src="./index_files/clasli.js"></script>
+<div class="dn">
+<audio src="audio/click.wav" id="clickAudio" preload="auto"></audio>
+<audio src="audio/click.wav" id="selectAudio" preload="auto"></audio>
+
+</div>
+
+</body></html>

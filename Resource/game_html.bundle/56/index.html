@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimal-ui, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no height=device-height" />
+<title>4joys</title>
+<link rel="shortcut icon" href="icon.png">
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<link type="text/css" href="style/index.css" rel="stylesheet" />
+<script type="text/javascript" src="js/index.js?v1"></script>
+<style type="text/css">
+	.gamebtn{
+		margin-top:15px;
+		font-size:40px;
+	}
+</style>
+</head>
+
+<body class="body">
+<canvas id="gamescene"></canvas>
+<div id="mask" class="hide"></div>
+<div id="cover" class="hide"></div>
+<div id="game_div" class="">
+	<div id="ctrboard">
+		<div id="start" class="boards hide">
+			<div class="logo"></div>
+			<div class="title"></div>
+			<a class="startgame" href="###" alt="start"></a>
+		</div>
+		<div id="play" class="boards hide">
+			<div class="score_title">score</div>
+			<div class="score">0</div>
+		</div>
+		<div id="end" class="boards hide">
+			<div>score</div>
+			<div class="score">0</div>
+			<div class="history">Highest score: <span class="bestScore">0</span></div>
+			<div class="gameover"></div>
+			<div id="resetgame" class="gamebtn" style="margin-top:40px;">Replay</div>
+			<!-- <div id="showgame"  class="gamebtn"  onclick="dp_share();">Share</div> -->
+		</div>
+	</div>
+	<div id="footer" class="hide">
+	</div>
+</div>
+
+<script type="text/javascript">
+	window.onerror = function(e) {
+		// alert(e);
+	}
+</script>
+<input id="bt-game-id" type="hidden" value="8-supermario">
+<script language=javascript>
+				
+		function goHome(){
+		}
+		function clickMore(){
+		}
+		function dp_share(){
+		}
+		function dp_Ranking(){
+		}
+		function showAd(){
+		}
+		function hideAd(){
+		}
+</script>
+
+			<script type="text/javascript">
+            var myData = { gameid: "cjmla" };
+			 
+			function dp_submitScore(score){
+						window.__score__ = {
+                			score: score
+            			}
+			            if ( window.Android ) {
+			                window.Android.showShare(JSON.stringify(__score__));
+			            } else {
+			                window.P.showShare(__score__);
+			            }
+			}
+			function onShareComplete(res) {
+		        	document.location.href = mebtnopenurl;
+	        }
+			</script>
+</body>
+</html>

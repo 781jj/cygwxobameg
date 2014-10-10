@@ -18,7 +18,6 @@
     if (self) {
         _type = type;
         
-     //   [self loadJson];
       
     }
     return self;
@@ -31,50 +30,42 @@
         parm = @"hot";
     }
     
+//     [self loadJson];
+//    callback(YES,nil);
+//    return;
+    
     __weak typeof(self) blockself = self;
     [VSRequest get:@"games/gamelist" params:@{@"listType":parm} success:^(NSURLRequest *request, id obj) {
         if ([obj isKindOfClass:[NSDictionary class]]) {
-            NSMutableArray *array = [NSMutableArray array];
             if ([[obj objectForKey:@"returnCode"] integerValue] == 1) {
                 NSDictionary *dic = [obj objectForKey:@"data"];
-//                if ([dic objectForKey:@"favorlist"]) {
-//                    NSArray *list = (NSArray *)[dic objectForKey:@"favorlist"];
-//                    if (list && [list count]>0) {
-//                        NSMutableArray *favor = [NSMutableArray array];
-//                        [list enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-//                            VSGameDetailInfo *info = [[VSGameDetailInfo alloc] initWithDic:obj];
-//                            [favor addObject:info];
-//                        }];
-//                        VSFavorGame *favorGame = [VSFavorGame new];
-//                        favorGame.favorlist = favor;
-//                        [array addObject:favor];
-//                    }
-//                }
-  
-                if([dic objectForKey:@"gamelist"]){
-                    NSArray *list = (NSArray *)[dic objectForKey:@"gamelist"];
-                    NSMutableArray *favor = [NSMutableArray array];
 
-                    for (int i = 0; i<4; i++) {
-                        NSDictionary *dic = [list objectAtIndex:i];
-                        VSGameDetailInfo *info = [[VSGameDetailInfo alloc] initWithDic:dic];
-                        [favor addObject:info];
-                    }
-                    VSFavorGame *favorGame = [VSFavorGame new];
-                    favorGame.favorlist = favor;
-                    [array addObject:favorGame];
-                }
-                
-                //[array addObject:[VSGameBroadcast shareInstance]];
+                NSMutableArray *array = [NSMutableArray array];
+                NSMutableArray *favor = [NSMutableArray array];
                 if([dic objectForKey:@"gamelist"]){
                     NSArray *list = (NSArray *)[dic objectForKey:@"gamelist"];
                     [list enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                         VSGameDetailInfo *info = [[VSGameDetailInfo alloc] initWithDic:obj];
                         [array addObject:info];
+                        
+                        
                     }];
                 }
                 
                 
+                if ([array count]>0) {
+                    [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                        VSGameDetailInfo *info = (VSGameDetailInfo *)obj;
+                        if (info.isFavor) {
+                            [favor addObject:info];
+                        }
+                    }];
+                    VSFavorGame *favorGame = [VSFavorGame new];
+                    favorGame.favorlist = favor;
+                    
+                    [array insertObject:favorGame atIndex:0];
+                }
+    
                 
                 blockself.gameList = array;
                 callback(YES,array);
@@ -90,6 +81,26 @@
     }];
 }
 
+- (void)loadJson
+{
+    NSString *jsonFile = [NSBundle pathForResource:@"game" ofType:@"json" inDirectory:[[NSBundle mainBundle]  bundlePath]];
+    NSData *data = [NSData dataWithContentsOfFile:jsonFile];
+    NSError *error ;
+    id json =[NSJSONSerialization
+              JSONObjectWithData:data
+              options:kNilOptions
+              error:&error];
+    NSMutableArray *array = [NSMutableArray array];
+    
+    if ([json isKindOfClass:[NSArray class]]) {
+        [json enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            VSGameDetailInfo *info = [[VSGameDetailInfo alloc] initWithDic:obj];
+            [array addObject:info];
+        }];
+    }
+    _gameList = array;
+    NSLog(@"json :%@",json);
+}
 
 
 

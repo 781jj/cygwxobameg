@@ -42,28 +42,10 @@
 		"share":"Trap the cat , do not let it escape."
 	},
 	{
-		"id":14,
-		"name":"Shooting lolita",
-		"description":"Control to shoot the lolita and win coins!",
-		"share":"Mass of lovely girls are invading your sky,you must pick up your weapon to defend !"
-	},
-	{
 		"id":15,
 		"name":"Color king",
 		"description":"You must try to find the unique color brick,only 1 minute.",
 		"share":"You must try to find the unique color brick,only 1 minute,be the king of color!"
-	},
-	{
-		"id":17,
-		"name":"Super mario",
-		"description":"Control Mario to move to the termination.",
-		"share":"The classic Mario helps you to recollect the warm memory of your childhood."
-	},
-	{
-		"id":18,
-		"name":"Naruto run",
-		"description":"Click the screen to control the Naruto jumping right or left.",
-		"share":"The best running game of Naruto! If you're fans of Naruto,of course you won't miss it!"
 	},
 	{
 		"id":19,
@@ -76,12 +58,6 @@
 		"name":"Magic finger",
 		"description":"Click the red area as fast as you can,or you can use more fingers",
 		"share":"If one finger isn't enough,you can use two,then you will get exciting!"
-	},
-	{
-		"id":21,
-		"name":"Evil rabbit",
-		"description":"Slide to control the rabbit jumping  over the obstacles.",
-		"share":"Help rabbit through obstacles and collect up-grades along the road. But if you collect enough grenades, he’ll turn evil!"
 	},
 	{
 		"id":25,
@@ -108,26 +84,8 @@
 		"share":"If you're man,you must last 30 seconds,challenge for others!"
 	},
 	{
-		"id":33,
-		"name":"Tadpoles",
-		"description":"Move the red circle, touch the tadpole, to escape the attention thorn ball",
-		"share":"The more tadpoles you save,the higher scores you'll get,let's go!"
-	},
-	{
-		"id":34,
-		"name":"Swing copters",
-		"description":"Tap to control the direction of the copters.",
-		"share":"Flying with a propeller hat is not as easy as it looks,more exciting than Flappy Bird!"
-	},
-	{
-		"id":35,
-		"name":"Skyscraper",
-		"description":"Click the screen to build the skyscraper.",
-		"share":"Use your illusion to build a skyscraper!Why not try???"
-	},
-	{
 		"id":37,
-		"name":"Wodblox",
+		"name":"Wodblox 修改",
 		"description":"The sliding block, make it reach the designated place",
 		"share":"A funny puzzle game,you must finish the task in limited time,are you ready?"
 	},
@@ -150,28 +108,10 @@
 		"share":"The classic BlackJack game,will you be the winner?"
 	},
 	{
-		"id":41,
-		"name":"Toy bricks",
-		"description":"A funny puzzle game,connect the bricks with same color in limited times.",
-		"share":"Classic puzzle game,can you find the best way to accomplish the mission?"
-	},
-	{
 		"id":42,
 		"name":"100th floor",
 		"description":"Click the right part of screen to right,and click the left part of screen to left.",
 		"share":"A exciting adventure game which makes you crazy,now you must escape at once!"
-	},
-	{
-		"id":43,
-		"name":"Puzzle Bobble",
-		"description":"Match 3 game,you need to match the same color and eliminate them.",
-		"share":"Classic Puzzle Bobble,it's time to show your talent!"
-	},
-	{
-		"id":44,
-		"name":"Soccer mover",
-		"description":"Move the brick to let the ball move to the net.",
-		"share":"It's not a typical soccer game but a funny casual game,are you ready?"
 	},
 	{
 		"id":45,
@@ -187,7 +127,7 @@
 	},
 	{
 		"id":49,
-		"name":"Beauty puzzle",
+		"name":"Beauty puzzle 修改",
 		"description":"Spot the differences of beauty.",
 		"share":"Spot the differences of beauty."
 	},
@@ -202,5 +142,41 @@
 		"name":"Air intercepts",
 		"description":"Click to shoot the moving red point,the nearer,the better.",
 		"share":"Target is coming,you must intercept the invading missile,come on!"
+	},
+	{
+ 		"id":46,
+        "name":"Gobang",
+ 		"description":"Make five-in-a-row,you will win.",
+ 		"share":"Are you a loyal Gobang fan?try this game!"
+	},
+	{
+ 		"id":52,
+        "name":"Jigsaw",
+ 		"description":"Move and exchange the pictures to finish the jigsaw.",
+ 		"share":"A funny jigsaw game,can you finish it in limited time?"
+	},
+	{
+		 "id":53,
+ 		"name":"Spin it",
+ 		"description":"Click the the left/right part of screen and spin the hexagon,which part can be eliminated with the same color,last longer,you'll win.",
+ 		"share":"An interesting puzzle game about hexagon,why not try it?"
+	},
+	{
+ 		"id":54,
+ 		"name":"Paper plane",
+ 		"description":"Click the left/right part of screen to control the direction of flight,the lower the faster.",
+ 		"share":"Have you played the Paper plane in your childhood?Try this! "
+	},
+	{
+ 		"id":56,
+ 		"name":"New mario",
+ 		"description":"Control Mario running and jumping to avoid obstacles.",
+ 		"share":"New Super mario game,you must like it!"
+	},
+	{
+ 		"id":57,
+ 		"name":"Birds jump",
+ 		"description":"Click left and right,make big bird skip birdie.",
+ 		"share":"Move your fingers as fast as you can,go ahead!"
 	}
 ]

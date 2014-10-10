@@ -30,10 +30,7 @@ static VSUserManager *_userManager = nil;
 {
     VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
     NSString *currentGameId = [channel currentGameId];
-    [VSRequest post:@"users/updateplayinfos" params:@{@"userid":[VSSessionManager shareInstance].passport.userId,@"gamenumber":currentGameId} success:^(NSURLRequest *request, id obj) {
-        NSLog(@"%s:true",__func__);
-    } failed:^(NSURLRequest *request, id obj, NSError *error) {
-        NSLog(@"%s:false",__func__);
-    }];
+    [VSRequest post:@"games/updateplayinfos" params:@{@"userid":[VSSessionManager shareInstance].passport.userId,@"gamenumber":currentGameId} success:^(NSURLRequest *request, id obj) {
+    } failed:^(NSURLRequest *request, id obj, NSError *error) {    }];
 }
 @end

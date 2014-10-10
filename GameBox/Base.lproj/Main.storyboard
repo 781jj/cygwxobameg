@@ -332,10 +332,10 @@
             </objects>
             <point key="canvasLocation" x="812" y="-187"/>
         </scene>
-        <!--Play Game-->
+        <!--PlayGame-->
         <scene sceneID="7mq-SJ-qWe">
             <objects>
-                <viewController storyboardIdentifier="VSGamePlayViewController" title="Play Game" id="SEW-m4-tsQ" customClass="VSGamePlayViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VSGamePlayViewController" title="PlayGame" id="SEW-m4-tsQ" customClass="VSGamePlayViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z5O-Iq-jfP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

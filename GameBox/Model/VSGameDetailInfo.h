@@ -26,6 +26,7 @@ typedef  void(^VSGameRankBlock)(BOOL success,NSArray *rankList);
 @property (nonatomic,strong)NSString *shareInfo;
 @property (nonatomic,readonly)NSString *htmlPath;
 @property (nonatomic,readonly)NSArray *rankList;
+@property (nonatomic,assign)BOOL isFavor;
 
 
 - (id)initWithDic:(NSDictionary *)dic;

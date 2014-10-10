@@ -33,6 +33,7 @@ static NSString* const kGameboxSchema = @"gamebox";
     [super viewDidLoad];
      self.navigationItem.leftBarButtonItem = [VSBackBarButtonItem backBarButtonItem:self selector:@selector(backButtonClick)];
     
+    self.title = @"Play Game";
     VSChannel *currentChannel = [[VSChannelList shareInstance] currentChannel];
     
     NSString *gameId = currentChannel.currentGameId;
