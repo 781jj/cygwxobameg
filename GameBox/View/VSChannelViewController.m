@@ -119,6 +119,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     [[VSHomeController shareInstance] gameClick:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
 }
 

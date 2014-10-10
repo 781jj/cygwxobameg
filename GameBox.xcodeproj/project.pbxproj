@@ -702,7 +702,7 @@
 		3DEC306019CD2236009FCCFE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = cyggame;
 				TargetAttributes = {
 					3DEC308819CD2236009FCCFE = {
