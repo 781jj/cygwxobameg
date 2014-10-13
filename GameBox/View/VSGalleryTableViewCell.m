@@ -13,20 +13,20 @@
 #import "VSPageControl.h"
 #import "VSChannelList.h"
 #import "VSChannel.h"
+#import "CycleScrollView.h"
 @interface VSGalleryTableViewCell()<UIScrollViewDelegate>
-{
-    NSInteger _pageIndex;
-}
 
-@property (nonatomic,strong)UIScrollView *scrollview;
+
+@property (nonatomic,strong)CycleScrollView *scrollview;
 @property (nonatomic,strong)UILabel *nameLabel;
 @property (nonatomic,strong)VSPageControl *pageControl;
+@property (nonatomic)NSInteger pageIndex;
 @end
 
 @implementation VSGalleryTableViewCell
 - (void)dealloc
 {
-    _scrollview.delegate = nil;
+    
 }
 
 - (id)initWithReuseId:(NSString *)reuseId
@@ -44,26 +44,39 @@
 
         
        
-        _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, VSGalleryTableViewCellHeight)];
-        _scrollview.delegate = self;
+        _scrollview = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, VSGalleryTableViewCellHeight) animationDuration:AutoScrollInterval];
         _scrollview.backgroundColor = [UIColor clearColor];
-        _scrollview.showsHorizontalScrollIndicator = NO;
-        _scrollview.showsVerticalScrollIndicator = NO;
-        _scrollview.bounces = YES;
-        _scrollview.pagingEnabled = YES;
         [self addSubview:_scrollview];
         
         NSInteger count = [info.favorlist count];
-        [_scrollview setContentSize:CGSizeMake(count*_scrollview.frame.size.width, _scrollview.frame.size.height)];
         
-        
-        for (NSInteger i = 0;i < count;i++) {
-            VSGameDetailInfo *gameInfo = [info.favorlist  objectAtIndex:i];
-            VSPageView *page = [[VSPageView alloc ] initWithFrame:CGRectMake(i*_scrollview.frame.size.width, 0, _scrollview.frame.size.width, _scrollview.frame.size.height) imagePath:gameInfo.iconPath];
-            page.index = i;
-            [_scrollview addSubview:page];
-        }
-        
+        __weak VSGalleryTableViewCell *blockself = self;
+        _scrollview.fetchContentViewAtIndex = ^UIView *(NSInteger pageIndex){
+            VSGameDetailInfo *gameInfo = [info.favorlist  objectAtIndex:pageIndex];
+            VSPageView *page = [[VSPageView alloc ] initWithFrame:CGRectMake(pageIndex*blockself.scrollview.frame.size.width, 0, blockself.scrollview.frame.size.width, blockself.scrollview.frame.size.height) imagePath:gameInfo.iconPath];
+            page.index = pageIndex;
+            return page;
+        };
+        _scrollview.totalPagesCount = ^NSInteger(void){
+            return count;
+        };
+
+        _scrollview.scrollActionBlock  =  ^(NSInteger index){
+            VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
+            if ([channel.gameList count]< 1 || ![[channel.gameList objectAtIndex:0] isKindOfClass:[VSFavorGame class]]) {
+                return;
+            }
+            NSInteger count = index;
+            VSFavorGame *favor = [channel.gameList objectAtIndex:0];
+            if (blockself.pageIndex != count && count < [favor.favorlist count] ) {
+                blockself.pageIndex = count;
+                [blockself.pageControl setCurrentPage:blockself.pageIndex];
+                
+                
+                VSGameDetailInfo *info = [favor.favorlist objectAtIndex:count];
+                blockself.nameLabel.text = info.name;
+            }
+        };
         
 
         UIView *introduceView = [[UIView alloc ]initWithFrame:CGRectMake(0,_scrollview.frame.size.height*0.85, _scrollview.frame.size.width,_scrollview.frame.size.height*0.15)];
@@ -72,7 +85,7 @@
         
         
       
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(introduceView.frame.size.width*0.05, 0, introduceView.frame.size.width*0.4, introduceView.frame.size.height)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(introduceView.frame.size.width*0.05, 0, introduceView.frame.size.width*0.6, introduceView.frame.size.height)];
         label.backgroundColor = [UIColor clearColor];
         if ([info.favorlist count]>0) {
             VSGameDetailInfo *gameInfo = [info.favorlist objectAtIndex:0];
@@ -81,7 +94,7 @@
         }
         label.textColor = [UIColor whiteColor];
         label.textAlignment = 0;
-        label.font = [UIFont boldSystemFontOfSize:15];
+        label.font = [UIFont boldSystemFontOfSize:14];
         [introduceView addSubview:label];
         _nameLabel = label;
         
@@ -111,60 +124,7 @@
 }
 
 
-- (void)update
-{
-//    VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
-//    if ([channel.gameList count]< 1 || ![[channel.gameList objectAtIndex:0] isKindOfClass:[VSFavorGame class]]) {
-//        return;
-//    }
-//    VSFavorGame *data = [channel.gameList objectAtIndex:0];
-//
-//    if (_scrollview ) {
-//        for (UIView *view in _scrollview.subviews) {
-//            [view removeFromSuperview];
-//        }
-//    }
-//    
-//    NSInteger count = [data.favorlist count];
-//    [_scrollview setContentSize:CGSizeMake(count*_scrollview.frame.size.width, _scrollview.frame.size.height)];
-//    
-//    
-//    for (NSInteger i = 0;i < count;i++) {
-//        VSGameDetailInfo *gameInfo = [data.favorlist  objectAtIndex:i];
-//        VSPageView *page = [[VSPageView alloc ] initWithFrame:CGRectMake(i*_scrollview.frame.size.width, 0, _scrollview.frame.size.width, _scrollview.frame.size.height) imagePath:gameInfo.iconPath];
-//        page.index = i;
-//        [_scrollview addSubview:page];
-//    }
-//    
-//    
-//    if ([data.favorlist count]>0) {
-//        VSGameDetailInfo *gameInfo = [data.favorlist objectAtIndex:0];
-//        _nameLabel.text = gameInfo.name;
-//        _pageIndex = 0;
-//    }
-//    
-//    if (_pageControl) {
-//        [_pageControl setCurrentPage:0];
-//    }
-}
 
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    
-    VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
-    if ([channel.gameList count]< 1 || ![[channel.gameList objectAtIndex:0] isKindOfClass:[VSFavorGame class]]) {
-        return;
-    }
-    NSInteger count = scrollView.contentOffset.x/scrollView.frame.size.width;
-    VSFavorGame *favor = [channel.gameList objectAtIndex:0];
-    if (_pageIndex != count && count < [favor.favorlist count] ) {
-        _pageIndex = count;
-        [_pageControl setCurrentPage:_pageIndex];
-        
-        
-        VSGameDetailInfo *info = [favor.favorlist objectAtIndex:count];
-        _nameLabel.text = info.name;
-    }
-}
+
 @end

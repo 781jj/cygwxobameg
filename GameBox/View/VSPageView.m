@@ -8,6 +8,12 @@
 
 #import "VSPageView.h"
 #import "VSHomeController.h"
+
+@interface VSPageView ()
+
+@property(nonatomic,strong)UIButton *clickBtn;
+@end
+
 @implementation VSPageView
 
 /*
@@ -28,10 +34,15 @@
         button.frame = CGRectMake(frame.size.width*0.05, 0, frame.size.width*0.9, frame.size.height);
         [button setImage:[UIImage imageWithContentsOfFile:path] forState:UIControlStateNormal];
         [button addTarget:[VSHomeController shareInstance] action:@selector(galleryClick:) forControlEvents:UIControlEventTouchUpInside];
-        button.tag = _index+1;
         [self addSubview:button];
+        _clickBtn = button;
     }
     return self;
 }
 
+
+- (void)setIndex:(NSInteger)index
+{
+    _clickBtn.tag = index+1;
+}
 @end

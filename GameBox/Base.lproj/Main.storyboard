@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" id="Nry-tn-8ob">
-                                <rect key="frame" x="0.0" y="63.999998551778248" width="320" height="464"/>
+                                <rect key="frame" x="0.0" y="63.999998277637957" width="320" height="464"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -42,7 +42,7 @@
                                 </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" id="jJJ-cA-24h" customClass="VSChannelSwitch">
-                                <rect key="frame" x="0.0" y="527.99999855177828" width="320" height="40"/>
+                                <rect key="frame" x="0.0" y="527.99999827763793" width="320" height="40"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VwD-RJ-gMR">

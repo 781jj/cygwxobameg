@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D02EB4D19EBD4D700EC5FB6 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D02EB4919EBD4D700EC5FB6 /* NSTimer+Addition.m */; };
+		3D02EB4E19EBD4D700EC5FB6 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D02EB4B19EBD4D700EC5FB6 /* CycleScrollView.m */; };
 		3D05337D19E6650F00812CB6 /* VSUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D05337C19E6650F00812CB6 /* VSUserManager.m */; };
 		3D05339919E7B32100812CB6 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D05339819E7B32100812CB6 /* AFNetworking.framework */; };
 		3D3D121319E123D8002116C9 /* VSPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3D121219E123D8002116C9 /* VSPageView.m */; };
@@ -115,6 +117,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D02EB4919EBD4D700EC5FB6 /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
+		3D02EB4A19EBD4D700EC5FB6 /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
+		3D02EB4B19EBD4D700EC5FB6 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
+		3D02EB4C19EBD4D700EC5FB6 /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
 		3D05337B19E6650F00812CB6 /* VSUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSUserManager.h; sourceTree = "<group>"; };
 		3D05337C19E6650F00812CB6 /* VSUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSUserManager.m; sourceTree = "<group>"; };
 		3D05339819E7B32100812CB6 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = "<group>"; };
@@ -414,6 +420,10 @@
 		3D987A0719E284120069C26F /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				3D02EB4919EBD4D700EC5FB6 /* NSTimer+Addition.m */,
+				3D02EB4A19EBD4D700EC5FB6 /* NSTimer+Addition.h */,
+				3D02EB4C19EBD4D700EC5FB6 /* CycleScrollView.h */,
+				3D02EB4B19EBD4D700EC5FB6 /* CycleScrollView.m */,
 				3DA7966219E3934E00AB1340 /* VSBackBarButtonItem.h */,
 				3DA7966119E3934E00AB1340 /* VSBackBarButtonItem.m */,
 				3D987A0019E26BFC0069C26F /* VSGameDetailInfoView.h */,
@@ -801,6 +811,7 @@
 				3D9F174E19E4E96A0090C101 /* VSIndividualCenterViewController.m in Sources */,
 				3D987A1219E299BB0069C26F /* VSRankingView.m in Sources */,
 				3D9F179A19E551AC0090C101 /* SDWebImageDecoder.m in Sources */,
+				3D02EB4E19EBD4D700EC5FB6 /* CycleScrollView.m in Sources */,
 				3D90422219D905C200C26CD9 /* VSTempPassport.m in Sources */,
 				3D9F17A219E551AC0090C101 /* UIImage+WebP.m in Sources */,
 				3D9F179619E551AC0090C101 /* MKAnnotationView+WebCache.m in Sources */,
@@ -829,6 +840,7 @@
 				3D9F179919E551AC0090C101 /* SDWebImageCompat.m in Sources */,
 				3D97A84719DA9D66005468F5 /* VSFavorGame.m in Sources */,
 				3D9879FF19E26BB20069C26F /* VSBroast.m in Sources */,
+				3D02EB4D19EBD4D700EC5FB6 /* NSTimer+Addition.m in Sources */,
 				3D9F17A019E551AC0090C101 /* UIImage+GIF.m in Sources */,
 				3D8B58DD19E0F983007F075B /* VSBroastTableViewCell.m in Sources */,
 				3D9F175119E4E9CF0090C101 /* VSEditUserInfoViewController.m in Sources */,

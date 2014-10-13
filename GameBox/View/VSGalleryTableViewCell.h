@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 cyggame. All rights reserved.
 //
 #define VSGalleryTableViewCellHeight  132
+#define AutoScrollInterval 6.0
 #import <UIKit/UIKit.h>
 @class VSFavorGame;
 @interface VSGalleryTableViewCell : UITableViewCell
