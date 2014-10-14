@@ -27,7 +27,7 @@
     _loginView.frame = CGRectMake(_loginView.frame.origin.x,200, _loginView.frame.size.width, _loginView.frame.size.height);
     _loginView.delegate = self;
     _loginView.hidden = NO;
-    [self.view addSubview:_loginView];
+   // [self.view addSubview:_loginView];
     
     
 }

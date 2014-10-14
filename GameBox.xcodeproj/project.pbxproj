@@ -12,6 +12,10 @@
 		3D02EB5119ECD43300EC5FB6 /* VSGameResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D02EB5019ECD43300EC5FB6 /* VSGameResource.m */; };
 		3D02EB5619ED03E700EC5FB6 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D02EB5319ED03E700EC5FB6 /* libMobClickLibrary.a */; };
 		3D02EB5819ED040900EC5FB6 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D02EB5719ED040900EC5FB6 /* libz.1.1.3.dylib */; };
+		3D02EB5D19ED16AE00EC5FB6 /* text_or@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D02EB5919ED16AE00EC5FB6 /* text_or@2x.png */; };
+		3D02EB5E19ED16AE00EC5FB6 /* pic_welcome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D02EB5A19ED16AE00EC5FB6 /* pic_welcome@2x.png */; };
+		3D02EB6319ED16D100EC5FB6 /* btn_oksignin_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D02EB6119ED16D100EC5FB6 /* btn_oksignin_pressed@2x.png */; };
+		3D02EB6419ED16D100EC5FB6 /* btn_fbsignin_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D02EB6219ED16D100EC5FB6 /* btn_fbsignin_pressed@2x.png */; };
 		3D05337D19E6650F00812CB6 /* VSUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D05337C19E6650F00812CB6 /* VSUserManager.m */; };
 		3D05339919E7B32100812CB6 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D05339819E7B32100812CB6 /* AFNetworking.framework */; };
 		3D3D121319E123D8002116C9 /* VSPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3D121219E123D8002116C9 /* VSPageView.m */; };
@@ -130,6 +134,10 @@
 		3D02EB5419ED03E700EC5FB6 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		3D02EB5519ED03E700EC5FB6 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
 		3D02EB5719ED040900EC5FB6 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		3D02EB5919ED16AE00EC5FB6 /* text_or@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "text_or@2x.png"; path = "Resource/text_or@2x.png"; sourceTree = "<group>"; };
+		3D02EB5A19ED16AE00EC5FB6 /* pic_welcome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pic_welcome@2x.png"; path = "Resource/pic_welcome@2x.png"; sourceTree = "<group>"; };
+		3D02EB6119ED16D100EC5FB6 /* btn_oksignin_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_oksignin_pressed@2x.png"; path = "Resource/btn_oksignin_pressed@2x.png"; sourceTree = "<group>"; };
+		3D02EB6219ED16D100EC5FB6 /* btn_fbsignin_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_fbsignin_pressed@2x.png"; path = "Resource/btn_fbsignin_pressed@2x.png"; sourceTree = "<group>"; };
 		3D05337B19E6650F00812CB6 /* VSUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSUserManager.h; sourceTree = "<group>"; };
 		3D05337C19E6650F00812CB6 /* VSUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSUserManager.m; sourceTree = "<group>"; };
 		3D05339819E7B32100812CB6 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = "<group>"; };
@@ -535,6 +543,10 @@
 		3DAC904919D2A2C80039DAC3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3D02EB6119ED16D100EC5FB6 /* btn_oksignin_pressed@2x.png */,
+				3D02EB6219ED16D100EC5FB6 /* btn_fbsignin_pressed@2x.png */,
+				3D02EB5919ED16AE00EC5FB6 /* text_or@2x.png */,
+				3D02EB5A19ED16AE00EC5FB6 /* pic_welcome@2x.png */,
 				3D9F175519E516C40090C101 /* head_default_big@2x.png */,
 				3D9F175619E516C40090C101 /* btn_share_pressed@2x.png */,
 				3D9F175719E516C40090C101 /* btn_rank_pressed@2x.png */,
@@ -773,15 +785,19 @@
 			files = (
 				3DA7967419E3C96A00AB1340 /* symbol_female@2x.png in Resources */,
 				3DA7966019E3922D00AB1340 /* btn_back@2x.png in Resources */,
+				3D02EB6319ED16D100EC5FB6 /* btn_oksignin_pressed@2x.png in Resources */,
 				3DA7967319E3C96A00AB1340 /* symbol_male@2x.png in Resources */,
 				3DA7967219E3C96A00AB1340 /* triangle_green_up@2x.png in Resources */,
 				3D9F175C19E516C40090C101 /* btn_rank_pressed@2x.png in Resources */,
 				3D9F175E19E516C40090C101 /* btn_detele_pressed@2x.png in Resources */,
+				3D02EB5E19ED16AE00EC5FB6 /* pic_welcome@2x.png in Resources */,
+				3D02EB5D19ED16AE00EC5FB6 /* text_or@2x.png in Resources */,
 				3DA7967119E3C96A00AB1340 /* triangle_red_down@2x.png in Resources */,
 				3D3D122219E13532002116C9 /* dot_banner_red@2x.png in Resources */,
 				3DEC308419CD2236009FCCFE /* Images.xcassets in Resources */,
 				3D3D122819E14E27002116C9 /* btn_Alternative_hot@2x.png in Resources */,
 				3DEC307619CD2236009FCCFE /* InfoPlist.strings in Resources */,
+				3D02EB6419ED16D100EC5FB6 /* btn_fbsignin_pressed@2x.png in Resources */,
 				3D97A84019DA51D8005468F5 /* M2DHudView.bundle in Resources */,
 				3DA7967619E3D11200AB1340 /* btn_pk_released@2x.png in Resources */,
 				3D9F175A19E516C40090C101 /* head_default_big@2x.png in Resources */,
