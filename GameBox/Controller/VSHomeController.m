@@ -39,6 +39,8 @@ static VSHomeController *_homeController = nil;
             }
         }
         
+        
+        [MobClick event:VSClickListView attributes:@{@"channelid":[NSString stringWithFormat:@"%d",channel.type],@"gameid":channel.currentGameId}];
         UINavigationController *nav = (UINavigationController *)controller;
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UIViewController *detail = [storyBoard instantiateViewControllerWithIdentifier:@"VSGameDetailView"];
@@ -63,6 +65,7 @@ static VSHomeController *_homeController = nil;
             }
         }
         
+        [MobClick event:VSGameStartClick attributes:@{@"channelid":[NSString stringWithFormat:@"%d",channel.type],@"gameid":channel.currentGameId,@"origin":@"home"}];
         UINavigationController *nav = (UINavigationController *)controller;
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UIViewController *detail = [storyBoard instantiateViewControllerWithIdentifier:@"VSGamePlayViewController"];
@@ -89,6 +92,8 @@ static VSHomeController *_homeController = nil;
             }
         }
         
+        
+        [MobClick event:VSClickFavorView attributes:@{@"channelid":[NSString stringWithFormat:@"%d",channel.type],@"gameid":channel.currentGameId}];
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UIViewController *detail = [storyBoard instantiateViewControllerWithIdentifier:@"VSGameDetailView"];
         UINavigationController *nav = (UINavigationController *)controller;
@@ -106,9 +111,14 @@ static VSHomeController *_homeController = nil;
         if ([home isKindOfClass:[VSHomeViewController class]]) {
             if ([sender isEqualToString:@"new"]) {
                 [(VSHomeViewController *)home moveToChannel:1];
+                [MobClick event:VSChannelSwitchClick attributes:@{@"channelid":@"2"}];
             }else{
                 [(VSHomeViewController *)home moveToChannel:0];
+                [MobClick event:VSChannelSwitchClick attributes:@{@"channelid":@"1"}];
+
             }
+            
+            
         }
     }
 

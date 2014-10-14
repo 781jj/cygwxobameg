@@ -314,6 +314,7 @@
                                             <color key="titleColor" red="0.29803921568627451" green="0.6588235294117647" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="startClick:" destination="49l-AR-f0h" eventType="touchUpInside" id="dCM-6n-6lE"/>
                                             <segue destination="SEW-m4-tsQ" kind="push" id="2kh-n6-aGF"/>
                                         </connections>
                                     </button>

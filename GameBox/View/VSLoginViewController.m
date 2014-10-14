@@ -37,35 +37,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginEvent:VSEnterLoginView];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [MobClick endEvent:VSEnterLoginView];
+}
+
 
 - (IBAction)facebookLogin:(id)sender
 {
    
-    
-    
-//    // If the session state is any of the two "open" states when the button is clicked
-//    if (FBSession.activeSession.state == FBSessionStateOpen
-//        || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
-//        
-//        // Close the session and remove the access token from the cache
-//        // The session state handler (in the app delegate) will be called automatically
-//        [FBSession.activeSession closeAndClearTokenInformation];
-//        
-//        // If the session state is not any of the two "open" states when the button is clicked
-//    } else {
-//        // Open a session showing the user the login UI
-//        // You must ALWAYS ask for public_profile permissions when opening a session
-//        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
-//                                           allowLoginUI:YES
-//                                      completionHandler:
-//         ^(FBSession *session, FBSessionState state, NSError *error) {
-//             
-//             // Retrieve the app delegate
-//             AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
-//             // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
-//             [appDelegate sessionStateChanged:session state:state error:error];
-//         }];
-//    }
     
 
 }
@@ -83,9 +70,12 @@
     VSTempLoginMessage *info = [VSTempLoginMessage new];
     [[VSSessionManager shareInstance] loginWithType:info finish:^(BOOL success,id msg){
             if (success) {
-            [M2DHudView hideLoading];
-            [self dismissViewControllerAnimated:NO completion:nil];
-        }
+                [MobClick event:VSLoginTempSuccess];
+                [M2DHudView hideLoading];
+                [self dismissViewControllerAnimated:NO completion:nil];
+            }else{
+                [MobClick event:VSLoginTempFail];
+            }
     }];
     
 }
@@ -95,7 +85,8 @@
 -(void)loginView:(FBLoginView *)loginView handleError:(NSError *)error
 {
     NSString *alertMessage, *alertTitle;
-    
+    [MobClick event:VSLoginFacebookFail];
+
     // If the user should perform an action outside of you app to recover,
     // the SDK will provide a message for the user, you just need to surface it.
     // This conveniently handles cases like Facebook password change or unverified Facebook accounts.
@@ -141,19 +132,22 @@
     [M2DHudView showLoading];
     VSParamLoginMessage *info = [VSParamLoginMessage new];
     info.nickName = user.name;
-    info.userName = user.id;
+    info.userName = user.objectID;
     
     [[VSSessionManager shareInstance] loginWithType:info finish:^(BOOL success,id msg){
         if (success) {
+            [MobClick event:VSLoginFacebookSuccess];
             [M2DHudView hideLoading];
             [self dismissViewControllerAnimated:NO completion:nil];
+        }else{
+            [MobClick event:VSLoginFacebookFail];
         }
     }];
 }
 
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
 {
-    NSLog(@"gxx");
+   
 }
 
 -(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView

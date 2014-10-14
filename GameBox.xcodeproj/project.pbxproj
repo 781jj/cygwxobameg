@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3D02EB4D19EBD4D700EC5FB6 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D02EB4919EBD4D700EC5FB6 /* NSTimer+Addition.m */; };
 		3D02EB4E19EBD4D700EC5FB6 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D02EB4B19EBD4D700EC5FB6 /* CycleScrollView.m */; };
+		3D02EB5119ECD43300EC5FB6 /* VSGameResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D02EB5019ECD43300EC5FB6 /* VSGameResource.m */; };
+		3D02EB5619ED03E700EC5FB6 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D02EB5319ED03E700EC5FB6 /* libMobClickLibrary.a */; };
+		3D02EB5819ED040900EC5FB6 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D02EB5719ED040900EC5FB6 /* libz.1.1.3.dylib */; };
 		3D05337D19E6650F00812CB6 /* VSUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D05337C19E6650F00812CB6 /* VSUserManager.m */; };
 		3D05339919E7B32100812CB6 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D05339819E7B32100812CB6 /* AFNetworking.framework */; };
 		3D3D121319E123D8002116C9 /* VSPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3D121219E123D8002116C9 /* VSPageView.m */; };
@@ -121,6 +124,12 @@
 		3D02EB4A19EBD4D700EC5FB6 /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
 		3D02EB4B19EBD4D700EC5FB6 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
 		3D02EB4C19EBD4D700EC5FB6 /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
+		3D02EB4F19ECD43300EC5FB6 /* VSGameResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSGameResource.h; sourceTree = "<group>"; };
+		3D02EB5019ECD43300EC5FB6 /* VSGameResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSGameResource.m; sourceTree = "<group>"; };
+		3D02EB5319ED03E700EC5FB6 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		3D02EB5419ED03E700EC5FB6 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		3D02EB5519ED03E700EC5FB6 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
+		3D02EB5719ED040900EC5FB6 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		3D05337B19E6650F00812CB6 /* VSUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSUserManager.h; sourceTree = "<group>"; };
 		3D05337C19E6650F00812CB6 /* VSUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSUserManager.m; sourceTree = "<group>"; };
 		3D05339819E7B32100812CB6 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = "<group>"; };
@@ -290,9 +299,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D02EB5819ED040900EC5FB6 /* libz.1.1.3.dylib in Frameworks */,
 				3DEC306E19CD2236009FCCFE /* CoreGraphics.framework in Frameworks */,
 				3D05339919E7B32100812CB6 /* AFNetworking.framework in Frameworks */,
 				F423898019E667F1004651E5 /* FacebookSDK.framework in Frameworks */,
+				3D02EB5619ED03E700EC5FB6 /* libMobClickLibrary.a in Frameworks */,
 				3DEC307019CD2236009FCCFE /* UIKit.framework in Frameworks */,
 				3DEC306C19CD2236009FCCFE /* Foundation.framework in Frameworks */,
 			);
@@ -311,6 +322,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D02EB5219ED03E600EC5FB6 /* UMAnalytics_Sdk */ = {
+			isa = PBXGroup;
+			children = (
+				3D02EB5319ED03E700EC5FB6 /* libMobClickLibrary.a */,
+				3D02EB5419ED03E700EC5FB6 /* MobClick.h */,
+				3D02EB5519ED03E700EC5FB6 /* MobClickSocialAnalytics.h */,
+			);
+			name = UMAnalytics_Sdk;
+			path = Plugin/UMAnalytics_Sdk;
+			sourceTree = "<group>";
+		};
 		3D3D121819E126C5002116C9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +581,8 @@
 		3DEC306A19CD2236009FCCFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D02EB5719ED040900EC5FB6 /* libz.1.1.3.dylib */,
+				3D02EB5219ED03E600EC5FB6 /* UMAnalytics_Sdk */,
 				F423897F19E667F1004651E5 /* FacebookSDK.framework */,
 				3DEC306B19CD2236009FCCFE /* Foundation.framework */,
 				3DEC306D19CD2236009FCCFE /* CoreGraphics.framework */,
@@ -663,6 +687,8 @@
 				3DAC905219D2B1840039DAC3 /* VSGameHtml.m */,
 				3D97A84819DA9E4C005468F5 /* VSGameText.h */,
 				3D97A84919DA9E4C005468F5 /* VSGameText.m */,
+				3D02EB4F19ECD43300EC5FB6 /* VSGameResource.h */,
+				3D02EB5019ECD43300EC5FB6 /* VSGameResource.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -823,6 +849,7 @@
 				3D987A0F19E299A00069C26F /* VSDetailGalleryView.m in Sources */,
 				3D97A84119DA51D8005468F5 /* M2DHudView.m in Sources */,
 				3D9F17A319E551AC0090C101 /* UIImageView+HighlightedWebCache.m in Sources */,
+				3D02EB5119ECD43300EC5FB6 /* VSGameResource.m in Sources */,
 				3D9F179719E551AC0090C101 /* NSData+ImageContentType.m in Sources */,
 				3DAC905019D2B17A0039DAC3 /* VSGameImage.m in Sources */,
 				3DEC30B619CD34A8009FCCFE /* VSRequest.m in Sources */,
@@ -1000,6 +1027,10 @@
 				GCC_PREFIX_HEADER = "GameBox/GameBox-Prefix.pch";
 				INFOPLIST_FILE = "GameBox/GameBox-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Plugin/UMAnalytics_Sdk",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1020,6 +1051,10 @@
 				GCC_PREFIX_HEADER = "GameBox/GameBox-Prefix.pch";
 				INFOPLIST_FILE = "GameBox/GameBox-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Plugin/UMAnalytics_Sdk",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -51,6 +51,29 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)startClick:(id)sender
+{
+    VSChannel *channel = [VSChannelList shareInstance].currentChannel;
+    [MobClick event:VSGameStartClick attributes:@{@"channelid":[NSString stringWithFormat:@"%d",channel.type],@"gameid":channel.currentGameId,@"origin":@"detail"}];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+
+    [super viewWillAppear:animated];
+    VSChannel *channel = [VSChannelList shareInstance].currentChannel;
+
+    [MobClick beginEvent:VSDetailView primarykey:@"GameDetail" attributes:@{@"gameid":channel.currentGameId}];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+
+    [super viewDidDisappear:animated];
+    [MobClick endEvent:VSDetailView primarykey:@"GameDetail"];
+}
+
+
 /*
 #pragma mark - Navigation
 

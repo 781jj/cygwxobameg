@@ -26,6 +26,19 @@ static NSString* const kGameboxSchema = @"gamebox";
     [_webView stopLoading];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    VSChannel *channel = [VSChannelList shareInstance].currentChannel;
+
+    [MobClick beginEvent:VSPlayView primarykey:@"GamePlay" attributes:@{@"gameid":channel.currentGameId}];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [MobClick endEvent:VSPlayView primarykey:@"GamePlay"];
+}
 
 
 - (void)viewDidLoad
@@ -62,14 +75,14 @@ static NSString* const kGameboxSchema = @"gamebox";
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView;
 {
-    NSLog(@"succes");
-    
-
+    VSChannel *currentChannel = [[VSChannelList shareInstance] currentChannel];
+    [MobClick event:VSLoadPlaySuccess attributes:@{@"gameid":currentChannel.currentGameId}];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    NSLog(@"fail");
+    VSChannel *currentChannel = [[VSChannelList shareInstance] currentChannel];
+    [MobClick event:VSLoadPlayFail attributes:@{@"gameid":currentChannel.currentGameId}];
 }
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
