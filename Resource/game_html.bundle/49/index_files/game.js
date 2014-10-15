@@ -463,44 +463,44 @@ var picgame = {
 		dp_submitScore(self.currIndex+1);
 		self.currIndex = self.currIndex + 1;
 		self.gamestart()
-		// if (picimgs.length - 1 == this.currIndex) {
-		// 	title = "恭喜你！你打通关啦！";
-		// 	msg = "你真是霸气侧漏的大英雄，美人关已经全部打通了！";
-		// 	dialog.dialog({
-		// 		title: title,
-		// 		content: msg,
-		// 		buttons: {
-		// 			close: {
-		// 				title: "我好棒！必须炫耀一下",
-		// 				click: function() {
-		// 					dp_share();
-		// 				}
-		// 			}
-		// 		}
-		// 	})
-		// } else {
-		// 	title = "恭喜过第" + (self.currIndex + 1) + "\u5173";
-		// 	msg = "你一共找出了" + this.action.correctNum + "个不同，正确率" + this.action.correctPecent + "%,\u8017\u65f6" + this.second + "\u79d2!";
-		// 	dialog.dialog({
-		// 		title: title,
-		// 		content: msg,
-		// 		buttons: {
-		// 			confirm: {
-		// 				title: "next",
-		// 				click: function() {
-		// 					self.currIndex = self.currIndex + 1;
-		// 					self.gamestart()
-		// 				}
-		// 			},
-		// 			close: {
-		// 				title: "share",
-		// 				click: function() {
-		// 					dp_share();
-		// 				}
-		// 			}
-		// 		}
-		// 	})
-		// }
+		if (picimgs.length - 1 == this.currIndex) {
+			title = "恭喜你！你打通关啦！";
+			msg = "你真是霸气侧漏的大英雄，美人关已经全部打通了！";
+			dialog.dialog({
+				title: title,
+				content: msg,
+				buttons: {
+					close: {
+						title: "我好棒！必须炫耀一下",
+						click: function() {
+							dp_share();
+						}
+					}
+				}
+			})
+		} else {
+			title = "恭喜过第" + (self.currIndex + 1) + "\u5173";
+			msg = "你一共找出了" + this.action.correctNum + "个不同，正确率" + this.action.correctPecent + "%,\u8017\u65f6" + this.second + "\u79d2!";
+			dialog.dialog({
+				title: title,
+				content: msg,
+				buttons: {
+					confirm: {
+						title: "next",
+						click: function() {
+							self.currIndex = self.currIndex + 1;
+							self.gamestart()
+						}
+					},
+					close: {
+						title: "share",
+						click: function() {
+							dp_share();
+						}
+					}
+				}
+			})
+		}
 		self.stopTimer()
 	},
 	gamefinish: function() {},

@@ -384,6 +384,9 @@
                                         <state key="normal" image="btn_fbsignin_pressed.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="facebookLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5sg-Vc-lh8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dgv-kM-SOg">
                                         <rect key="frame" x="37" y="431" width="247" height="36"/>

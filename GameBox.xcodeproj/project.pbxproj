@@ -16,6 +16,8 @@
 		3D02EB5E19ED16AE00EC5FB6 /* pic_welcome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D02EB5A19ED16AE00EC5FB6 /* pic_welcome@2x.png */; };
 		3D02EB6319ED16D100EC5FB6 /* btn_oksignin_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D02EB6119ED16D100EC5FB6 /* btn_oksignin_pressed@2x.png */; };
 		3D02EB6419ED16D100EC5FB6 /* btn_fbsignin_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D02EB6219ED16D100EC5FB6 /* btn_fbsignin_pressed@2x.png */; };
+		3D02EB6819EE393100EC5FB6 /* VSFacebookLoginHold.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D02EB6719EE393100EC5FB6 /* VSFacebookLoginHold.m */; };
+		3D02EB6D19EE643B00EC5FB6 /* icon_share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D02EB6C19EE643B00EC5FB6 /* icon_share@2x.png */; };
 		3D05337D19E6650F00812CB6 /* VSUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D05337C19E6650F00812CB6 /* VSUserManager.m */; };
 		3D05339919E7B32100812CB6 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D05339819E7B32100812CB6 /* AFNetworking.framework */; };
 		3D3D121319E123D8002116C9 /* VSPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3D121219E123D8002116C9 /* VSPageView.m */; };
@@ -58,7 +60,6 @@
 		3D9F175119E4E9CF0090C101 /* VSEditUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F175019E4E9CF0090C101 /* VSEditUserInfoViewController.m */; };
 		3D9F175419E4E9E30090C101 /* VSPlayerPKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F175319E4E9E30090C101 /* VSPlayerPKViewController.m */; };
 		3D9F175A19E516C40090C101 /* head_default_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F175519E516C40090C101 /* head_default_big@2x.png */; };
-		3D9F175B19E516C40090C101 /* btn_share_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F175619E516C40090C101 /* btn_share_pressed@2x.png */; };
 		3D9F175C19E516C40090C101 /* btn_rank_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F175719E516C40090C101 /* btn_rank_pressed@2x.png */; };
 		3D9F175D19E516C40090C101 /* btn_edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F175819E516C40090C101 /* btn_edit@2x.png */; };
 		3D9F175E19E516C40090C101 /* btn_detele_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F175919E516C40090C101 /* btn_detele_pressed@2x.png */; };
@@ -138,6 +139,9 @@
 		3D02EB5A19ED16AE00EC5FB6 /* pic_welcome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pic_welcome@2x.png"; path = "Resource/pic_welcome@2x.png"; sourceTree = "<group>"; };
 		3D02EB6119ED16D100EC5FB6 /* btn_oksignin_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_oksignin_pressed@2x.png"; path = "Resource/btn_oksignin_pressed@2x.png"; sourceTree = "<group>"; };
 		3D02EB6219ED16D100EC5FB6 /* btn_fbsignin_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_fbsignin_pressed@2x.png"; path = "Resource/btn_fbsignin_pressed@2x.png"; sourceTree = "<group>"; };
+		3D02EB6619EE393100EC5FB6 /* VSFacebookLoginHold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSFacebookLoginHold.h; sourceTree = "<group>"; };
+		3D02EB6719EE393100EC5FB6 /* VSFacebookLoginHold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSFacebookLoginHold.m; sourceTree = "<group>"; };
+		3D02EB6C19EE643B00EC5FB6 /* icon_share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_share@2x.png"; path = "Resource/icon_share@2x.png"; sourceTree = "<group>"; };
 		3D05337B19E6650F00812CB6 /* VSUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSUserManager.h; sourceTree = "<group>"; };
 		3D05337C19E6650F00812CB6 /* VSUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSUserManager.m; sourceTree = "<group>"; };
 		3D05339819E7B32100812CB6 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = "<group>"; };
@@ -214,7 +218,6 @@
 		3D9F175219E4E9E30090C101 /* VSPlayerPKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSPlayerPKViewController.h; sourceTree = "<group>"; };
 		3D9F175319E4E9E30090C101 /* VSPlayerPKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSPlayerPKViewController.m; sourceTree = "<group>"; };
 		3D9F175519E516C40090C101 /* head_default_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "head_default_big@2x.png"; path = "Resource/head_default_big@2x.png"; sourceTree = "<group>"; };
-		3D9F175619E516C40090C101 /* btn_share_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_share_pressed@2x.png"; path = "Resource/btn_share_pressed@2x.png"; sourceTree = "<group>"; };
 		3D9F175719E516C40090C101 /* btn_rank_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_rank_pressed@2x.png"; path = "Resource/btn_rank_pressed@2x.png"; sourceTree = "<group>"; };
 		3D9F175819E516C40090C101 /* btn_edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_edit@2x.png"; path = "Resource/btn_edit@2x.png"; sourceTree = "<group>"; };
 		3D9F175919E516C40090C101 /* btn_detele_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_detele_pressed@2x.png"; path = "Resource/btn_detele_pressed@2x.png"; sourceTree = "<group>"; };
@@ -543,12 +546,12 @@
 		3DAC904919D2A2C80039DAC3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3D02EB6C19EE643B00EC5FB6 /* icon_share@2x.png */,
 				3D02EB6119ED16D100EC5FB6 /* btn_oksignin_pressed@2x.png */,
 				3D02EB6219ED16D100EC5FB6 /* btn_fbsignin_pressed@2x.png */,
 				3D02EB5919ED16AE00EC5FB6 /* text_or@2x.png */,
 				3D02EB5A19ED16AE00EC5FB6 /* pic_welcome@2x.png */,
 				3D9F175519E516C40090C101 /* head_default_big@2x.png */,
-				3D9F175619E516C40090C101 /* btn_share_pressed@2x.png */,
 				3D9F175719E516C40090C101 /* btn_rank_pressed@2x.png */,
 				3D9F175819E516C40090C101 /* btn_edit@2x.png */,
 				3D9F175919E516C40090C101 /* btn_detele_pressed@2x.png */,
@@ -684,6 +687,8 @@
 				3DEC30AE19CD30F9009FCCFE /* VSChannelList.m */,
 				3D9879FD19E26BB20069C26F /* VSBroast.h */,
 				3D9879FE19E26BB20069C26F /* VSBroast.m */,
+				3D02EB6619EE393100EC5FB6 /* VSFacebookLoginHold.h */,
+				3D02EB6719EE393100EC5FB6 /* VSFacebookLoginHold.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -753,6 +758,9 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = cyggame;
 				TargetAttributes = {
+					3DEC306719CD2236009FCCFE = {
+						DevelopmentTeam = 73GF67U332;
+					};
 					3DEC308819CD2236009FCCFE = {
 						TestTargetID = 3DEC306719CD2236009FCCFE;
 					};
@@ -800,12 +808,12 @@
 				3D02EB6419ED16D100EC5FB6 /* btn_fbsignin_pressed@2x.png in Resources */,
 				3D97A84019DA51D8005468F5 /* M2DHudView.bundle in Resources */,
 				3DA7967619E3D11200AB1340 /* btn_pk_released@2x.png in Resources */,
+				3D02EB6D19EE643B00EC5FB6 /* icon_share@2x.png in Resources */,
 				3D9F175A19E516C40090C101 /* head_default_big@2x.png in Resources */,
 				3D3D122719E14E27002116C9 /* btn_Alternative_new@2x.png in Resources */,
 				3DEC307F19CD2236009FCCFE /* Main.storyboard in Resources */,
 				3D9F175D19E516C40090C101 /* btn_edit@2x.png in Resources */,
 				3D3D122419E1456B002116C9 /* btn_play_release@2x.png in Resources */,
-				3D9F175B19E516C40090C101 /* btn_share_pressed@2x.png in Resources */,
 				3DAC904B19D2A2D60039DAC3 /* game.json in Resources */,
 				3D987A0A19E28DA80069C26F /* btn_userhome@2x.png in Resources */,
 				3D3D122119E13532002116C9 /* dot_banner_white@2x.png in Resources */,
@@ -883,6 +891,7 @@
 				3D9F179919E551AC0090C101 /* SDWebImageCompat.m in Sources */,
 				3D97A84719DA9D66005468F5 /* VSFavorGame.m in Sources */,
 				3D9879FF19E26BB20069C26F /* VSBroast.m in Sources */,
+				3D02EB6819EE393100EC5FB6 /* VSFacebookLoginHold.m in Sources */,
 				3D02EB4D19EBD4D700EC5FB6 /* NSTimer+Addition.m in Sources */,
 				3D9F17A019E551AC0090C101 /* UIImage+GIF.m in Sources */,
 				3D8B58DD19E0F983007F075B /* VSBroastTableViewCell.m in Sources */,
@@ -1034,6 +1043,7 @@
 				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1058,6 +1068,7 @@
 				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

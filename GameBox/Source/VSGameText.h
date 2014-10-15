@@ -14,5 +14,6 @@
 - (NSString *)gameName:(NSString *)gameId;
 - (NSString *)gameAbstract:(NSString *)gameId;
 - (NSString *)gameShare:(NSString *)gameId;
+- (NSString *)gameImageLink:(NSString *)gameId;
 
 @end

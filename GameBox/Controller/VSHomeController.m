@@ -13,6 +13,13 @@
 #import "VSChannel.h"
 #import "VSGameDetailInfo.h"
 #import "VSFavorGame.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import "VSChannel.h"
+#import "VSChannelList.h"
+#import "VSGameDetailInfo.h"
+#import "VSGameText.h"
+#define DownloadLink @"https://developers.facebook.com"
+
 static VSHomeController *_homeController = nil;
 @implementation VSHomeController
 + (VSHomeController *)shareInstance{
@@ -128,5 +135,60 @@ static VSHomeController *_homeController = nil;
 - (void)pkClick:(id)sender
 {
     
+}
+
+
+
+- (void)share
+{
+    [FBSettings setDefaultDisplayName:[[FBSettings defaultDisplayName] precomposedStringWithCanonicalMapping]];
+    
+    VSChannel *currentChannel = [[VSChannelList shareInstance] currentChannel];
+    
+    NSString *gameId = currentChannel.currentGameId;
+    NSString *shareUrl = [[VSGameText shareInstance] gameImageLink:gameId];
+    FBLinkShareParams *linkparams = [[FBLinkShareParams alloc] init];
+    linkparams.link = [NSURL URLWithString:DownloadLink];
+    linkparams.caption = @"Game Pocket";
+    linkparams.name = @"Game Pocket";
+//    linkparams.picture = [NSURL URLWithString:shareUrl];
+    linkparams.linkDescription = [[VSGameText shareInstance] gameShare:gameId];
+    
+    // If the Facebook app is installed and we can present the share dialog
+    if ([FBDialogs canPresentShareDialogWithParams:linkparams]) {
+        
+        [FBDialogs presentShareDialogWithParams:linkparams clientState:nil handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+            if(error) {
+                
+            } else {
+                
+            }
+        }];
+    }else{
+        // Show the feed dialog
+        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       @"Game Pocket", @"name",
+                                       @"Game Pocket", @"caption",
+                                      [[VSGameText shareInstance] gameShare:gameId], @"description",
+                                       DownloadLink, @"link",
+                                       @"shareUrl",@"picture",
+                                       nil];
+        [FBWebDialogs presentFeedDialogModallyWithSession:nil
+                                               parameters:params
+                                                  handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+                                                      if (error) {
+                                                          // An error occurred, we need to handle the error
+                                                          // See: https://developers.facebook.com/docs/ios/errors
+                                                          // NSLog(@"Error publishing story: %@", error.description);
+                                                      } else {
+                                                          if (result == FBWebDialogResultDialogNotCompleted) {
+                                                              // User canceled.
+                                                              //  NSLog(@"User cancelled.");
+                                                          } else {
+                                                              
+                                                          }
+                                                      }
+                                                  }];
+    }
 }
 @end

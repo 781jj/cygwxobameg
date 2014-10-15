@@ -15,4 +15,6 @@
 - (void)channelClick:(id)sender;
 - (void)gameClick:(id)sender;
 - (void)pkClick:(id)sender;
+
+- (void)share;
 @end

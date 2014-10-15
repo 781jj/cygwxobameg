@@ -79,4 +79,14 @@ static VSGameText *_gameText = nil;
     return nil;
 }
 
+- (NSString *)gameImageLink:(NSString *)gameId
+{
+    for (NSDictionary *dic in _infoList) {
+        if ([[dic objectForKey:@"id"] integerValue] == [gameId integerValue]) {
+            return [dic objectForKey:@"sharelink"];
+        }
+    }
+    return nil;
+}
+
 @end

@@ -11,8 +11,7 @@
 #import "VSGameHtml.h"
 #import "VSBackBarButtonItem.h"
 #import "VSUserManager.h"
-
-
+#import "VSHomeController.h"
 static NSString* const kGameboxSchema = @"gamebox";
 
 @interface VSGamePlayViewController ()<UIWebViewDelegate>
@@ -46,6 +45,16 @@ static NSString* const kGameboxSchema = @"gamebox";
     [super viewDidLoad];
      self.navigationItem.leftBarButtonItem = [VSBackBarButtonItem backBarButtonItem:self selector:@selector(backButtonClick)];
     
+    
+    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightBtn.exclusiveTouch = YES;
+    UIImage *rightBtnImage = [UIImage imageNamed:@"icon_share"];
+    rightBtn.frame = CGRectMake(0, 0, rightBtnImage.size.width, rightBtnImage.size.height);
+    [rightBtn setImage:rightBtnImage forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(share:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+    self.navigationItem.rightBarButtonItem = menuButton;
+    
     self.title = @"Play Game";
     VSChannel *currentChannel = [[VSChannelList shareInstance] currentChannel];
     
@@ -65,6 +74,11 @@ static NSString* const kGameboxSchema = @"gamebox";
 - (void)backButtonClick
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)share:(id)sender
+{
+    [[VSHomeController shareInstance] share];
 }
 
 - (void)didReceiveMemoryWarning

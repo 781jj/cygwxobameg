@@ -14,6 +14,7 @@
 #import "VSChannel.h"
 #import "VSChannelList.h"
 #import "VSBackBarButtonItem.h"
+#import "VSHomeController.h"
 @interface VSGameDetailViewController ()
 @property(nonatomic,weak)IBOutlet VSBroastView *broastView;
 @property(nonatomic,weak)IBOutlet VSGameDetailInfoView *detailView;
@@ -28,7 +29,14 @@
 {
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem = [VSBackBarButtonItem backBarButtonItem:self selector:@selector(backButtonClick)];
-
+    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightBtn.exclusiveTouch = YES;
+    UIImage *rightBtnImage = [UIImage imageNamed:@"icon_share"];
+    rightBtn.frame = CGRectMake(0, 0, rightBtnImage.size.width, rightBtnImage.size.height);
+    [rightBtn setImage:rightBtnImage forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(share:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+    self.navigationItem.rightBarButtonItem = menuButton;
     
     VSChannel *channel = [VSChannelList shareInstance].currentChannel;
     VSGameDetailInfo *info = [[VSGameDetailInfo alloc] initWithGameId:channel.currentGameId];
@@ -49,6 +57,11 @@
 - (void)backButtonClick
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)share:(id)sender
+{
+    [[VSHomeController shareInstance] share];
 }
 
 - (IBAction)startClick:(id)sender

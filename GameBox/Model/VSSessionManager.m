@@ -53,11 +53,14 @@ static VSSessionManager *_sessionManager = nil;
 
 - (void)loginWithType:(VSLoginMessage *)info finish:(VSSessionLoginCallback)finish;
 {
+    __weak VSSessionManager *blockself = self;
+
     switch (info.type) {
         case VSTemp:
         {
             VSTempPassport *temp = [[VSTempPassport alloc] init];
             [temp doLogin:^(BOOL success,id msg){
+                blockself.passport = temp;
                 finish(success,msg);
             }];
             break;
@@ -68,6 +71,7 @@ static VSSessionManager *_sessionManager = nil;
             temp.nickname = ((VSParamLoginMessage *)info).nickName;
             temp.userName = ((VSParamLoginMessage *)info).userName;
             [temp doLogin:^(BOOL success,id msg){
+                blockself.passport = temp;
                 finish(success,msg);
             }];
             break;
