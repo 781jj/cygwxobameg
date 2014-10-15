@@ -759,7 +759,7 @@
 				ORGANIZATIONNAME = cyggame;
 				TargetAttributes = {
 					3DEC306719CD2236009FCCFE = {
-						DevelopmentTeam = 73GF67U332;
+						DevelopmentTeam = 6F5458Z464;
 					};
 					3DEC308819CD2236009FCCFE = {
 						TestTargetID = 3DEC306719CD2236009FCCFE;
@@ -1043,7 +1043,7 @@
 				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: XIANXIONG GU  (6F5458Z464)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1069,7 +1069,7 @@
 				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: XIANXIONG GU  (6F5458Z464)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
