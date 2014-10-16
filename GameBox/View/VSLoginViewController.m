@@ -43,6 +43,19 @@
     [MobClick beginEvent:VSEnterLoginView];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+        
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *home = [storyBoard instantiateViewControllerWithIdentifier:@"VSHomeViewController"];
+        if ([VSSessionManager shareInstance].isLogin) {
+            [self.navigationController pushViewController:home animated:YES];
+        }
+    
+}
+
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
@@ -56,15 +69,8 @@
     // If the session state is any of the two "open" states when the button is clicked
     if (FBSession.activeSession.state == FBSessionStateOpen
         || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
-        
-        // Close the session and remove the access token from the cache
-        // The session state handler (in the app delegate) will be called automatically
         [FBSession.activeSession closeAndClearTokenInformation];
-        
-        // If the session state is not any of the two "open" states when the button is clicked
     } else {
-        // Open a session showing the user the login UI
-        // You must ALWAYS ask for public_profile permissions when opening a session
         [FBSession openActiveSessionWithReadPermissions:@[@"public_profile",@"e_mail"]
                                            allowLoginUI:YES
                                       completionHandler:
@@ -87,7 +93,11 @@
             if (success) {
                 [MobClick event:VSLoginTempSuccess];
                 [M2DHudView hideLoading];
-                [self dismissViewControllerAnimated:NO completion:nil];
+                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                UIViewController *home = [storyBoard instantiateViewControllerWithIdentifier:@"VSHomeViewController"];
+                if ([VSSessionManager shareInstance].isLogin) {
+                    [self.navigationController pushViewController:home animated:YES];
+                }
             }else{
                 [MobClick event:VSLoginTempFail];
             }

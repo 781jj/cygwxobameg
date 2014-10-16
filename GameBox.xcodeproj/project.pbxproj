@@ -1058,7 +1058,7 @@
 					"$(PROJECT_DIR)/Plugin/UMAnalytics_Sdk",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a61e0011-19a5-455a-bbbc-c21c8f4f3611";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1084,7 +1084,7 @@
 					"$(PROJECT_DIR)/Plugin/UMAnalytics_Sdk",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a61e0011-19a5-455a-bbbc-c21c8f4f3611";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

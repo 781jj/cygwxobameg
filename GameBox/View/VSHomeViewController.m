@@ -29,7 +29,8 @@ CGRectGetWidth(self.scrollview.frame), CGRectGetHeight(self.scrollview.frame))
 
     [super viewDidLoad];
     
-    
+    self.navigationController.navigationBarHidden = NO;
+    [self.navigationItem setHidesBackButton:YES];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [_scrollview setContentSize:CGSizeMake(_scrollview.bounds.size.width*2.0, _scrollview.bounds.size.height)];
@@ -64,14 +65,7 @@ CGRectGetWidth(self.scrollview.frame), CGRectGetHeight(self.scrollview.frame))
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    if (!_isshow) {
-        _isshow = YES;
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *login = [storyBoard instantiateViewControllerWithIdentifier:@"VSLoginView"];
-        if (![VSSessionManager shareInstance].isLogin) {
-            [self.navigationController presentViewController:login animated:NO completion:nil];
-        }
-    }
+
 }
 
 - (IBAction)playInfo:(id)sender

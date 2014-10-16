@@ -52,7 +52,7 @@ static VSFacebookLoginHold *_facebookHold = nil;
 {
     [M2DHudView showLoading];
     VSParamLoginMessage *info = [VSParamLoginMessage new];
-    info.nickName = session.accessTokenData.accessToken;
+   // info.nickName = session.accessTokenData.accessToken;
     info.userName = session.accessTokenData.appID;
     
     [[VSSessionManager shareInstance] loginWithType:info finish:^(BOOL success,id msg){
