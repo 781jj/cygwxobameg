@@ -18,7 +18,7 @@
 #import "VSChannelList.h"
 #import "VSGameDetailInfo.h"
 #import "VSGameText.h"
-#define DownloadLink @"https://developers.facebook.com"
+#define DownloadLink @"https://itunes.apple.com/us/app/fas-calculator/id874866243?ls=1&mt=8"
 
 static VSHomeController *_homeController = nil;
 @implementation VSHomeController
@@ -147,12 +147,21 @@ static VSHomeController *_homeController = nil;
     
     NSString *gameId = currentChannel.currentGameId;
     NSString *shareUrl = [[VSGameText shareInstance] gameImageLink:gameId];
+    if (!shareUrl) {
+        shareUrl = @"http://i1372.photobucket.com/albums/ag327/Gamebox_Cyg/gamebox/Icon2x_zps9b54a303.png";
+    }
+   
+    NSString *shareConent = [[VSGameText shareInstance] gameShare:gameId];
+    if (!shareConent) {
+        shareConent = @"Html5 Game Pocket";
+    }
     FBLinkShareParams *linkparams = [[FBLinkShareParams alloc] init];
     linkparams.link = [NSURL URLWithString:DownloadLink];
     linkparams.caption = @"Game Pocket";
     linkparams.name = @"Game Pocket";
-//    linkparams.picture = [NSURL URLWithString:shareUrl];
-    linkparams.linkDescription = [[VSGameText shareInstance] gameShare:gameId];
+    linkparams.picture = [NSURL URLWithString:shareUrl];
+    linkparams.linkDescription = shareConent;
+   
     
     // If the Facebook app is installed and we can present the share dialog
     if ([FBDialogs canPresentShareDialogWithParams:linkparams]) {
@@ -169,9 +178,9 @@ static VSHomeController *_homeController = nil;
         NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                        @"Game Pocket", @"name",
                                        @"Game Pocket", @"caption",
-                                      [[VSGameText shareInstance] gameShare:gameId], @"description",
+                                       shareConent, @"description",
                                        DownloadLink, @"link",
-                                       @"shareUrl",@"picture",
+                                       shareUrl,@"picture",
                                        nil];
         [FBWebDialogs presentFeedDialogModallyWithSession:nil
                                                parameters:params

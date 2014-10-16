@@ -75,7 +75,6 @@
 
 - (void)update:(NSInteger )index;
 {
-    
     VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
     if (index  >= [channel.gameList count] ) {
         return;

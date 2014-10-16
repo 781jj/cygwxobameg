@@ -40,7 +40,16 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [MobClick beginEvent:VSEnterLoginView];
+    if (![VSSessionManager shareInstance].isLogin) {
+        [MobClick beginLogPageView:VSEnterLoginView];
+    }
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:VSEnterLoginView];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -70,14 +79,20 @@
     if (FBSession.activeSession.state == FBSessionStateOpen
         || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
         [FBSession.activeSession closeAndClearTokenInformation];
-    } else {
-        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile",@"e_mail"]
+    }
+        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
                                            allowLoginUI:YES
                                       completionHandler:
          ^(FBSession *session, FBSessionState state, NSError *error) {
-             [[VSFacebookLoginHold shareInstance] sessionStateChanged:session state:state error:error];
+             [[VSFacebookLoginHold shareInstance] sessionStateChanged:session state:state error:error finished:^(BOOL finished){
+                 UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                 UIViewController *home = [storyBoard instantiateViewControllerWithIdentifier:@"VSHomeViewController"];
+                 if ([VSSessionManager shareInstance].isLogin) {
+                     [self.navigationController pushViewController:home animated:YES];
+                 }
+             }];
          }];
-    }
+
 }
 
 - (IBAction)twitterLogin:(id)sender

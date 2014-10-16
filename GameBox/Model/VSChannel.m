@@ -66,7 +66,6 @@
                     [array insertObject:favorGame atIndex:0];
                 }
     
-                
                 blockself.gameList = array;
                 callback(YES,array);
             }else{

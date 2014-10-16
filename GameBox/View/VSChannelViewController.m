@@ -40,30 +40,22 @@
 
     _table = tableView;
     
+ 
     VSChannel *channel = [[VSChannelList shareInstance] channelWithType:_type];
+    [M2DHudView showLoading];
+    
     [channel loadData:^(BOOL success,id msg){
         if (success) {
+            [M2DHudView hideLoading];
+            
             [_table performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
         }
     }];
-
     
     // Do any additional setup after loading the view.
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    NSString *type = [NSString stringWithFormat:@"%d",_type];
-    [MobClick beginEvent:VSChannelView primarykey:type attributes:@{@"channlid":type}];
-}
 
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    NSString *type = [NSString stringWithFormat:@"%d",_type];
-    [MobClick endEvent:VSChannelView primarykey:type];
-}
 
 - (void)didReceiveMemoryWarning
 {

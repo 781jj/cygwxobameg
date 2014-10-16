@@ -25,18 +25,18 @@ static NSString* const kGameboxSchema = @"gamebox";
     [_webView stopLoading];
 }
 
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    VSChannel *channel = [VSChannelList shareInstance].currentChannel;
-
-    [MobClick beginEvent:VSPlayView primarykey:@"GamePlay" attributes:@{@"gameid":channel.currentGameId}];
+    [MobClick beginLogPageView:VSPlayView];
+    
 }
 
-- (void)viewDidDisappear:(BOOL)animated
+- (void)viewWillDisappear:(BOOL)animated
 {
-    [super viewDidDisappear:animated];
-    [MobClick endEvent:VSPlayView primarykey:@"GamePlay"];
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:VSPlayView];
 }
 
 

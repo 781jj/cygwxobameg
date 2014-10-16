@@ -20,6 +20,7 @@ static CGFloat const M2DHudViewBackgroundAlpha = 0.7;
 #define M2DHudViewErrorImagePath [NSString stringWithFormat:@"%@/error.png", [[NSBundle mainBundle] pathForResource:@"M2DHudView" ofType:@"bundle"]]
 
 static M2DHudView *_hudLoadingView = nil;
+static M2DHudView *_hudLoadingView2 = nil;
 
 @interface M2DHudView ()
 {
@@ -35,9 +36,13 @@ static M2DHudView *_hudLoadingView = nil;
 
 + (void)showLoading
 {
-    M2DHudView *loading = [[M2DHudView alloc] initWithStyle:M2DHudViewStyleLoading title:@"Loading"];
-    _hudLoadingView = loading;
-   [loading show];
+    if (_hudLoadingView) {
+        [_hudLoadingView dismiss];
+        _hudLoadingView = nil;
+    }
+     M2DHudView *loading = [[M2DHudView alloc] initWithStyle:M2DHudViewStyleLoading title:@"Loading"];
+     _hudLoadingView = loading;
+     [loading show];
 }
 
 + (void)hideLoading

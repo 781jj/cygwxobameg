@@ -68,7 +68,6 @@ static VSSessionManager *_sessionManager = nil;
         case VSPara:
         {
             VSGamePassport *temp = [[VSGamePassport alloc] init];
-            temp.nickname = ((VSParamLoginMessage *)info).nickName;
             temp.userName = ((VSParamLoginMessage *)info).userName;
             [temp doLogin:^(BOOL success,id msg){
                 blockself.passport = temp;

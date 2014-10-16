@@ -11,7 +11,7 @@
 @implementation VSGamePassport
 - (void)doLogin:(VSPassportLoginCallback)finish;
 {
-    [VSRequest post :@"users/register"  params:@{@"facebookid":self.userName,@"nickname":self.nickname} success:^(NSURLRequest * request , id info) {
+    [VSRequest post :@"users/register"  params:@{@"facebookid":self.userName} success:^(NSURLRequest * request , id info) {
         NSDictionary *dic = (NSDictionary *)info;
         if ([dic objectForKey:@"returnCode"]) {
             if ([[dic objectForKey:@"returnCode"] integerValue] == 1) {

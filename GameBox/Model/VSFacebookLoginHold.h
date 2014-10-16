@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <FacebookSDK/FacebookSDK.h>
+typedef  void(^VSFacebookLoginBlock)(BOOL success );
 
 @interface VSFacebookLoginHold : NSObject
 + (VSFacebookLoginHold *)shareInstance;
-- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error;
+- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error finished:(VSFacebookLoginBlock) finish;
 @end

@@ -10,6 +10,8 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "VSGameResource.h"
 #import "VSFacebookLoginHold.h"
+#import "VSSessionManager.h"
+#import "VSLoginViewController.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -17,21 +19,32 @@
     // Override point for customization after application launch.
     [MobClick startWithAppkey:@"543cca8ffd98c5173900e44b"];
 
+    
     [VSGameResource shareInstance];
+  
     
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
         // If there's one, just open the session silently, without showing the user the login UI
         [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
                                            allowLoginUI:NO
                                       completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
-                                          // Handler for session state changes
-                                          // This method will be called EACH time the session state changes,
-                                          // also for intermediate states and NOT just when the session open
-                                          [[VSFacebookLoginHold shareInstance]sessionStateChanged:session state:state error:error];
-                                      }];
-        
-        // If there's no cached session, we will show a login button
-    }
+                            if(![VSSessionManager shareInstance].isLogin ){
+                                UIViewController *controller =   [[UIApplication sharedApplication] keyWindow].rootViewController;
+                                if([controller isKindOfClass:[UINavigationController class]] ){
+                                    UINavigationController *nav = (UINavigationController *)controller;
+                                    if ([nav.topViewController isKindOfClass:[VSLoginViewController class]]) {
+                                            [[VSFacebookLoginHold shareInstance] sessionStateChanged:session state:state error:error finished:^(BOOL finished){
+                                                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                UIViewController *home = [storyBoard instantiateViewControllerWithIdentifier:@"VSHomeViewController"];
+                                                if ([VSSessionManager shareInstance].isLogin) {
+                                                              [nav pushViewController:home animated:YES];
+                                                          }
+                                                    }];
+                                                }
+                                            }
+                                            }
+                                    }];
+            }
   
     return YES;
 }

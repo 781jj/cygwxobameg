@@ -41,8 +41,8 @@ CGRectGetWidth(self.scrollview.frame), CGRectGetHeight(self.scrollview.frame))
         controller.type = i+1;
         [self addChildViewController:controller];
         controller.view.frame = CGRectForVCAtIndex(i);
-        _scrollview.scrollsToTop = YES;
-        [_scrollview scrollRectToVisible:CGRectMake (0, 0, 0, 0) animated:NO];
+       // _scrollview.scrollsToTop = YES;
+      //  [_scrollview scrollRectToVisible:CGRectMake (0, 0, 0, 0) animated:NO];
         [_scrollview addSubview:controller.view];
         [controller didMoveToParentViewController:self];
         
@@ -66,6 +66,20 @@ CGRectGetWidth(self.scrollview.frame), CGRectGetHeight(self.scrollview.frame))
 {
     [super viewDidAppear:animated];
 
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:VSChannelView];
+  
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:VSChannelView];
 }
 
 - (IBAction)playInfo:(id)sender

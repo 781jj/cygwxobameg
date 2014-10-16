@@ -11,6 +11,8 @@
 #import "VSParamLoginMessage.h"
 #import "VSPassport.h"
 static VSFacebookLoginHold *_facebookHold = nil;
+
+
 @implementation VSFacebookLoginHold
 
 + (VSFacebookLoginHold *)shareInstance{
@@ -24,16 +26,16 @@ static VSFacebookLoginHold *_facebookHold = nil;
 }
 
 
-- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error
+- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error finished:(VSFacebookLoginBlock) finish
 {
     // If the session was opened successfully
     if (!error && state == FBSessionStateOpen){
         //login
         if (![VSSessionManager shareInstance].isLogin) {
-            [self loginFacebook:session];
+            [self loginFacebook:session callback:finish];
         }else{
             if ([[VSSessionManager shareInstance].passport isKindOfClass:NSClassFromString(@"VSTempPassport")]) {
-                [self loginFacebook:session];
+                [self loginFacebook:session callback:finish];
             }
         }
         return;
@@ -48,7 +50,7 @@ static VSFacebookLoginHold *_facebookHold = nil;
     }
 }
 
-- (void)loginFacebook:(FBSession *)session
+- (void)loginFacebook:(FBSession *)session callback:(VSFacebookLoginBlock )finish
 {
     [M2DHudView showLoading];
     VSParamLoginMessage *info = [VSParamLoginMessage new];
@@ -59,9 +61,11 @@ static VSFacebookLoginHold *_facebookHold = nil;
         if (success) {
             [MobClick event:VSLoginFacebookSuccess];
             [M2DHudView hideLoading];
+            finish(YES);
           //  [self dismissViewControllerAnimated:NO completion:nil];
         }else{
             [MobClick event:VSLoginFacebookFail];
+             finish(NO);
         }
     }];
 }

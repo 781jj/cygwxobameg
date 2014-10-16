@@ -70,22 +70,21 @@
     [MobClick event:VSGameStartClick attributes:@{@"channelid":[NSString stringWithFormat:@"%d",channel.type],@"gameid":channel.currentGameId,@"origin":@"detail"}];
 }
 
+
+
+
 - (void)viewWillAppear:(BOOL)animated
 {
-
     [super viewWillAppear:animated];
-    VSChannel *channel = [VSChannelList shareInstance].currentChannel;
-
-    [MobClick beginEvent:VSDetailView primarykey:@"GameDetail" attributes:@{@"gameid":channel.currentGameId}];
+    [MobClick beginLogPageView:VSDetailView];
+    
 }
 
-- (void)viewDidDisappear:(BOOL)animated
+- (void)viewWillDisappear:(BOOL)animated
 {
-
-    [super viewDidDisappear:animated];
-    [MobClick endEvent:VSDetailView primarykey:@"GameDetail"];
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:VSDetailView];
 }
-
 
 /*
 #pragma mark - Navigation
