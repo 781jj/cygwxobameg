@@ -117,11 +117,16 @@ static VSHomeController *_homeController = nil;
         UIViewController *home = [nav topViewController];
         if ([home isKindOfClass:[VSHomeViewController class]]) {
             if ([sender isEqualToString:@"new"]) {
+                [VSChannelList shareInstance].currentType = VSNewChannel;
+
+                [(VSHomeViewController *)home addNew];
                 [(VSHomeViewController *)home moveToChannel:1];
-                [MobClick event:VSChannelSwitchClick attributes:@{@"channelid":@"2"}];
-            }else{
-                [(VSHomeViewController *)home moveToChannel:0];
                 [MobClick event:VSChannelSwitchClick attributes:@{@"channelid":@"1"}];
+                
+            }else{
+                [VSChannelList shareInstance].currentType = VSHotChannel;
+                [(VSHomeViewController *)home moveToChannel:0];
+                [MobClick event:VSChannelSwitchClick attributes:@{@"channelid":@"2"}];
 
             }
             

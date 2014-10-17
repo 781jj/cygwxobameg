@@ -88,6 +88,10 @@
     return _rankings;
 }
 
+- (NSString *)bigPic
+{
+    return [[VSGameImage shareInstance] bigImagePath:_gameId];
+}
 - (void)rankingList:(VSGameRankBlock)callback
 {
     [VSRequest get:@"games/gamerank" params:@{@"gamenumber":_gameId} success:^(NSURLRequest *request, id obj) {

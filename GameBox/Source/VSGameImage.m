@@ -42,6 +42,17 @@ static VSGameImage *_gameImage = nil;
     return [gameFoulder stringByAppendingPathComponent:@"icon.png"];
 }
 
+- (NSString *)bigImagePath:(NSString *)gameId
+{
+    NSString *gameFoulder = [_gameImagePath stringByAppendingPathComponent:gameId];
+    gameFoulder = [gameFoulder stringByAppendingPathComponent:@"big.jpg"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:gameFoulder]) {
+        return gameFoulder;
+    }else{
+        return [self iconPath:gameId];
+    }
+}
+
 - (NSArray *)galleryPath:(NSString *)gameId
 {
     NSString *gameFoulder = [_gameImagePath stringByAppendingPathComponent:gameId];

@@ -15,5 +15,5 @@
 
 - (NSString *)iconPath:(NSString *)gameId;
 - (NSArray *)galleryPath:(NSString *)gameId;
-
+- (NSString *)bigImagePath:(NSString *)gameId;
 @end

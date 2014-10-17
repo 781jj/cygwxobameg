@@ -11,4 +11,5 @@
 @interface VSHomeViewController : UIViewController
 
 - (void)moveToChannel:(NSInteger )index;
+- (void)addNew;
 @end

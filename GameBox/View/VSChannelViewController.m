@@ -65,14 +65,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
+    VSChannel *channel = [[VSChannelList shareInstance] channelWithType:_type];
     return [channel.gameList count];
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
+    VSChannel *channel = [[VSChannelList shareInstance] channelWithType:_type];
+
     NSInteger index = indexPath.row;
     if (index >= [channel.gameList count] ) {
          return 44;
@@ -90,7 +91,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
+    VSChannel *channel = [[VSChannelList shareInstance] channelWithType:_type];
     NSInteger index = indexPath.row;
     if (index >= [channel.gameList count] ) {
         static NSString *CellIdentifier = @"UITableViewCell";

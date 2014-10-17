@@ -19,6 +19,7 @@ typedef  void(^VSGameRankBlock)(BOOL success,NSArray *rankList);
 @property (nonatomic,copy)NSString *gameId;
 @property (nonatomic,readonly)NSString *iconPath;
 @property (nonatomic,copy)NSString *abstract;
+@property (nonatomic,copy)NSString *bigPic;
 //玩法
 @property (nonatomic,copy)NSString *gameplay;
 @property (nonatomic,assign)NSInteger players;

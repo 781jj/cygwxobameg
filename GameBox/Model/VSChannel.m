@@ -53,16 +53,32 @@
                 }
                 
                 
-                if ([array count]>0) {
-                    [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                        VSGameDetailInfo *info = (VSGameDetailInfo *)obj;
-                        if (info.isFavor) {
-                            [favor addObject:info];
-                        }
-                    }];
+//                if ([array count]>0) {
+//                    [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//                        VSGameDetailInfo *info = (VSGameDetailInfo *)obj;
+//                        if (info.isFavor) {
+//                            [favor addObject:info];
+//                        }
+//                    }];
+//                    VSFavorGame *favorGame = [VSFavorGame new];
+//                    favorGame.favorlist = favor;
+//                    
+//                    [array insertObject:favorGame atIndex:0];
+//                }
+                
+                if (blockself.type == 1) {
+                    VSGameDetailInfo *gameInfo1 = [[VSGameDetailInfo alloc] initWithGameId:@"48"];
+                    VSGameDetailInfo *gameInfo2 = [[VSGameDetailInfo alloc] initWithGameId:@"49"];
+                    [favor addObjectsFromArray:@[gameInfo1,gameInfo2]];
                     VSFavorGame *favorGame = [VSFavorGame new];
                     favorGame.favorlist = favor;
-                    
+                    [array insertObject:favorGame atIndex:0];
+                }else{
+                    VSGameDetailInfo *gameInfo1 = [[VSGameDetailInfo alloc] initWithGameId:@"56"];
+                    VSGameDetailInfo *gameInfo2 = [[VSGameDetailInfo alloc] initWithGameId:@"3"];
+                    [favor addObjectsFromArray:@[gameInfo1,gameInfo2]];
+                    VSFavorGame *favorGame = [VSFavorGame new];
+                    favorGame.favorlist = favor;
                     [array insertObject:favorGame atIndex:0];
                 }
     

@@ -36,20 +36,27 @@ CGRectGetWidth(self.scrollview.frame), CGRectGetHeight(self.scrollview.frame))
     [_scrollview setContentSize:CGSizeMake(_scrollview.bounds.size.width*2.0, _scrollview.bounds.size.height)];
     _scrollview.scrollEnabled = NO;
 
-    for (int i = 0; i<2; i++) {
+  
         VSChannelViewController *controller = [[VSChannelViewController alloc] init];
-        controller.type = i+1;
+        controller.type = 2;
         [self addChildViewController:controller];
-        controller.view.frame = CGRectForVCAtIndex(i);
-       // _scrollview.scrollsToTop = YES;
-      //  [_scrollview scrollRectToVisible:CGRectMake (0, 0, 0, 0) animated:NO];
+        controller.view.frame = CGRectForVCAtIndex(0);
         [_scrollview addSubview:controller.view];
         [controller didMoveToParentViewController:self];
         
-    }
+    
     // Do any additional setup after loading the view.
 }
 
+- (void)addNew
+{
+    VSChannelViewController *controller = [[VSChannelViewController alloc] init];
+    controller.type = 1;
+    [self addChildViewController:controller];
+    controller.view.frame = CGRectForVCAtIndex(1);
+    [_scrollview addSubview:controller.view];
+    [controller didMoveToParentViewController:self];
+}
 
 - (void)moveToChannel:(NSInteger )index
 {

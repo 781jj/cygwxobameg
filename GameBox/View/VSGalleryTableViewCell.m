@@ -35,6 +35,7 @@
     if (self) {
          self.selectionStyle = UITableViewCellSelectionStyleNone;
         
+        NSInteger current = [VSChannelList shareInstance].currentType;
         VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
         if ([channel.gameList count]< 1 || ![[channel.gameList objectAtIndex:0] isKindOfClass:[VSFavorGame class]]) {
             return self;
@@ -53,7 +54,7 @@
         __weak VSGalleryTableViewCell *blockself = self;
         _scrollview.fetchContentViewAtIndex = ^UIView *(NSInteger pageIndex){
             VSGameDetailInfo *gameInfo = [info.favorlist  objectAtIndex:pageIndex];
-            VSPageView *page = [[VSPageView alloc ] initWithFrame:CGRectMake(pageIndex*blockself.scrollview.frame.size.width, 0, blockself.scrollview.frame.size.width, blockself.scrollview.frame.size.height) imagePath:gameInfo.iconPath];
+            VSPageView *page = [[VSPageView alloc ] initWithFrame:CGRectMake(pageIndex*blockself.scrollview.frame.size.width, 0, blockself.scrollview.frame.size.width, blockself.scrollview.frame.size.height) imagePath:gameInfo.bigPic];
             page.index = pageIndex;
             return page;
         };
