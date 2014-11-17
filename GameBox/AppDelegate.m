@@ -12,6 +12,7 @@
 #import "VSFacebookLoginHold.h"
 #import "VSSessionManager.h"
 #import "VSLoginViewController.h"
+#import "VSTempLoginMessage.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -21,30 +22,38 @@
 
     
     [VSGameResource shareInstance];
-  
     
-    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
-        // If there's one, just open the session silently, without showing the user the login UI
-        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
-                                           allowLoginUI:NO
-                                      completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
-                            if(![VSSessionManager shareInstance].isLogin ){
-                                UIViewController *controller =   [[UIApplication sharedApplication] keyWindow].rootViewController;
-                                if([controller isKindOfClass:[UINavigationController class]] ){
-                                    UINavigationController *nav = (UINavigationController *)controller;
-                                    if ([nav.topViewController isKindOfClass:[VSLoginViewController class]]) {
-                                            [[VSFacebookLoginHold shareInstance] sessionStateChanged:session state:state error:error finished:^(BOOL finished){
-                                                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                                UIViewController *home = [storyBoard instantiateViewControllerWithIdentifier:@"VSHomeViewController"];
-                                                if ([VSSessionManager shareInstance].isLogin) {
-                                                              [nav pushViewController:home animated:YES];
-                                                          }
-                                                    }];
-                                                }
-                                            }
-                                            }
-                                    }];
-            }
+    VSTempLoginMessage *info = [VSTempLoginMessage new];
+    [[VSSessionManager shareInstance] loginWithType:info finish:^(BOOL success,id msg){
+        if (success) {
+            [MobClick event:VSLoginTempSuccess];
+        }else{
+            [MobClick event:VSLoginTempFail];
+        }
+    }];
+    
+//    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+//        // If there's one, just open the session silently, without showing the user the login UI
+//        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
+//                                           allowLoginUI:NO
+//                                      completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+//                            if(![VSSessionManager shareInstance].isLogin ){
+//                                UIViewController *controller =   [[UIApplication sharedApplication] keyWindow].rootViewController;
+//                                if([controller isKindOfClass:[UINavigationController class]] ){
+//                                    UINavigationController *nav = (UINavigationController *)controller;
+//                                    if ([nav.topViewController isKindOfClass:[VSLoginViewController class]]) {
+//                                            [[VSFacebookLoginHold shareInstance] sessionStateChanged:session state:state error:error finished:^(BOOL finished){
+//                                                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//                                                UIViewController *home = [storyBoard instantiateViewControllerWithIdentifier:@"VSHomeViewController"];
+//                                                if ([VSSessionManager shareInstance].isLogin) {
+//                                                              [nav pushViewController:home animated:YES];
+//                                                          }
+//                                                    }];
+//                                                }
+//                                            }
+//                                            }
+//                                    }];
+//            }
   
     return YES;
 }
@@ -77,19 +86,19 @@
 }
 
 #pragma mark facebook
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [FBAppCall handleDidBecomeActive];
-}
-
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation
-{
-    return [FBSession.activeSession handleOpenURL:url];
-}
+//- (void)applicationDidBecomeActive:(UIApplication *)application
+//{
+//    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+//    [FBAppCall handleDidBecomeActive];
+//}
+//
+//- (BOOL)application:(UIApplication *)application
+//            openURL:(NSURL *)url
+//  sourceApplication:(NSString *)sourceApplication
+//         annotation:(id)annotation
+//{
+//    return [FBSession.activeSession handleOpenURL:url];
+//}
 
 
 

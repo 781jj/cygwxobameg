@@ -35,7 +35,7 @@
     if (self) {
          self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        NSInteger current = [VSChannelList shareInstance].currentType;
+       
         VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
         if ([channel.gameList count]< 1 || ![[channel.gameList objectAtIndex:0] isKindOfClass:[VSFavorGame class]]) {
             return self;

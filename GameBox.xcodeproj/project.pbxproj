@@ -30,6 +30,7 @@
 		3D3D122819E14E27002116C9 /* btn_Alternative_hot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D3D122619E14E27002116C9 /* btn_Alternative_hot@2x.png */; };
 		3D81718019CD751900125961 /* VSChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81717F19CD751900125961 /* VSChannelViewController.m */; };
 		3D81718319CD757D00125961 /* VSChannelSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81718219CD757D00125961 /* VSChannelSwitch.m */; };
+		3D86A9001A15AA0D00215FD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D86A8FE1A15AA0D00215FD6 /* Main.storyboard */; };
 		3D8B58DA19E0F965007F075B /* VSGalleryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B58D919E0F965007F075B /* VSGalleryTableViewCell.m */; };
 		3D8B58DD19E0F983007F075B /* VSBroastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B58DC19E0F983007F075B /* VSBroastTableViewCell.m */; };
 		3D8B58E019E0F99B007F075B /* VSGameAbstractTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B58DF19E0F99B007F075B /* VSGameAbstractTableViewCell.m */; };
@@ -100,7 +101,6 @@
 		3DEC307619CD2236009FCCFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DEC307419CD2236009FCCFE /* InfoPlist.strings */; };
 		3DEC307819CD2236009FCCFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC307719CD2236009FCCFE /* main.m */; };
 		3DEC307C19CD2236009FCCFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC307B19CD2236009FCCFE /* AppDelegate.m */; };
-		3DEC307F19CD2236009FCCFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEC307D19CD2236009FCCFE /* Main.storyboard */; };
 		3DEC308419CD2236009FCCFE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DEC308319CD2236009FCCFE /* Images.xcassets */; };
 		3DEC308B19CD2236009FCCFE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEC308A19CD2236009FCCFE /* XCTest.framework */; };
 		3DEC308C19CD2236009FCCFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEC306B19CD2236009FCCFE /* Foundation.framework */; };
@@ -160,6 +160,7 @@
 		3D81717F19CD751900125961 /* VSChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSChannelViewController.m; sourceTree = "<group>"; };
 		3D81718119CD757D00125961 /* VSChannelSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSChannelSwitch.h; sourceTree = "<group>"; };
 		3D81718219CD757D00125961 /* VSChannelSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSChannelSwitch.m; sourceTree = "<group>"; };
+		3D86A8FF1A15AA0D00215FD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = GameBox/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D8B58D819E0F965007F075B /* VSGalleryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSGalleryTableViewCell.h; sourceTree = "<group>"; };
 		3D8B58D919E0F965007F075B /* VSGalleryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSGalleryTableViewCell.m; sourceTree = "<group>"; };
 		3D8B58DB19E0F983007F075B /* VSBroastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSBroastTableViewCell.h; sourceTree = "<group>"; };
@@ -287,7 +288,6 @@
 		3DEC307919CD2236009FCCFE /* GameBox-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GameBox-Prefix.pch"; sourceTree = "<group>"; };
 		3DEC307A19CD2236009FCCFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3DEC307B19CD2236009FCCFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3DEC307E19CD2236009FCCFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DEC308319CD2236009FCCFE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3DEC308919CD2236009FCCFE /* GameBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DEC308A19CD2236009FCCFE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -618,7 +618,7 @@
 				3DEC30AA19CD30F9009FCCFE /* Model */,
 				3DEC307A19CD2236009FCCFE /* AppDelegate.h */,
 				3DEC307B19CD2236009FCCFE /* AppDelegate.m */,
-				3DEC307D19CD2236009FCCFE /* Main.storyboard */,
+				3D86A8FE1A15AA0D00215FD6 /* Main.storyboard */,
 				3DEC308319CD2236009FCCFE /* Images.xcassets */,
 				3DEC307219CD2236009FCCFE /* Supporting Files */,
 			);
@@ -755,7 +755,7 @@
 		3DEC306019CD2236009FCCFE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = cyggame;
 				TargetAttributes = {
 					3DEC306719CD2236009FCCFE = {
@@ -798,6 +798,7 @@
 				3DA7967219E3C96A00AB1340 /* triangle_green_up@2x.png in Resources */,
 				3D9F175C19E516C40090C101 /* btn_rank_pressed@2x.png in Resources */,
 				3D9F175E19E516C40090C101 /* btn_detele_pressed@2x.png in Resources */,
+				3D86A9001A15AA0D00215FD6 /* Main.storyboard in Resources */,
 				3D02EB5E19ED16AE00EC5FB6 /* pic_welcome@2x.png in Resources */,
 				3D02EB5D19ED16AE00EC5FB6 /* text_or@2x.png in Resources */,
 				3DA7967119E3C96A00AB1340 /* triangle_red_down@2x.png in Resources */,
@@ -811,7 +812,6 @@
 				3D02EB6D19EE643B00EC5FB6 /* icon_share@2x.png in Resources */,
 				3D9F175A19E516C40090C101 /* head_default_big@2x.png in Resources */,
 				3D3D122719E14E27002116C9 /* btn_Alternative_new@2x.png in Resources */,
-				3DEC307F19CD2236009FCCFE /* Main.storyboard in Resources */,
 				3D9F175D19E516C40090C101 /* btn_edit@2x.png in Resources */,
 				3D3D122419E1456B002116C9 /* btn_play_release@2x.png in Resources */,
 				3DAC904B19D2A2D60039DAC3 /* game.json in Resources */,
@@ -940,20 +940,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3D86A8FE1A15AA0D00215FD6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D86A8FF1A15AA0D00215FD6 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		3DEC307419CD2236009FCCFE /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3DEC307519CD2236009FCCFE /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		3DEC307D19CD2236009FCCFE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3DEC307E19CD2236009FCCFE /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		3DEC309319CD2236009FCCFE /* InfoPlist.strings */ = {
@@ -1040,7 +1041,6 @@
 		3DEC309B19CD2236009FCCFE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1066,7 +1066,6 @@
 		3DEC309C19CD2236009FCCFE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

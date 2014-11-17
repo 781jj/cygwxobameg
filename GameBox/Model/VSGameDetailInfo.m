@@ -22,19 +22,19 @@
     if(self)
     {
         _players = 10;
-        _gameId = [dic objectForKey:@"gamenumber"] ;
+        _gameId = [NSString stringWithFormat:@"%@",[dic objectForKey:@"id"]];
         _isFavor = NO;
-        if ([dic objectForKey:@"isfavorite"]) {
-            _isFavor = [[dic objectForKey:@"isfavorite"] integerValue] == 1?YES:NO;
-        }              
-        
-        if ([dic objectForKey:@"playtimes"]) {
-            _players = [[dic objectForKey:@"playtimes"] integerValue]  + 10;
-            
-            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            [defaults setObject:[NSString stringWithFormat:@"%d",_players] forKey:[NSString stringWithFormat:@"VSGameDetailInfo_%@",_gameId]];
-            [defaults synchronize];
-        }
+//        if ([dic objectForKey:@"isfavorite"]) {
+//            _isFavor = [[dic objectForKey:@"isfavorite"] integerValue] == 1?YES:NO;
+//        }              
+//        
+//        if ([dic objectForKey:@"playtimes"]) {
+//            _players = [[dic objectForKey:@"playtimes"] integerValue]  + 10;
+//            
+//            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//            [defaults setObject:[NSString stringWithFormat:@"%d",_players] forKey:[NSString stringWithFormat:@"VSGameDetailInfo_%@",_gameId]];
+//            [defaults synchronize];
+//        }
 
     }
     return self;

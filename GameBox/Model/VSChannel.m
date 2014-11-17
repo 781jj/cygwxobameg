@@ -25,75 +25,62 @@
 
 - (void)loadData:(VSChannelLoadDataBlock)callback
 {
-    NSString *parm = @"new";
-    if (_type == VSHotChannel) {
-        parm = @"hot";
-    }
     
-//     [self loadJson];
-//    callback(YES,nil);
-//    return;
-    
-    __weak typeof(self) blockself = self;
-    [VSRequest get:@"games/gamelist" params:@{@"listType":parm} success:^(NSURLRequest *request, id obj) {
-        if ([obj isKindOfClass:[NSDictionary class]]) {
-            if ([[obj objectForKey:@"returnCode"] integerValue] == 1) {
-                NSDictionary *dic = [obj objectForKey:@"data"];
 
-                NSMutableArray *array = [NSMutableArray array];
-                NSMutableArray *favor = [NSMutableArray array];
-                if([dic objectForKey:@"gamelist"]){
-                    NSArray *list = (NSArray *)[dic objectForKey:@"gamelist"];
-                    [list enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                        VSGameDetailInfo *info = [[VSGameDetailInfo alloc] initWithDic:obj];
-                        [array addObject:info];
-                        
-                        
-                    }];
-                }
-                
-                
-//                if ([array count]>0) {
-//                    [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-//                        VSGameDetailInfo *info = (VSGameDetailInfo *)obj;
-//                        if (info.isFavor) {
-//                            [favor addObject:info];
-//                        }
+//    NSString *parm = @"new";
+//    if (_type == VSHotChannel) {
+//        parm = @"hot";
+//    }
+//    
+//
+//    
+//    __weak typeof(self) blockself = self;
+//    [VSRequest get:@"games/gamelist" params:@{@"listType":parm} success:^(NSURLRequest *request, id obj) {
+//        if ([obj isKindOfClass:[NSDictionary class]]) {
+//            if ([[obj objectForKey:@"returnCode"] integerValue] == 1) {
+//                NSDictionary *dic = [obj objectForKey:@"data"];
+//
+//                NSMutableArray *array = [NSMutableArray array];
+//                NSMutableArray *favor = [NSMutableArray array];
+//                if([dic objectForKey:@"gamelist"]){
+//                    NSArray *list = (NSArray *)[dic objectForKey:@"gamelist"];
+//                    [list enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//                        VSGameDetailInfo *info = [[VSGameDetailInfo alloc] initWithDic:obj];
+//                        [array addObject:info];
+//                        
+//                        
 //                    }];
+//                }
+//                
+//                
+//                if (blockself.type == 1) {
+//                    VSGameDetailInfo *gameInfo1 = [[VSGameDetailInfo alloc] initWithGameId:@"48"];
+//                    VSGameDetailInfo *gameInfo2 = [[VSGameDetailInfo alloc] initWithGameId:@"49"];
+//                    [favor addObjectsFromArray:@[gameInfo1,gameInfo2]];
 //                    VSFavorGame *favorGame = [VSFavorGame new];
 //                    favorGame.favorlist = favor;
-//                    
+//                    [array insertObject:favorGame atIndex:0];
+//                }else{
+//                    VSGameDetailInfo *gameInfo1 = [[VSGameDetailInfo alloc] initWithGameId:@"56"];
+//                    VSGameDetailInfo *gameInfo2 = [[VSGameDetailInfo alloc] initWithGameId:@"3"];
+//                    [favor addObjectsFromArray:@[gameInfo1,gameInfo2]];
+//                    VSFavorGame *favorGame = [VSFavorGame new];
+//                    favorGame.favorlist = favor;
 //                    [array insertObject:favorGame atIndex:0];
 //                }
-                
-                if (blockself.type == 1) {
-                    VSGameDetailInfo *gameInfo1 = [[VSGameDetailInfo alloc] initWithGameId:@"48"];
-                    VSGameDetailInfo *gameInfo2 = [[VSGameDetailInfo alloc] initWithGameId:@"49"];
-                    [favor addObjectsFromArray:@[gameInfo1,gameInfo2]];
-                    VSFavorGame *favorGame = [VSFavorGame new];
-                    favorGame.favorlist = favor;
-                    [array insertObject:favorGame atIndex:0];
-                }else{
-                    VSGameDetailInfo *gameInfo1 = [[VSGameDetailInfo alloc] initWithGameId:@"56"];
-                    VSGameDetailInfo *gameInfo2 = [[VSGameDetailInfo alloc] initWithGameId:@"3"];
-                    [favor addObjectsFromArray:@[gameInfo1,gameInfo2]];
-                    VSFavorGame *favorGame = [VSFavorGame new];
-                    favorGame.favorlist = favor;
-                    [array insertObject:favorGame atIndex:0];
-                }
-    
-                blockself.gameList = array;
-                callback(YES,array);
-            }else{
-               callback(NO,obj);
-            }
-        }else{
-             callback(NO,obj);
-        }
-       
-    } failed:^(NSURLRequest *request, id obj, NSError *error) {
-        callback(NO,obj);
-    }];
+//    
+//                blockself.gameList = array;
+//                callback(YES,array);
+//            }else{
+//               callback(NO,obj);
+//            }
+//        }else{
+//             callback(NO,obj);
+//        }
+//       
+//    } failed:^(NSURLRequest *request, id obj, NSError *error) {
+//        callback(NO,obj);
+//    }];
 }
 
 - (void)loadJson
@@ -113,8 +100,16 @@
             [array addObject:info];
         }];
     }
-    _gameList = array;
-    NSLog(@"json :%@",json);
+   
+    
+    NSMutableArray *favor = [NSMutableArray array];
+    VSGameDetailInfo *gameInfo1 = [[VSGameDetailInfo alloc] initWithGameId:@"56"];
+    VSGameDetailInfo *gameInfo2 = [[VSGameDetailInfo alloc] initWithGameId:@"3"];
+    [favor addObjectsFromArray:@[gameInfo1,gameInfo2]];
+    VSFavorGame *favorGame = [VSFavorGame new];
+    favorGame.favorlist = favor;
+    [array insertObject:favorGame atIndex:0];
+     _gameList = array;
 }
 
 

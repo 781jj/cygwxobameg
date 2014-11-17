@@ -13,7 +13,7 @@
 #import "SKSTableView.h"
 #import "SKSTableViewCell.h"
 #define VSUserTableViewCellHeight 66
-@interface VSIndividualCenterViewController ()<SKSTableViewDelegate>
+@interface VSIndividualCenterViewController ()
 @property (nonatomic,weak)IBOutlet VSImageView *photo;
 @property (nonatomic,weak)IBOutlet UILabel *nameLabel;
 @property (nonatomic,weak)IBOutlet UIView *errorView;
@@ -29,7 +29,7 @@
     _photo.layer.masksToBounds = YES;
     _photo.layer.cornerRadius = _photo.frame.size.width/2.0;
     
-    _tableView.SKSTableViewDelegate = self;
+   // _tableView.SKSTableViewDelegate = self;
     [M2DHudView showLoading];
     [[VSSessionManager shareInstance].passport reloadInfo:^(BOOL success){
         [M2DHudView hideLoading];

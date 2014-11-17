@@ -53,19 +53,19 @@
         [contentView addSubview:abstract];
         _abstrctLabel = abstract;
         
-        UIButton *playButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        playButton.frame = CGRectMake(abstract.frame.origin.x+abstract.frame.size.width+5, contentView.frame.size.height*0.15, contentView.frame.size.width*0.24, contentView.frame.size.width*0.11);
-        [playButton setImage:[UIImage imageNamed:@"btn_play_release"] forState:UIControlStateNormal];
-        [playButton addTarget:[VSHomeController shareInstance] action:@selector(gamePlayClick:) forControlEvents:UIControlEventTouchUpInside];
-        [contentView addSubview:playButton];
-        _playButton = playButton;
+//        UIButton *playButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        playButton.frame = CGRectMake(abstract.frame.origin.x+abstract.frame.size.width+5, contentView.frame.size.height*0.15, contentView.frame.size.width*0.24, contentView.frame.size.width*0.11);
+//        [playButton setImage:[UIImage imageNamed:@"btn_play_release"] forState:UIControlStateNormal];
+//        [playButton addTarget:[VSHomeController shareInstance] action:@selector(gamePlayClick:) forControlEvents:UIControlEventTouchUpInside];
+//        [contentView addSubview:playButton];
+//        _playButton = playButton;
         
-        UILabel *players = [[UILabel alloc] initWithFrame:CGRectMake(playButton.frame.origin.x+playButton.frame.size.width*0.25,playButton.frame.origin.y+playButton.frame.size.height+contentView.frame.size.height*0.05, contentView.frame.size.width*0.2, contentView.frame.size.height*0.2)];
-        players.font = [UIFont systemFontOfSize:12];
-        players.textColor = [UIColor blackColor];
-        players.textAlignment = 0;
-        [contentView addSubview:players];
-        _playsLabel = players;
+//        UILabel *players = [[UILabel alloc] initWithFrame:CGRectMake(playButton.frame.origin.x+playButton.frame.size.width*0.25,playButton.frame.origin.y+playButton.frame.size.height+contentView.frame.size.height*0.05, contentView.frame.size.width*0.2, contentView.frame.size.height*0.2)];
+//        players.font = [UIFont systemFontOfSize:12];
+//        players.textColor = [UIColor blackColor];
+//        players.textAlignment = 0;
+//        [contentView addSubview:players];
+//        _playsLabel = players;
         
         
     }
@@ -80,12 +80,13 @@
         return;
     }
     VSGameDetailInfo *gameDetail  = [channel.gameList objectAtIndex:index];
-
+    UIImage *image = [UIImage imageWithContentsOfFile:gameDetail.iconPath];
+    NSString *name = gameDetail.name;
     _iconImageView.image = [UIImage imageWithContentsOfFile:gameDetail.iconPath];
     _nameLabel.text = gameDetail.name;
     _abstrctLabel.text = gameDetail.abstract;
-    _playsLabel.text = [NSString stringWithFormat:@"+%ld",(long)gameDetail.players];
-    _playButton.tag = index+1;
+   // _playsLabel.text = [NSString stringWithFormat:@"+%ld",(long)gameDetail.players];
+   // _playButton.tag = index+1;
 
 }
 

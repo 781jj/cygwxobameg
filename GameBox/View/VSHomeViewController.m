@@ -20,7 +20,6 @@ CGRectGetWidth(self.scrollview.frame), CGRectGetHeight(self.scrollview.frame))
 }
 
 @property (nonatomic,weak)IBOutlet UIScrollView *scrollview;
-@property (nonatomic,weak)IBOutlet VSChannelSwitch *channelSwitch;
 @end
 
 @implementation VSHomeViewController
@@ -29,11 +28,11 @@ CGRectGetWidth(self.scrollview.frame), CGRectGetHeight(self.scrollview.frame))
 
     [super viewDidLoad];
     
-    self.navigationController.navigationBarHidden = NO;
-    [self.navigationItem setHidesBackButton:YES];
-    self.automaticallyAdjustsScrollViewInsets = NO;
+//    self.navigationController.navigationBarHidden = NO;
+ //   [self.navigationItem setHidesBackButton:YES];
+//    self.automaticallyAdjustsScrollViewInsets = NO;
     
-    [_scrollview setContentSize:CGSizeMake(_scrollview.bounds.size.width*2.0, _scrollview.bounds.size.height)];
+    [_scrollview setContentSize:CGSizeMake(_scrollview.bounds.size.width, _scrollview.bounds.size.height)];
     _scrollview.scrollEnabled = NO;
 
   
@@ -48,15 +47,15 @@ CGRectGetWidth(self.scrollview.frame), CGRectGetHeight(self.scrollview.frame))
     // Do any additional setup after loading the view.
 }
 
-- (void)addNew
-{
-    VSChannelViewController *controller = [[VSChannelViewController alloc] init];
-    controller.type = 1;
-    [self addChildViewController:controller];
-    controller.view.frame = CGRectForVCAtIndex(1);
-    [_scrollview addSubview:controller.view];
-    [controller didMoveToParentViewController:self];
-}
+//- (void)addNew
+//{
+//    VSChannelViewController *controller = [[VSChannelViewController alloc] init];
+//    controller.type = 1;
+//    [self addChildViewController:controller];
+//    controller.view.frame = CGRectForVCAtIndex(1);
+//    [_scrollview addSubview:controller.view];
+//    [controller didMoveToParentViewController:self];
+//}
 
 - (void)moveToChannel:(NSInteger )index
 {

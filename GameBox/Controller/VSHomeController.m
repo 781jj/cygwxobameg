@@ -18,7 +18,7 @@
 #import "VSChannelList.h"
 #import "VSGameDetailInfo.h"
 #import "VSGameText.h"
-#define DownloadLink @"https://itunes.apple.com/us/app/fas-calculator/id874866243?ls=1&mt=8"
+#define DownloadLink @"https://itunes.apple.com/us/app/fas-calculator/id930053388?ls=1&mt=8"
 
 static VSHomeController *_homeController = nil;
 @implementation VSHomeController
@@ -56,6 +56,28 @@ static VSHomeController *_homeController = nil;
 
 }
 
+- (void)gamePlay:(NSInteger )index
+{
+    UIViewController *controller =   [[UIApplication sharedApplication] keyWindow].rootViewController;
+    
+    if([controller isKindOfClass:[UINavigationController class]] ){
+        
+        NSInteger gameIndex = index;
+        VSChannel *channel = [[VSChannelList shareInstance] currentChannel];
+        if (gameIndex < [channel.gameList count] && gameIndex>=0) {
+            VSGameDetailInfo *info = [channel.gameList objectAtIndex:gameIndex];
+            if ([info isKindOfClass:[VSGameDetailInfo class]]) {
+                channel.currentGameId = info.gameId;
+            }
+        }
+        
+        [MobClick event:VSGameStartClick attributes:@{@"channelid":[NSString stringWithFormat:@"%d",channel.type],@"gameid":channel.currentGameId,@"origin":@"home"}];
+        UINavigationController *nav = (UINavigationController *)controller;
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *detail = [storyBoard instantiateViewControllerWithIdentifier:@"VSGamePlayViewController"];
+        [nav pushViewController:detail animated:YES];
+    }
+}
 
 - (void)gamePlayClick:(UIButton *)sender
 {
@@ -109,32 +131,32 @@ static VSHomeController *_homeController = nil;
 
 }
 
-- (void)channelClick:(id)sender
-{
-    UIViewController *controller =   [[UIApplication sharedApplication] keyWindow].rootViewController;
-    if([controller isKindOfClass:[UINavigationController class]] ){
-        UINavigationController *nav = (UINavigationController *)controller;
-        UIViewController *home = [nav topViewController];
-        if ([home isKindOfClass:[VSHomeViewController class]]) {
-            if ([sender isEqualToString:@"new"]) {
-                [VSChannelList shareInstance].currentType = VSNewChannel;
-
-                [(VSHomeViewController *)home addNew];
-                [(VSHomeViewController *)home moveToChannel:1];
-                [MobClick event:VSChannelSwitchClick attributes:@{@"channelid":@"1"}];
-                
-            }else{
-                [VSChannelList shareInstance].currentType = VSHotChannel;
-                [(VSHomeViewController *)home moveToChannel:0];
-                [MobClick event:VSChannelSwitchClick attributes:@{@"channelid":@"2"}];
-
-            }
-            
-            
-        }
-    }
-
-}
+//- (void)channelClick:(id)sender
+//{
+//    UIViewController *controller =   [[UIApplication sharedApplication] keyWindow].rootViewController;
+//    if([controller isKindOfClass:[UINavigationController class]] ){
+//        UINavigationController *nav = (UINavigationController *)controller;
+//        UIViewController *home = [nav topViewController];
+//        if ([home isKindOfClass:[VSHomeViewController class]]) {
+//            if ([sender isEqualToString:@"new"]) {
+//                [VSChannelList shareInstance].currentType = VSNewChannel;
+//
+//                [(VSHomeViewController *)home addNew];
+//                [(VSHomeViewController *)home moveToChannel:1];
+//                [MobClick event:VSChannelSwitchClick attributes:@{@"channelid":@"1"}];
+//                
+//            }else{
+//                [VSChannelList shareInstance].currentType = VSHotChannel;
+//                [(VSHomeViewController *)home moveToChannel:0];
+//                [MobClick event:VSChannelSwitchClick attributes:@{@"channelid":@"2"}];
+//
+//            }
+//            
+//            
+//        }
+//    }
+//
+//}
 
 
 - (void)pkClick:(id)sender

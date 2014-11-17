@@ -161,7 +161,7 @@ GameManager.prototype.move = function (direction) {
   if (moved) {
     this.addRandomTile();
     if (!this.movesAvailable()) {
-	  dp_submitScore(-1,self.score);
+	  //dp_submitScore(-1,self.score);
       this.over = true; // Game over! 
     }
     this.actuate();

@@ -27,7 +27,7 @@
     
     _channelType = 0;
     _tapView.image = [UIImage  imageNamed:@"btn_Alternative_hot"];
-    [[VSHomeController shareInstance] channelClick:@"hot"];
+   // [[VSHomeController shareInstance] channelClick:@"hot"];
 }
 
 - (IBAction)newClick:(id)sender
@@ -38,7 +38,7 @@
     
     _channelType = 1;
     _tapView.image = [UIImage  imageNamed:@"btn_Alternative_new"];
-    [[VSHomeController shareInstance] channelClick:@"new"];
+   // [[VSHomeController shareInstance] channelClick:@"new"];
 
 }
 

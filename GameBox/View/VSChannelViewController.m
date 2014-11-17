@@ -19,7 +19,7 @@
 #import "VSGameAbstractTableViewCell.h"
 #import "VSHomeController.h"
 @interface VSChannelViewController ()<UITableViewDataSource,UITableViewDelegate>
-@property (nonatomic,strong )UITableView *table;
+@property (nonatomic,weak )IBOutlet UITableView *table;
 @end
 
 @implementation VSChannelViewController
@@ -27,30 +27,27 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-100) style:UITableViewStylePlain];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    tableView.bounces = YES;
-    tableView.backgroundColor = UIColorFromRGB(0xf0f2f5);
     
-    [self.view addSubview:tableView];
+    [super viewDidLoad];
+    _type = 2;
+//    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-100) style:UITableViewStylePlain];
+//    tableView.delegate = self;
+//    tableView.dataSource = self;
+//    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    tableView.bounces = YES;
+//    tableView.backgroundColor = UIColorFromRGB(0xf0f2f5);
+//    
+//    [self.view addSubview:tableView];
 
-    _table = tableView;
+//    _table = tableView;
     
  
     VSChannel *channel = [[VSChannelList shareInstance] channelWithType:_type];
-    [M2DHudView showLoading];
+    [channel loadJson];
+    [_table reloadData];
+   // [M2DHudView showLoading];
     
-    [channel loadData:^(BOOL success,id msg){
-        if (success) {
-            [M2DHudView hideLoading];
-            
-            [_table performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
-        }
-    }];
+
     
     // Do any additional setup after loading the view.
 }
@@ -129,7 +126,7 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    [[VSHomeController shareInstance] gameClick:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
+    [[VSHomeController shareInstance] gamePlay:indexPath.row];
 }
 
 

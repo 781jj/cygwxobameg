@@ -460,7 +460,7 @@ var picgame = {
 		var self = this;
 		var title = "";
 		var msg = "";
-		dp_submitScore(self.currIndex+1);
+		//dp_submitScore(self.currIndex+1);
 		self.currIndex = self.currIndex + 1;
 		self.gamestart()
 		if (picimgs.length - 1 == this.currIndex) {
@@ -488,14 +488,14 @@ var picgame = {
 					confirm: {
 						title: "next",
 						click: function() {
-							self.currIndex = self.currIndex + 1;
+						//	self.currIndex = self.currIndex + 1;
 							self.gamestart()
 						}
 					},
 					close: {
 						title: "share",
 						click: function() {
-							dp_share();
+					//	dp_share();
 						}
 					}
 				}
@@ -507,7 +507,7 @@ var picgame = {
 	gameover: function(optmsg) {
 		var self = this;
 		var msg = optmsg;
-		dp_submitScore(self.currIndex);
+	//	dp_submitScore(self.currIndex);
 		dialog.dialog({
 			title: "GAME OVER",
 			content: "You lose!",
